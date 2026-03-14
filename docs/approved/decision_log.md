@@ -1,4 +1,4 @@
-# Decision Log v0.8
+# Decision Log v0.9
 
 ## Назначение документа
 Этот документ фиксирует уже принятые решения по проекту SaleCheckUp Signals Radar, чтобы не обсуждать их заново и не терять контекст между итерациями.
@@ -43,6 +43,7 @@
 26. В scope repo changes входят document edits, version registry, change log, lifecycle/status updates и другие логически затронутые файлы.
 27. Active approved docs используют stable semantic filenames без version suffix; active filename не является revision marker.
 28. Run должен быть grounded через stable approved paths и полный Git commit SHA, а не через ручной список versioned approved filenames.
+29. Historical recovery approved governance contour must rely on Git + explicit contour snapshot/history artifacts, а не на duplicate archived full copies.
 
 ## Новая запись решения v0.3
 
@@ -522,10 +523,8 @@ Canonical identity active approved doc определяется через stabl
 
 `current_version` в `version_registry` остается canonical revision marker для active approved contour.
 
-#### 3. Archival model remains versioned
-Version suffix остается допустимым и обязательным archival discriminator для superseded approved docs в `docs/outdated/`.
-
-Versioned / numbered naming также остается допустимым для handoff artifacts:
+#### 3. Versioned numbering remains limited
+Versioned / numbered naming остается допустимым для handoff artifacts:
 - `docs/patch_plans/`
 - `docs/decision_drafts/`
 
@@ -585,17 +584,131 @@ Path-only migration:
 - `test_set` остается `v0.2`, но переходит на stable active path.
 
 ### Affected Documents
-- `docs/outdated/spec_governance_v0.3.md`
-- `docs/outdated/decision_log_v0.7.md`
-- `docs/outdated/master_instruction_v0.4.md`
-- `docs/outdated/project_brief_v0.5.md`
-- `docs/outdated/experiment_charter_stage_a_v0.5.md`
-- `docs/outdated/README_upload_to_projects_v0.2.md`
-- `docs/outdated/output_contract_v0.2.md`
+- `spec_governance` previous approved revision `v0.3`
+- `decision_log` previous approved revision `v0.7`
+- `master_instruction` previous approved revision `v0.4`
+- `project_brief` previous approved revision `v0.5`
+- `experiment_charter_stage_a` previous approved revision `v0.5`
+- `README_upload_to_projects` previous approved revision `v0.2`
+- `output_contract` previous approved revision `v0.2`
 - `docs/approved/test_set.md`
 - `docs/indexes/version_registry.md`
 - `docs/indexes/change_log.md`
 - `docs/indexes/current_handoff.md`
+- `docs/patch_plans/_template_patch_plan.md`
+- `docs/decision_drafts/_template_decision_draft.md`
+
+### Approval
+Approved
+
+## Новая запись решения v0.9
+
+### Decision ID
+`decision_006`
+
+### Title
+Contour history layer replaces archived duplicate governance copies
+
+### Status
+Approved
+
+### Date
+2026-03-15
+
+### Problem
+После перехода active approved contour на stable semantic paths project still retained a second architectural problem:
+- superseded governance states хранились как full duplicate copies в archival storage;
+- contour-level historical recovery зависел от pile of archived files;
+- explicit approved contour history layer отсутствовал;
+- run grounding был commit-based, но history layer не позволял быстро понять, какой contour действовал на каком snapshot without opening archived duplicates.
+
+Это создавало смешение между:
+- revision history;
+- lifecycle semantics;
+- contour-level recovery;
+- file storage model.
+
+### Decision
+Принята следующая storage и history model.
+
+#### 1. Stable paths remain canonical
+Один semantic governance doc должен жить на одном stable path в `docs/approved/`.
+
+Version не живет в active governance filename.
+
+#### 2. Duplicate archived full copies stop being canonical history model
+History approved governance docs не должна опираться на duplicate archived full copies.
+
+Status `outdated` остается lifecycle semantics для superseded states, но не требует хранения полного duplicate file per revision.
+
+#### 3. Explicit contour history layer becomes canonical
+Canonical history layer фиксируется через:
+- `docs/indexes/approved_contour_history.md`
+- `docs/history/approved_contours/`
+
+Эти artifacts должны позволять восстановить:
+- какой approved contour действовал;
+- на каком Git commit SHA его можно recover;
+- какие stable paths входили в contour;
+- какие approved revisions действовали.
+
+#### 4. Recovery model
+Full text recovery historical docs выполняется через Git history.
+
+Contour-level recovery выполняется через explicit snapshot/history artifacts, а не через pile of archived duplicates.
+
+#### 5. Run grounding consistency
+`approved_contour_commit_sha` и `approved_contour_paths` в `run_manifest.json` должны соответствовать contour snapshot, зафиксированному в canonical history layer.
+
+### Rationale
+Это решение разделяет:
+- current document identity;
+- revision history;
+- contour snapshot history;
+- lifecycle semantics.
+
+Оно нужно, чтобы:
+- historical recovery был repo-resident и явным;
+- duplicate archived full copies перестали быть основным способом восстановления history;
+- runs и governance layer ссылались на один и тот же contour model;
+- storage model перестала скрыто подменять lifecycle semantics.
+
+### Consequences
+
+#### Governance consequences
+- `spec_governance` должен зафиксировать history artifacts как canonical history layer.
+- `decision_log` должен зафиксировать replacement of archived duplicate copies.
+- `project_brief` и `README_upload_to_projects` должны перестать описывать history recovery через outdated full-copy storage.
+
+#### History layer consequences
+- должен появиться canonical history index;
+- должны появиться contour snapshot files для coherent approved states;
+- archived duplicate governance copies должны быть удалены после backfill snapshot layer.
+
+#### Documentation consequences
+Должны быть синхронизированы:
+- `spec_governance` → `v0.5`
+- `decision_log` → `v0.9`
+- `project_brief` → `v0.7`
+- `README_upload_to_projects` → `v0.4`
+- `output_contract` → `v0.4`
+
+Без новой revision:
+- `master_instruction` → `v0.5`
+- `experiment_charter_stage_a` → `v0.6`
+- `test_set` → `v0.2`
+
+### Affected Documents
+- `docs/approved/spec_governance.md`
+- `docs/approved/decision_log.md`
+- `docs/approved/project_brief.md`
+- `docs/approved/README_upload_to_projects.md`
+- `docs/approved/output_contract.md`
+- `docs/indexes/version_registry.md`
+- `docs/indexes/change_log.md`
+- `docs/indexes/current_handoff.md`
+- `docs/indexes/approved_contour_history.md`
+- `docs/history/approved_contours/`
 - `docs/patch_plans/_template_patch_plan.md`
 - `docs/decision_drafts/_template_decision_draft.md`
 
@@ -644,10 +757,11 @@ Approved
 
 Там происходят:
 - хранение approved docs;
-- хранение outdated docs;
+- хранение approved contour history artifacts;
 - хранение draft docs;
 - хранение active approved docs на stable semantic paths;
 - versioning через Git, `version_registry` и `change_log`;
+- contour-level recovery через `approved_contour_history`;
 - change log;
 - version registry;
 - фиксация новых approved versions.
@@ -686,10 +800,11 @@ Approved
 2. Формируется decision draft.
 3. Формируются patch plans по затронутым документам.
 4. Готовятся новые approved revisions на stable paths и, при необходимости, versioned handoff artifacts.
-5. Новые версии проверяются и апрувятся.
-6. Новые версии коммитятся и пушатся в Git.
-7. Version registry и change log обновляются.
-8. Только после этого Manus работает по новой версии.
+5. Обновляются approved contour history artifacts.
+6. Новые версии проверяются и апрувятся.
+7. Новые версии коммитятся и пушатся в Git.
+8. Version registry и change log обновляются.
+9. Только после этого Manus работает по новой версии.
 
 ## Текущий следующий шаг
 Использовать в качестве актуального approved contour:
@@ -707,4 +822,5 @@ Operational support doc:
 После этого:
 1. выполнять research runs в Manus по актуальному approved contour из Git и фиксировать stable approved paths + commit SHA в `run_manifest.json`;
 2. выполнять repo/spec changes в VS Code/Codex только по versioned handoff artifact и не исполнять их напрямую в web chat;
-3. обновлять спецификацию только через явный review loop и approved revision sync в Git.
+3. использовать `approved_contour_history` для contour-level historical recovery;
+4. обновлять спецификацию только через явный review loop и approved revision sync в Git.

@@ -18,6 +18,9 @@ TBD
 ## Base Commit SHA
 Optional
 
+## Base Approved Contour Snapshot ID
+Optional
+
 ## Why This Patch Exists
 Кратко опиши, какое противоречие, gap или sync-необходимость закрывает этот patch.
 
@@ -25,6 +28,7 @@ Optional
 1. Что меняется в документе или наборе документов.
 2. Какие stable approved paths или versioned handoff artifacts затрагиваются.
 3. Какие control-layer обновления обязательны: `version_registry`, `change_log`, lifecycle/status, refs.
+4. Какие contour history artifacts нужно обновить: history index, snapshot files, run grounding refs.
 
 ## Explicit Non-Changes
 Явно перечисли, что этот patch не меняет.

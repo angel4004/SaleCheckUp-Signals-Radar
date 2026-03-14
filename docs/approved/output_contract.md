@@ -1,4 +1,4 @@
-# Output Contract v0.3
+# Output Contract v0.4
 
 ## Назначение
 Этот документ фиксирует, что именно Manus обязан возвращать по итогам каждого run и в каком виде должен быть устроен результат.
@@ -78,6 +78,10 @@
 - `approved_contour_paths` — список stable approved doc paths из `docs/approved/`, использованных для run.
 
 Manual listing of versioned approved filenames не является корректной заменой этих полей.
+
+Эти поля должны соответствовать contour snapshot, описанному в canonical history layer:
+- `docs/indexes/approved_contour_history.md`;
+- `docs/history/approved_contours/`.
 
 ### Поле summary должно содержать
 - `sources_scanned`

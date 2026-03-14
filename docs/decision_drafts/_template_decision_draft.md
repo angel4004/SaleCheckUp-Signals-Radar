@@ -33,6 +33,12 @@ TBD
 - stable path remains: docs/approved/document_name.md
 - TBD
 
+## History / Snapshot Impact
+- current_snapshot_id: TBD
+- superseded_snapshot_ids: TBD
+- recovery_model_change: yes/no
+- historical refs requiring normalization: TBD
+
 ## Boundary
 Явно перечисли, что решение меняет и чего оно не меняет.
 

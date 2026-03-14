@@ -1,4 +1,4 @@
-# README — upload to Projects v0.3
+# README — upload to Projects v0.4
 
 ## Назначение файла
 Этот файл описывает, какие документы загружать в ChatGPT Project и как не смешивать Project layer с source of truth для approved docs.
@@ -22,6 +22,7 @@
 ## Что считать источником правды
 - source of truth для approved docs остается Git;
 - active approved docs идентифицируются через stable paths, а их текущая revision фиксируется в `version_registry` и `change_log`;
+- contour-level historical recovery выполняется через `docs/indexes/approved_contour_history.md`, а не через archived duplicate full copies;
 - upload в ChatGPT Project не делает текст approved автоматически;
 - ChatGPT Project используется как thinking / feedback / governance layer;
 - handoff к VS Code/Codex должен идти через versioned repo artifact, а не через ручной copy-paste длинных сообщений между окнами.
@@ -33,9 +34,9 @@
 4. После согласования решения зафиксируй patch scope в versioned handoff artifacts и, при необходимости, выпусти новую approved revision на stable path до исполнения задачи в VS Code/Codex.
 5. Не исполняй repo changes напрямую в web chat.
 6. Research runs продолжай выполнять в Manus по актуальному approved contour из Git.
+7. Если нужно понять исторический approved contour, используй `approved_contour_history` и Git history.
 
 ## Что считать устаревшим
 Не используй как source of truth:
-- outdated docs;
-- `docs/outdated/README_upload_to_projects.md`;
+- numbered historical artifacts как замену current approved contour;
 - старые approved versions, которые уже superseded в `version_registry`.

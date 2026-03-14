@@ -1,4 +1,4 @@
-# Spec Governance v0.4
+# Spec Governance v0.5
 
 ## Назначение документа
 Этот документ фиксирует governance-модель проекта SaleCheckUp Signals Radar:
@@ -16,7 +16,7 @@ Git является:
 - **source of truth для version history**;
 - местом, где хранятся:
   - approved docs;
-  - outdated docs;
+  - approved contour history artifacts;
   - drafts;
   - decision drafts;
   - patch plans;
@@ -95,7 +95,7 @@ Repo changes не должны исполняться напрямую в web ch
 2. Изменение отражено в соответствующих approved docs на stable paths.
 3. Новая approved revision документа зафиксирована в Git на stable path.
 4. Version registry и change log обновлены.
-5. Предыдущая approved-версия переведена в outdated, если это требуется.
+5. Superseded approved state зафиксирован в approved contour history artifacts и Git, если это требуется.
 
 До этого момента изменение считается:
 - draft;
@@ -107,21 +107,34 @@ Repo changes не должны исполняться напрямую в web ch
 1. Approved docs не редактируются молча по месту.
 2. Существенное изменение должно выпускаться как новая approved revision, а не через правку active файла без lifecycle sync.
 3. Active approved docs в `docs/approved/` используют stable semantic filenames без version suffix.
-4. Предыдущая approved-версия не удаляется, а переводится в outdated с versioned archival filename, если это требуется.
+4. Superseded approved state не должен храниться как duplicate full copy только ради history recovery.
 5. Если правка затрагивает несколько документов, это должно быть явно отражено через:
    - decision draft;
    - patch plan;
    - approved revision updates;
+   - approved contour history update;
    - change log.
 
 ## Правило именования active approved docs
 1. Canonical approved identifiers задаются через stable paths в `docs/approved/`, а не через version suffix в active filename.
 2. История ревизий active approved docs хранится в Git, `version_registry` и `change_log`.
 3. `current_version` в `version_registry` остается canonical revision marker для active approved docs.
-4. Version suffix допустим для:
-   - `docs/outdated/` как archival discriminator;
-   - versioned handoff artifacts в `docs/patch_plans/` и `docs/decision_drafts/`.
-5. Run-level grounding должен ссылаться на stable approved paths и полный Git commit SHA, а не на ручной список versioned approved filenames.
+4. Duplicate archived full copies governance docs не являются canonical history model.
+5. Version suffix допустим для versioned handoff artifacts в `docs/patch_plans/` и `docs/decision_drafts/`.
+6. Historical recovery для approved contour должна опираться на Git и explicit contour snapshot/history artifacts, а не на pile of archived duplicate files.
+7. Run-level grounding должен ссылаться на stable approved paths и полный Git commit SHA, а не на ручной список versioned approved filenames.
+
+## Правило historical recovery
+1. Canonical contour history layer задается через:
+   - `docs/indexes/approved_contour_history.md`;
+   - `docs/history/approved_contours/`.
+2. Approved contour snapshot должен позволять определить:
+   - какой contour действовал;
+   - какой stable path входил в contour;
+   - какая approved revision действовала;
+   - к какому Git commit SHA относится recovery.
+3. Full text recovery historical docs должен выполняться через Git history.
+4. Contour-level recovery не должен зависеть от duplicate archived full copies одного и того же governance doc.
 
 ## Правило работы с draft layer
 Draft-документы могут появляться:
@@ -201,10 +214,11 @@ Governance rules:
 2. Формируется decision draft.
 3. Формируются patch plans по затронутым документам.
 4. Готовятся новые approved revisions на stable paths и, при необходимости, versioned handoff artifacts.
-5. Новые версии проверяются и апрувятся.
-6. Новые версии коммитятся и пушатся в Git.
-7. Version registry и change log обновляются.
-8. Только после этого Manus работает по новой версии.
+5. Обновляются approved contour history artifacts.
+6. Новые версии проверяются и апрувятся.
+7. Новые версии коммитятся и пушатся в Git.
+8. Version registry и change log обновляются.
+9. Только после этого Manus работает по новой версии.
 
 ## Правило разрешения противоречий
 Если:
@@ -229,7 +243,8 @@ Governance-ошибкой считаются ситуации, когда:
 - repo changes исполняются вне VS Code/Codex;
 - active approved docs продолжают зависеть от version suffix как от canonical identifier;
 - substantive approved changes вносятся без новой approved revision и без sync в `version_registry` / `change_log`;
-- старые approved docs исчезают вместо перевода в outdated;
+- superseded approved states исчезают без capture в contour history artifacts и Git;
+- historical recovery зависит от duplicate archived full copies как от основного механизма;
 - patch затрагивает несколько документов, но синхронизация не отражена явно.
 
 ## Связь с другими документами

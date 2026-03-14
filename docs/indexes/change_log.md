@@ -1,6 +1,18 @@
 # Change Log
 
 ## 2026-03-15
+- Entries for `decision_006` below describe the current working change package in the workspace; the last committed approved contour remains `approved_contour_2026-03-15_decision_005` until the next Git commit.
+- Added patch_plan_009 for replacing archived duplicate governance copies with explicit contour history artifacts.
+- Approved decision_006: contour history layer replaces archived duplicate governance copies.
+- Added canonical history index `docs/indexes/approved_contour_history.md`.
+- Added approved contour snapshot files under `docs/history/approved_contours/`.
+- Promoted spec_governance from v0.4 to v0.5 on the stable path.
+- Promoted decision_log from v0.8 to v0.9 on the stable path.
+- Promoted project_brief from v0.6 to v0.7 on the stable path.
+- Promoted README_upload_to_projects from v0.3 to v0.4 on the stable path.
+- Promoted output_contract from v0.3 to v0.4 on the stable path.
+- Updated `version_registry`, `current_handoff`, templates and run/history wording for contour snapshot recovery.
+- Removed duplicate archived governance copies from `docs/outdated/` after backfilling the contour history layer.
 - Added patch_plan_008 for migration from versioned active approved filenames to stable approved paths.
 - Approved decision_005: stable approved paths and commit-grounded runs.
 - Migrated active approved contour in `docs/approved/` to stable semantic filenames without version suffix.

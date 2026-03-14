@@ -3,11 +3,13 @@
 Status: draft
 
 ## Contour grounding
-- Base `HEAD` commit SHA: `796229e179df6b3660e3d4f49cfd3146c629f86b`
-- Workspace state at execution start: dirty working tree
+- Base approved contour snapshot ID: `approved_contour_2026-03-15_decision_005`
+- Current working snapshot ID: `approved_contour_2026-03-15_decision_006`
+- Base `HEAD` commit SHA: `e1f5c9b7a248baad0b8de1e466af4ca16eef52bf`
+- Workspace state at execution start: clean working tree
 
 ## Task
-- Migrate active approved contour from versioned filenames to stable approved paths and ground runs through stable paths plus full Git commit SHA.
+- Replace archived duplicate governance copies with explicit approved contour history artifacts and keep run grounding aligned with committed contour snapshots.
 
 ## Source docs
 - `docs/approved/spec_governance.md`
@@ -20,25 +22,26 @@ Status: draft
 - `docs/approved/test_set.md`
 - `docs/indexes/version_registry.md`
 - `docs/indexes/change_log.md`
+- `docs/indexes/approved_contour_history.md`
 
 ## Change scope
 ### Change
-- Release stable approved paths for the active contour and record new approved revisions where the policy/schema changed.
-- Move superseded versioned approved files to `docs/outdated/` and keep archival filenames versioned.
-- Update canonical `version_registry`, `change_log`, templates and run grounding policy.
-- Require `run_manifest.json` to capture stable approved paths and base commit SHA.
+- Release new approved revisions where storage/history policy changes.
+- Add canonical contour history index and approved contour snapshot artifacts.
+- Remove duplicate archived governance copies after historical backfill is in place.
+- Update canonical `version_registry`, `change_log`, templates and run/history grounding policy.
 
 ### Do not change
 - historical patch plans and decision drafts unrelated to this sync-pass
-- archival naming model in `docs/outdated/`
 - semantic classification model in `test_set`
+- numbering/id-based artifact model for patch plans and decision drafts
 
 ## Sync impact
-- All current approved contour lists and registry locations must stop depending on version suffix in active approved filenames.
-- `output_contract` must carry commit-grounded run linkage.
-- Live templates must stop teaching versioned active filenames as canonical identifiers.
+- History recovery must stop depending on archived duplicate full copies.
+- `output_contract` must point run grounding to canonical contour history artifacts.
+- Live templates must carry snapshot-aware grounding fields.
 
 ## Document status
 - approved: `spec_governance.md`, `project_brief.md`, `experiment_charter_stage_a.md`, `decision_log.md`, `master_instruction.md`, `output_contract.md`, `test_set.md`, `README_upload_to_projects.md`
-- outdated: `spec_governance_v0.3`, `project_brief_v0.5`, `experiment_charter_stage_a_v0.5`, `decision_log_v0.7`, `master_instruction_v0.4`, `README_upload_to_projects_v0.2`, `output_contract_v0.2`
-- draft: `docs/indexes/current_handoff.md`, `docs/patch_plans/patch_plan_008_stable_approved_paths_and_commit_grounding.md`, `docs/decision_drafts/decision_005_stable_approved_paths_and_commit_grounding.md`
+- outdated: semantic previous revisions are represented in `approved_contour_history`, not as duplicate full-copy files
+- draft: `docs/indexes/current_handoff.md`, `docs/patch_plans/patch_plan_009_contour_history_replaces_archived_duplicate_copies.md`, `docs/decision_drafts/decision_006_contour_history_replaces_archived_duplicate_copies.md`, `docs/indexes/approved_contour_history.md`
