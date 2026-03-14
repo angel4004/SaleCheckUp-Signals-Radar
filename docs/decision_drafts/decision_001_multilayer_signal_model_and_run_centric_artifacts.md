@@ -1,7 +1,7 @@
 # Decision Draft
 
 ## Status
-Draft
+Approved
 
 ## Decision ID
 decision_001
@@ -12,7 +12,8 @@ Multi-layer signal record and run-centric artifact model
 ## Scope
 Разрешение двух системных противоречий:
 1. конфликт вокруг hold;
-2. конфликт между un как unit of account и daily_synthesis_ru.md как обязательным human-readable артефактом.
+2. конфликт между 
+un как unit of account и daily_synthesis_ru.md как обязательным human-readable артефактом.
 
 ## Problem
 Текущая модель записи сигнала смешивает в один слой разные смысловые оси:
@@ -25,11 +26,13 @@ Multi-layer signal record and run-centric artifact model
 - но не имеет корректного места в общей модели и output_contract_v0.1.
 
 Параллельно текущая модель артефактов смешивает:
-- un как единицу исполнения и учета;
+- 
+un как единицу исполнения и учета;
 - daily как способ человекочитаемого представления результата.
 
 Из-за этого:
-- declared unit of account = un;
+- declared unit of account = 
+un;
 - обязательный markdown-артефакт именован как day-level объект.
 
 ## Decision
@@ -45,10 +48,12 @@ Multi-layer signal record and run-centric artifact model
 - 
 one
 
-#### esolution_status
+#### 
+esolution_status
 В каком состоянии находится запись после текущего прохода:
 - ccepted
-- ejected
+- 
+ejected
 - hold
 
 #### evidence_strength
@@ -60,7 +65,8 @@ one
 ### 2. hold is a valid resolution state
 hold признается валидным состоянием записи.
 
-hold используется только тогда, когда запись нельзя корректно закрыть в ccepted или ejected в рамках текущего прохода без потери качества решения.
+hold используется только тогда, когда запись нельзя корректно закрыть в ccepted или 
+ejected в рамках текущего прохода без потери качества решения.
 
 hold не является:
 - типом сигнала;
@@ -70,9 +76,11 @@ hold не является:
 hold является состоянием незавершенного корректного решения.
 
 ### 3. Artifact model remains run-centric
-Система остается un-centric.
+Система остается 
+un-centric.
 
-un сохраняется как:
+
+un сохраняется как:
 - unit of execution;
 - unit of account;
 - unit of traceability;
@@ -88,7 +96,8 @@ day используется только как:
 - dashboard/read-model dimension.
 
 ### 4. Human-readable layer is not day-bound
-Обязательное human-readable представление должно быть привязано к un или к другому объекту уровня source of truth, но не к day как обязательной единице документации.
+Обязательное human-readable представление должно быть привязано к 
+un или к другому объекту уровня source of truth, но не к day как обязательной единице документации.
 
 ## Rationale
 Это решение разводит разные оси модели и устраняет смешение:
@@ -110,7 +119,8 @@ day используется только как:
 
 ### Model consequences
 - однослойная классификация становится outdated;
-- eject больше не должен рассматриваться как semantic signal type;
+- 
+eject больше не должен рассматриваться как semantic signal type;
 - hold получает системное место в модели;
 - day-level mandatory artifact model отвергается.
 
@@ -158,4 +168,4 @@ TBD after patch planning.
 - не создает скрытых обратносуместимых костылей.
 
 ## Approval
-Pending
+Approved
