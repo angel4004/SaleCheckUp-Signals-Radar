@@ -1,0 +1,86 @@
+# Patch Plan
+
+## Status
+Draft
+
+## Related Decision
+decision_001
+
+## Document
+decision_log
+
+## Current Version
+v0.2
+
+## Target Version
+v0.3
+
+## Why This Patch Exists
+Decision decision_001 фиксирует два архитектурных изменени€:
+1. переход от однослойной модели сигнала к многослойной;
+2. сохранение run-centric artifact model без об€зательного day-level artifact layer.
+
+“екущий decision_log_v0.2 должен быть синхронизирован с этим решением, чтобы нова€ модель была зафиксирована в source-of-truth governance layer, а не существовала только как draft.
+
+## Exact Changes
+1. ƒобавить новую decision entry, котора€ €вно фиксирует:
+   - переход к многослойной модели signal record;
+   - состав новой модели:
+     - signal_type
+     - esolution_status
+     - evidence_strength
+
+2. ¬ этой же decision entry €вно зафиксировать:
+   - hold не €вл€етс€ semantic class;
+   - hold допустим только как esolution_status = hold
+
+3. ¬ этой же decision entry €вно зафиксировать:
+   - eject не должен жить в semantic signal-type layer;
+   - смысл reject отражаетс€ через:
+     - signal_type = none
+     - esolution_status = rejected
+
+4. ƒобавить отдельную фиксацию artifact model decision:
+   - un сохран€етс€ как unit of execution, unit of account, unit of traceability и source of truth дл€ artifact layer;
+   - day не вводитс€ как mandatory artifact unit;
+   - day допустим только как date / grouping / filter / navigation dimension
+
+5. ≈сли в decision_log_v0.2 уже есть записи, которые не€вно поддерживают старую однослойную модель или day-bound artifact naming:
+   - не удал€ть их молча;
+   - отметить, что они superseded или outdated в пределах новой версии decision log
+
+6. ¬ новой записи €вно перечислить affected docs:
+   - output_contract
+   - 	est_set
+   - master_instruction (conditional check)
+   - project_brief (conditional check)
+   - experiment_charter_stage_a (conditional check)
+
+7. ¬ decision entry зафиксировать, что follow-up specification later may define:
+   - hold_reason
+   - 
+ext_action
+   - exit rule for hold-state records
+
+8. явно указать, что эти follow-up fields:
+   - не ввод€тс€ автоматически этим решением;
+   - требуют отдельного specification step
+
+## Explicit Non-Changes
+- Ќе переписывать весь decision log целиком.
+- Ќе переписывать старые решени€, если достаточно пометить их как superseded/outdated in effect.
+- Ќе вводить новые contract fields пр€мо в decision log beyond architectural statement.
+
+## Cross-Doc Sync Required
+- output_contract_v0.1 -> 0.2
+- 	est_set_v0.1 -> 0.2
+- master_instruction_v0.1 -> review for alignment
+- project_brief_v0.2 -> conditional review
+- experiment_charter_stage_a_v0.2 -> conditional review
+
+## Risks
+- ≈сли decision log не будет обновлен, нова€ модель останетс€ только в draft layer и patch plans, но не в approved governance layer.
+- ≈сли старые однослойные формулировки останутс€ без €вного superseded-status, позже может возникнуть ambiguity about which model governs execution.
+
+## Approval
+Pending
