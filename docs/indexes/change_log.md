@@ -9,3 +9,4 @@
 - Promoted output_contract from v0.1 to v0.2 and moved v0.1 to outdated.
 - Promoted test_set from v0.1 to v0.2 and moved v0.1 to outdated.
 - Promoted decision_log from v0.2 to v0.3 and moved v0.2 to outdated.
+- Promoted master_instruction from v0.1 to v0.2 and moved v0.1 to outdated.
