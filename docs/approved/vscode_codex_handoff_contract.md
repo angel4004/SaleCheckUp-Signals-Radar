@@ -1,4 +1,4 @@
-# VS Code/Codex Handoff Contract v0.1
+# VS Code/Codex Handoff Contract v0.2
 
 ## Назначение документа
 Этот документ задает canonical approved operational interface для repo work между:
@@ -127,6 +127,32 @@ Repo work между `GPT Project` и `VS Code/Codex` по умолчанию и
 - если change затрагивает version/control/history layer, это должно быть отражено явно;
 - `short_handoff` не может использоваться для masking substantive change.
 
+## Prompt Rendering Rules
+Для executable prompts, которые передаются в `VS Code/Codex` как execution layer, действуют следующие rendering rules:
+- section headers и machine-facing field names должны быть на английском;
+- human-facing rationale, problem framing, explanatory wording, sync explanation и `Short Russian Implementation Summary` должны быть на русском;
+- в executable Codex IDE prompts секция `Source Docs` должна использовать `@file` references;
+- простые repo paths без `@` допустимы в discussion/spec text, historical docs и non-executable narrative, но не являются preferred format для executable Codex IDE prompts;
+- handoff package считается execution-ready только если его rendered prompt соблюдает эти правила, а не только structural section list.
+
+## Preflight Validation Checklist
+Перед execution необходимо проверить минимум следующие пункты:
+- `Mode` указан;
+- `Contour Grounding` указан;
+- `Source Docs` в executable prompt используют `@file` references;
+- machine/human language split соблюден;
+- `Do Not Change` не пустой, если только явно не указано `none`;
+- `Affected Docs / Files` указан;
+- `Document Status` указан;
+- `Sync Impact` указан;
+- `Expected Execution Report` указан.
+
+## Interface Failure Cases
+Handoff contract считается violated не только при отсутствии required sections, но и в следующих случаях:
+- executable prompt rendered without `@file` references in `Source Docs`;
+- executable prompt violates the machine-facing / human-facing language split;
+- handoff package structurally compliant, but not properly rendered for Codex IDE execution.
+
 ## Structured execution report
 По итогам repo work execution layer должен вернуть structured execution report со следующими секциями:
 - `Changed Files`
@@ -154,7 +180,9 @@ Mode: full_handoff
 -
 
 ## Source Docs
-- 
+- @docs/approved/vscode_codex_handoff_contract.md
+- @docs/approved/master_instruction.md
+- @docs/approved/spec_governance.md
 
 ## Change Scope
 - 
@@ -202,7 +230,7 @@ Mode: short_handoff
 -
 
 ## Source Docs
-- 
+- @docs/approved/vscode_codex_handoff_contract.md
 
 ## Change Scope
 - 

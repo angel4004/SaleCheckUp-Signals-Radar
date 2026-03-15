@@ -1,8 +1,11 @@
 # Change Log
 
 ## 2026-03-15
-- Repaired stale control/history pointers so the last committed approved contour is now `approved_contour_2026-03-15_decision_006` at `33fa8ecbc066025bbdbc2b6e1b94a9fb50b817ea`.
-- Entries for `decision_007` below describe the current working change package in the workspace; the last committed approved contour remains `approved_contour_2026-03-15_decision_006` until the next Git commit.
+- Repaired stale control/history pointers so the last committed approved contour is now `approved_contour_2026-03-15_decision_007` at `3d3c5945ed7b338025712f94282dfd43ca1e9d3f`.
+- Added patch_plan_011 for hardening executable prompt rendering rules inside the canonical VS Code/Codex handoff contract.
+- Prepared `vscode_codex_handoff_contract` from v0.1 to v0.2 in the current working contour without introducing a new decision-layer entity.
+- Added working snapshot `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening`.
+- Updated `current_handoff` so the live repo-resident handoff artifact is structurally compliant with the hardened contract.
 - Added patch_plan_010 for introducing the canonical VS Code/Codex handoff contract.
 - Approved decision_007: canonical approved handoff contract for repo work between GPT Project and VS Code/Codex.
 - Added `docs/approved/vscode_codex_handoff_contract.md` as the canonical approved repo-work handoff interface.

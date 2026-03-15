@@ -7,9 +7,9 @@ Contour-level recovery is performed through the snapshot files in `docs/history/
 
 ## Current Pointers
 
-- `current_working_snapshot_id`: `approved_contour_2026-03-15_decision_007`
-- `current_committed_snapshot_id`: `approved_contour_2026-03-15_decision_006`
-- `current_committed_approved_contour_sha`: `33fa8ecbc066025bbdbc2b6e1b94a9fb50b817ea`
+- `current_working_snapshot_id`: `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening`
+- `current_committed_snapshot_id`: `approved_contour_2026-03-15_decision_007`
+- `current_committed_approved_contour_sha`: `3d3c5945ed7b338025712f94282dfd43ca1e9d3f`
 
 ## Snapshot Registry
 
@@ -21,4 +21,5 @@ Contour-level recovery is performed through the snapshot files in `docs/history/
 | `approved_contour_2026-03-15_decision_004` | approved_backfilled | 2026-03-15 | `e1f5c9b7a248baad0b8de1e466af4ca16eef52bf` | `decision_004`, `patch_plan_007` | `docs/history/approved_contours/approved_contour_2026-03-15_decision_004.md` | Execution-boundary contour recovered from Git. |
 | `approved_contour_2026-03-15_decision_005` | approved | 2026-03-15 | `e1f5c9b7a248baad0b8de1e466af4ca16eef52bf` | `decision_005`, `patch_plan_008` | `docs/history/approved_contours/approved_contour_2026-03-15_decision_005.md` | Last committed approved contour at the start of this pass. |
 | `approved_contour_2026-03-15_decision_006` | approved | 2026-03-15 | `33fa8ecbc066025bbdbc2b6e1b94a9fb50b817ea` | `decision_006`, `patch_plan_009` | `docs/history/approved_contours/approved_contour_2026-03-15_decision_006.md` | Committed contour after the history-model migration package. |
-| `approved_contour_2026-03-15_decision_007` | pending_commit | 2026-03-15 | `33fa8ecbc066025bbdbc2b6e1b94a9fb50b817ea` | `decision_007`, `patch_plan_010` | `docs/history/approved_contours/approved_contour_2026-03-15_decision_007.md` | Current working contour for handoff-contract Wave 0; final commit grounding requires the next Git commit. |
+| `approved_contour_2026-03-15_decision_007` | approved | 2026-03-15 | `3d3c5945ed7b338025712f94282dfd43ca1e9d3f` | `decision_007`, `patch_plan_010` | `docs/history/approved_contours/approved_contour_2026-03-15_decision_007.md` | Committed contour after introducing the canonical handoff contract. |
+| `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening` | pending_commit | 2026-03-15 | `3d3c5945ed7b338025712f94282dfd43ca1e9d3f` | `patch_plan_011` | `docs/history/approved_contours/approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening.md` | Current working contour for contract-rendering hardening under the existing `decision_007` governance rule. |

@@ -7,10 +7,10 @@ The last committed source-of-truth contour remains pinned through `current_commi
 
 ## Contour Snapshots
 
-- `current_working_snapshot_id`: `approved_contour_2026-03-15_decision_007`
-- `current_committed_snapshot_id`: `approved_contour_2026-03-15_decision_006`
+- `current_working_snapshot_id`: `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening`
+- `current_committed_snapshot_id`: `approved_contour_2026-03-15_decision_007`
 - `history_index`: `docs/indexes/approved_contour_history.md`
-- `last_committed_approved_contour_sha`: `33fa8ecbc066025bbdbc2b6e1b94a9fb50b817ea`
+- `last_committed_approved_contour_sha`: `3d3c5945ed7b338025712f94282dfd43ca1e9d3f`
 
 ## Approved Documents
 
@@ -24,4 +24,4 @@ The last committed source-of-truth contour remains pinned through `current_commi
 | test_set | v0.2 | approved | docs/approved/test_set.md | path-only migration to stable approved path under decision_005; semantic model unchanged |
 | spec_governance | v0.6 | approved | docs/approved/spec_governance.md | governance model with required handoff contract as reasoning-to-execution interface |
 | README_upload_to_projects | v0.5 | approved | docs/approved/README_upload_to_projects.md | operational upload guide aligned with decision_007 and canonical handoff contract |
-| vscode_codex_handoff_contract | v0.1 | approved | docs/approved/vscode_codex_handoff_contract.md | canonical approved repo-work handoff interface between GPT Project and VS Code/Codex |
+| vscode_codex_handoff_contract | v0.2 | approved | docs/approved/vscode_codex_handoff_contract.md | canonical approved repo-work handoff interface with explicit prompt rendering rules, `@file` source-doc standard and preflight validation checklist |

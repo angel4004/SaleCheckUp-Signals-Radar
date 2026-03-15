@@ -1,50 +1,78 @@
 # Current handoff
 
 Status: draft
+Mode: full_handoff
 
-## Contour grounding
-- Base approved contour snapshot ID: `approved_contour_2026-03-15_decision_006`
-- Current working snapshot ID: `approved_contour_2026-03-15_decision_007`
-- Base `HEAD` commit SHA: `33fa8ecbc066025bbdbc2b6e1b94a9fb50b817ea`
+## Contour Grounding
+- Base Approved Contour Snapshot ID: `approved_contour_2026-03-15_decision_007`
+- Current Working Snapshot ID: `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening`
+- Base HEAD Commit SHA: `3d3c5945ed7b338025712f94282dfd43ca1e9d3f`
 - Workspace state at execution start: clean working tree
 
 ## Task
-- Introduce the canonical approved handoff contract for repo work between GPT Project and VS Code/Codex and wire it into the live governance contour.
+- Harden the canonical VS Code/Codex handoff contract so it explicitly defines executable prompt rendering rules and a preflight validation checklist.
 
-## Source docs
-- `docs/approved/spec_governance.md`
-- `docs/approved/decision_log.md`
-- `docs/approved/master_instruction.md`
-- `docs/approved/vscode_codex_handoff_contract.md`
-- `docs/approved/project_brief.md`
-- `docs/approved/experiment_charter_stage_a.md`
-- `docs/approved/README_upload_to_projects.md`
-- `docs/approved/output_contract.md`
-- `docs/approved/test_set.md`
-- `docs/indexes/version_registry.md`
-- `docs/indexes/change_log.md`
-- `docs/indexes/approved_contour_history.md`
+## Source Docs
+- @docs/approved/vscode_codex_handoff_contract.md
+- @docs/approved/master_instruction.md
+- @docs/approved/spec_governance.md
+- @docs/approved/decision_log.md
+- @docs/indexes/version_registry.md
+- @docs/indexes/change_log.md
+- @docs/indexes/current_handoff.md
+- @docs/indexes/approved_contour_history.md
 
-## Change scope
-### Change
-- Create the new approved handoff contract doc for repo work.
-- Update handoff-related sections in `master_instruction` and `spec_governance`.
-- Sync `decision_log` and direct contour-reference docs with the new contract.
-- Repair stale `decision_006` committed pointers and add working snapshot `decision_007`.
-- Update canonical `version_registry` and `change_log`.
+## Change Scope
+- Update `docs/approved/vscode_codex_handoff_contract.md` with prompt rendering rules, preflight validation checklist and rendering-related interface failure cases.
+- Update the contract templates so `Source Docs` examples use `@file` references.
+- Repair stale committed pointers so `approved_contour_2026-03-15_decision_007` becomes the committed baseline at `3d3c5945ed7b338025712f94282dfd43ca1e9d3f`.
+- Add working snapshot `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening`.
+- Update `docs/indexes/current_handoff.md` so the live repo-resident handoff artifact is structurally compliant with the hardened contract.
+- Update canonical `version_registry`, `change_log` and `approved_contour_history`.
 
-### Do not change
-- `output_contract.md`
-- `test_set.md`
-- patch-plan and decision-draft templates
+## Do Not Change
+- @docs/approved/master_instruction.md unless a direct contradiction is found
+- @docs/approved/spec_governance.md unless a direct contradiction is found
+- @docs/approved/decision_log.md unless a direct contradiction is found
+- @docs/approved/output_contract.md
+- @docs/approved/test_set.md
+- historical patch plans and decision drafts
 - research logic, signal taxonomy, evidence model and search rules
 
-## Sync impact
-- Live approved contour lists must include the new contract where they enumerate repo/spec governance docs.
-- Decision and history layer must stay honest about the actual committed baseline for `decision_006`.
-- Handoff semantics must move from weak threshold framing to the contract-default rule.
+## Affected Docs / Files
+- @docs/approved/vscode_codex_handoff_contract.md
+- @docs/indexes/version_registry.md
+- @docs/indexes/change_log.md
+- @docs/indexes/current_handoff.md
+- @docs/indexes/approved_contour_history.md
+- @docs/history/approved_contours/approved_contour_2026-03-15_decision_007.md
+- @docs/history/approved_contours/approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening.md
+- @docs/patch_plans/patch_plan_011_handoff_contract_rendering_hardening.md
 
-## Document status
-- approved: `spec_governance.md`, `project_brief.md`, `experiment_charter_stage_a.md`, `decision_log.md`, `master_instruction.md`, `vscode_codex_handoff_contract.md`, `output_contract.md`, `test_set.md`, `README_upload_to_projects.md`
+## Document Status
+- approved: @docs/approved/vscode_codex_handoff_contract.md, @docs/approved/master_instruction.md, @docs/approved/spec_governance.md, @docs/approved/decision_log.md
 - outdated: none
-- draft: `docs/indexes/current_handoff.md`, `docs/patch_plans/patch_plan_010_canonical_vscode_codex_handoff_contract.md`, `docs/decision_drafts/decision_007_canonical_vscode_codex_handoff_contract.md`, `docs/indexes/approved_contour_history.md`, `docs/history/approved_contours/approved_contour_2026-03-15_decision_007.md`
+- draft: @docs/indexes/current_handoff.md, @docs/patch_plans/patch_plan_011_handoff_contract_rendering_hardening.md, @docs/history/approved_contours/approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening.md
+
+## Sync Impact
+- Future executable Codex IDE prompts must render `Source Docs` through `@file` references.
+- Current live handoff artifact must match the hardened contract so it does not remain a misleading example.
+- Control/history pointers must distinguish the committed `decision_007` baseline from the new working patch_011 snapshot.
+- Historical artifacts with plain repo paths remain audit trail and are not retrofitted in this patch.
+
+## Constraints / Assumptions
+- Use current `main` workspace state as source of truth.
+- Keep section headers and machine-facing field names in English.
+- Keep human-facing explanatory wording in Russian.
+- Treat this patch as contract hardening under existing `decision_007`, not as a new decision-layer entity, unless a direct contradiction is discovered.
+- Do not leave control/history pointers in a stale state after the contract bump.
+
+## Expected Execution Report
+- Changed Files
+- Created Files
+- Unchanged Reviewed Files
+- Version / Control Sync
+- Sync Impact
+- Unresolved Contradictions
+- Completion Check
+- Short Russian Implementation Summary
