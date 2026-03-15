@@ -1,6 +1,9 @@
 # Change Log
 
 ## 2026-03-15
+- Finalized Wave 1 metadata so `approved_contour_2026-03-15_decision_008` is now recorded as the committed approved contour at `5fc8f3201f07ab210caab949584416090a60bfb5`.
+- Closed the in-flight pointer state by aligning `current_working_snapshot_id` and `current_committed_snapshot_id` to `approved_contour_2026-03-15_decision_008`.
+- Confirmed Wave 1 approved content was already committed at `5fc8f32`; this pass only finalizes metadata/control-layer honesty and active handoff state.
 - Repaired stale control/history pointers so the last committed approved contour is now `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening` at `e30164588f005064a072bf222419926ff8eb49aa`.
 - Added patch_plan_012 for Wave 1 Search Operating System.
 - Prepared approved decision_008 Search Operating System in the current working contour.

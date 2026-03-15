@@ -2,15 +2,15 @@
 
 Active approved docs use stable semantic paths in `docs/approved/`.
 `current_version` remains the canonical revision marker for the active approved contour.
-The table below reflects the current working contour prepared in the workspace.
-The last committed source-of-truth contour remains pinned through `current_committed_snapshot_id` until the next Git commit.
+The table below reflects the current approved contour in the workspace.
+When no active repo/spec change is open, `current_working_snapshot_id` may equal `current_committed_snapshot_id`.
 
 ## Contour Snapshots
 
 - `current_working_snapshot_id`: `approved_contour_2026-03-15_decision_008`
-- `current_committed_snapshot_id`: `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening`
+- `current_committed_snapshot_id`: `approved_contour_2026-03-15_decision_008`
 - `history_index`: `docs/indexes/approved_contour_history.md`
-- `last_committed_approved_contour_sha`: `e30164588f005064a072bf222419926ff8eb49aa`
+- `last_committed_approved_contour_sha`: `5fc8f3201f07ab210caab949584416090a60bfb5`
 
 ## Approved Documents
 

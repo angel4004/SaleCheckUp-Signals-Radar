@@ -4,13 +4,13 @@
 `approved_contour_2026-03-15_decision_008`
 
 ## Status
-pending_commit
+approved
 
 ## Effective date
 2026-03-15
 
 ## Approved contour commit SHA
-`e30164588f005064a072bf222419926ff8eb49aa`
+`5fc8f3201f07ab210caab949584416090a60bfb5`
 
 ## Source decision / change package
 - `decision_008`
@@ -34,7 +34,6 @@ pending_commit
 - `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening`
 
 ## Notes
-- This snapshot represents the current working contour for Wave 1 Search Operating System.
-- The listed SHA is the committed baseline available at the start of this pass.
+- This snapshot represents the committed contour for Wave 1 Search Operating System.
+- The listed SHA is the Git commit that grounded decision_008 as the committed approved contour.
 - The wave introduces decision-driven and coverage-aware search rules for Manus research runs.
-- Final commit-grounded approval for this snapshot requires the next Git commit, which is intentionally outside the scope of this run.
