@@ -4,13 +4,13 @@
 `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening`
 
 ## Status
-pending_commit
+approved
 
 ## Effective date
 2026-03-15
 
 ## Approved contour commit SHA
-`3d3c5945ed7b338025712f94282dfd43ca1e9d3f`
+`e30164588f005064a072bf222419926ff8eb49aa`
 
 ## Source decision / change package
 - `patch_plan_011`
@@ -33,7 +33,6 @@ pending_commit
 - `approved_contour_2026-03-15_decision_007`
 
 ## Notes
-- This snapshot represents the current working contour for handoff contract rendering hardening.
-- The listed SHA is the committed baseline available at the start of this pass.
+- This snapshot represents the committed contour after handoff contract rendering hardening.
+- The listed SHA is the Git commit that grounded patch_011 as the committed approved contour.
 - This patch hardens the execution-ready rendering of the existing contract and does not introduce a new decision-layer entity.
-- Final commit-grounded approval for this snapshot requires the next Git commit, which is intentionally outside the scope of this run.

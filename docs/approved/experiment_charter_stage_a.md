@@ -1,4 +1,4 @@
-# Experiment Charter — Stage A v0.7
+# Experiment Charter — Stage A v0.8
 
 ## Название этапа
 **Этап A — проверка исследовательской машины**
@@ -29,12 +29,15 @@
 ## Что считается правильной исследовательской машиной
 Правильная исследовательская машина — это контур, который:
 - находит не просто интересные материалы, а монетизируемые сигналы;
+- начинает каждый run с явного decision question и uncertainty reduction target;
+- управляет search space по времени, географиям, source types и revisit/new lanes, а не ищет неявно;
 - различает semantic type сигнала и состояние решения по записи;
 - отсекает шум;
 - корректно удерживает пограничные случаи без ложного accepted-решения;
 - объясняет, почему сигнал важен;
 - структурирует результат;
 - помогает понимать, за что и сколько платит рынок;
+- честно показывает coverage, uncovered areas, blind spots и stopping reason;
 - помогает рождать новые гипотезы для SaleCheckUp.
 
 ## Что именно проверяем
@@ -56,6 +59,12 @@
    - корректно выставляет `resolution_status`;
    - не смешивает semantic type и resolution state;
    - корректно оценивает `evidence_strength`.
+
+6. **Управляемость поиска**  
+   Manus:
+   - явно фиксирует decision question и uncertainty to reduce;
+   - явно объясняет выбор временного окна, географий и source coverage plan;
+   - явно показывает covered / uncovered areas, blind spots, stopping reason и next search lane.
 
 ## Definition of Done
 Этап A считается успешным, если одновременно выполняются следующие условия:
@@ -85,6 +94,12 @@
    - точность определения `resolution_status` не ниже 80%;
    - пограничные случаи не превращаются автоматически в сильные accepted-cases без достаточных оснований.
 
+6. **Search governance и completeness reporting**  
+   На 3 последовательных run'ах:
+   - в `run_manifest.json` явно заданы decision question, uncertainty to reduce, search space, coverage summary, stopping rule и next lane;
+   - в `run_synthesis_ru.md` явно объяснены выбор времени, географий, source types, covered / uncovered areas и blind spots;
+   - run не останавливается без явного stopping reason и next-run rationale.
+
 ## Критерии перехода в этап B
 Переход в этап B возможен только если:
 - выполнены основные критерии этапа A;
@@ -109,6 +124,6 @@
 - `docs/approved/experiment_charter_stage_a.md`
 
 После этого:
-1. выполнить следующий research run в Manus по актуальному набору approved docs и зафиксировать stable approved paths + commit SHA в `run_manifest.json`;
+1. выполнить следующий research run в Manus по актуальному набору approved docs и зафиксировать stable approved paths + commit SHA в `run_manifest.json` вместе с явным search-governance layer;
 2. если нужен repo/spec change, сначала зафиксировать handoff package по canonical handoff contract, а затем исполнять задачу в VS Code/Codex;
 3. обновлять спецификацию только по итогам явного review loop и approved revision sync.

@@ -1,4 +1,4 @@
-# Decision Log v0.10
+# Decision Log v0.11
 
 ## Назначение документа
 Этот документ фиксирует уже принятые решения по проекту SaleCheckUp Signals Radar, чтобы не обсуждать их заново и не терять контекст между итерациями.
@@ -44,6 +44,9 @@
 27. Active approved docs используют stable semantic filenames без version suffix; active filename не является revision marker.
 28. Run должен быть grounded через stable approved paths и полный Git commit SHA, а не через ручной список versioned approved filenames.
 29. Historical recovery approved governance contour must rely on Git + explicit contour snapshot/history artifacts, а не на duplicate archived full copies.
+30. Каждый research run должен начинаться с явного `decision_question` и `uncertainty_to_reduce`.
+31. Каждый research run должен явно задавать search space через time windows, geographies, source coverage plan, revisit targets и new exploration targets.
+32. Каждый research run должен явно возвращать `coverage_summary`, `covered_areas`, `uncovered_areas`, `main_blind_spots`, `stopping_reason`, `coverage_confidence` и `recommended_next_search_lane`.
 
 ## Новая запись решения v0.3
 
@@ -192,6 +195,131 @@ Conditional review:
 - `master_instruction_v0.1` (alignment check)
 - `project_brief_v0.2` (conditional review)
 - `experiment_charter_stage_a_v0.2` (conditional review)
+
+### Approval
+Approved
+
+## Новая запись решения v0.11
+
+### Decision ID
+`decision_008`
+
+### Title
+Search Operating System for decision-driven and coverage-aware research runs
+
+### Status
+Approved
+
+### Date
+2026-03-15
+
+### Problem
+Research contour уже умеет различать signal types, фильтровать шум и возвращать run artifacts, но у текущего run loop нет governed search layer.
+
+Из-за этого в текущей модели не видно:
+- какой decision question решал run;
+- какую неопределенность он снижал;
+- почему выбраны именно эти годы, месяцы и географии;
+- какие source types должны были быть покрыты;
+- что реально покрыто, а что осталось непокрытым;
+- почему поиск остановлен;
+- какой следующий search lane должен идти дальше.
+
+Это делает search behavior менее управляемым, а completeness reporting — менее auditably explicit.
+
+### Decision
+Принято следующее operating rule для research runs.
+
+#### 1. Decision-driven search
+Каждый run должен начинаться с явного:
+- `decision_question`
+- `uncertainty_to_reduce`
+
+Run должен объяснять, какую управленческую неопределенность он снижает, а не только что он нашел.
+
+#### 2. Explicit search-space design
+Каждый run должен явно задавать:
+- `search_space_map`
+- `time_window_primary`
+- `time_window_secondary`
+- `older_evidence_rule`
+- `required_geographies`
+- `optional_geographies`
+- `reason_for_geography_selection`
+- `source_coverage_plan`
+- `revisit_targets`
+- `new_exploration_targets`
+- `revisit_reason`
+
+Поиск по времени, географиям и source types не должен оставаться неявным.
+
+#### 3. Coverage and stopping become mandatory outputs
+Каждый run обязан возвращать:
+- `coverage_summary`
+- `covered_areas`
+- `uncovered_areas`
+- `main_blind_spots`
+- `coverage_confidence`
+- `stopping_rule`
+- `stopping_reason`
+- `recommended_next_search_lane`
+- `next_run_rationale`
+
+Run не считается complete only because some findings were collected.  
+Он считается auditably useful только если видно, где coverage достигнут, где есть blind spots и почему поиск остановлен именно сейчас.
+
+#### 4. Run output standard must reflect the search layer
+`output_contract` должен требовать:
+- обязательный nested object `search_governance` в `run_manifest.json`;
+- обязательный Search Governance block в `run_synthesis_ru.md`.
+
+### Rationale
+Эта модель нужна, чтобы:
+- search loop снижал неопределенность, а не просто накапливал артефакты;
+- следующий run выбирался по blind spots и uncertainty reduction;
+- можно было аудировать completeness и stopping logic;
+- рыночный скан становился decision-driven и coverage-aware.
+
+### Consequences
+
+#### Research consequences
+- run loop становится decision-driven;
+- coverage и blind spots становятся явной частью output;
+- stopping rule и next lane становятся обязательными, а не устными.
+
+#### Documentation consequences
+Должны быть синхронизированы:
+- `decision_log` → `v0.11`
+- `master_instruction` → `v0.7`
+- `experiment_charter_stage_a` → `v0.8`
+- `output_contract` → `v0.5`
+- `project_brief` → `v0.9`
+
+Review-only:
+- `spec_governance` → `v0.6`
+- `vscode_codex_handoff_contract` → `v0.2`
+- `test_set` → `v0.2`
+- `README_upload_to_projects` → `v0.5`
+
+#### Control / history consequences
+- stale `patch_011` pointer state must be repaired so the committed contour matches `e30164588f005064a072bf222419926ff8eb49aa`;
+- `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening` becomes the committed baseline;
+- `approved_contour_2026-03-15_decision_008` becomes the new working snapshot for this wave.
+
+### Affected Documents
+- `docs/approved/project_brief.md`
+- `docs/approved/experiment_charter_stage_a.md`
+- `docs/approved/decision_log.md`
+- `docs/approved/master_instruction.md`
+- `docs/approved/output_contract.md`
+- `docs/indexes/version_registry.md`
+- `docs/indexes/change_log.md`
+- `docs/indexes/current_handoff.md`
+- `docs/indexes/approved_contour_history.md`
+- `docs/decision_drafts/decision_008_search_operating_system.md`
+- `docs/patch_plans/patch_plan_012_search_operating_system.md`
+- `docs/history/approved_contours/approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening.md`
+- `docs/history/approved_contours/approved_contour_2026-03-15_decision_008.md`
 
 ### Approval
 Approved
@@ -881,13 +1009,15 @@ Approved
 Там происходят:
 - исполнение зафиксированной версии инструкции;
 - поиск;
+- явное определение decision question и uncertainty to reduce;
+- явное задание search space по времени, географиям, source types и revisit/new lanes;
 - сбор материалов;
 - нормализация;
 - определение:
   - `signal_type`
   - `resolution_status`
   - `evidence_strength`
-- генерация артефактов run'а.
+- генерация артефактов run'а с coverage, blind spots, stopping reason и next lane.
 
 ### Repo/spec execution loop
 Живет в VS Code/Codex.
@@ -930,7 +1060,7 @@ Operational support doc:
 - `docs/approved/README_upload_to_projects.md`
 
 После этого:
-1. выполнять research runs в Manus по актуальному approved contour из Git и фиксировать stable approved paths + commit SHA в `run_manifest.json`;
+1. выполнять research runs в Manus по актуальному approved contour из Git и фиксировать stable approved paths + commit SHA вместе с `search_governance` в `run_manifest.json` и Search Governance block в `run_synthesis_ru.md`;
 2. выполнять repo/spec changes в VS Code/Codex по canonical handoff contract и task-level handoff package, не исполняя их напрямую в web chat;
 3. использовать `approved_contour_history` для contour-level historical recovery;
 4. обновлять спецификацию только через явный review loop и approved revision sync в Git.

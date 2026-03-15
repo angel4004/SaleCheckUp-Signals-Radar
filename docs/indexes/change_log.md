@@ -1,7 +1,12 @@
 # Change Log
 
 ## 2026-03-15
-- Repaired stale control/history pointers so the last committed approved contour is now `approved_contour_2026-03-15_decision_007` at `3d3c5945ed7b338025712f94282dfd43ca1e9d3f`.
+- Repaired stale control/history pointers so the last committed approved contour is now `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening` at `e30164588f005064a072bf222419926ff8eb49aa`.
+- Added patch_plan_012 for Wave 1 Search Operating System.
+- Prepared approved decision_008 Search Operating System in the current working contour.
+- Prepared decision_log v0.11, master_instruction v0.7, experiment_charter_stage_a v0.8, output_contract v0.5 and project_brief v0.9 in the current working contour.
+- Added working snapshot `approved_contour_2026-03-15_decision_008`.
+- Updated `current_handoff`, `version_registry`, `approved_contour_history` and run contract wording for decision-driven, coverage-aware search runs.
 - Added patch_plan_011 for hardening executable prompt rendering rules inside the canonical VS Code/Codex handoff contract.
 - Prepared `vscode_codex_handoff_contract` from v0.1 to v0.2 in the current working contour without introducing a new decision-layer entity.
 - Added working snapshot `approved_contour_2026-03-15_patch_011_handoff_contract_rendering_hardening`.
