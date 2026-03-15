@@ -1,4 +1,4 @@
-# Spec Governance v0.5
+# Spec Governance v0.6
 
 ## Назначение документа
 Этот документ фиксирует governance-модель проекта SaleCheckUp Signals Radar:
@@ -158,7 +158,8 @@ Manus должен получать в работу:
 ## Правило для VS Code/Codex
 VS Code/Codex должен получать в работу:
 - approved docs;
-- актуальные versioned handoff artifacts;
+- canonical approved handoff contract `docs/approved/vscode_codex_handoff_contract.md`;
+- актуальные versioned handoff artifacts, которые инстанцируют этот contract;
 - полный change scope, включая version/control layer.
 
 Через VS Code/Codex должны исполняться:
@@ -194,16 +195,24 @@ Manual listing of versioned approved filenames не является canonical r
 
 ## Canonical handoff artifacts
 
-Handoff between ChatGPT Project and VS Code/Codex must be performed through versioned repo artifacts, not through manual transfer of long-form chat messages.
+Required operational interface between ChatGPT Project and VS Code/Codex is defined in:
+- `docs/approved/vscode_codex_handoff_contract.md`
+
+Repo work must go through this approved handoff contract by default, not through manual transfer of long-form chat messages.
+
+The approved handoff contract defines the interface standard.
+Versioned repo artifacts carry or instantiate that contract for a concrete task.
 
 Artifact roles:
+- `docs/approved/vscode_codex_handoff_contract.md` — canonical approved handoff interface for repo work between reasoning layer and execution layer;
 - `docs/patch_plans/` — patch-level execution artifacts for explicit document changes;
 - `docs/decision_drafts/` — draft decisions that are not yet approved;
 - `docs/indexes/current_handoff.md` — optional single entry file for the currently active execution task.
 
 Governance rules:
 - approved docs remain the source of truth;
-- handoff artifacts are execution interfaces, not replacements for approved docs;
+- repo work uses the handoff contract by default; `short_handoff` is allowed only for clearly mechanical local edits under the contract rules;
+- handoff artifacts are carriers of the contract, not replacements for approved docs or for the contract definition itself;
 - if a patch changes one document but creates logical impact on others, sync-impact must be listed explicitly;
 - document status must always be explicit: `approved`, `outdated`, or `draft`.
 

@@ -1,4 +1,4 @@
-# Project Brief v0.7
+# Project Brief v0.8
 
 ## Название проекта
 **SaleCheckUp Signals Radar**
@@ -81,6 +81,7 @@ Git является:
 - местом, где active approved docs используют stable semantic filenames без version suffix;
 - местом, где `current_version` и revision history фиксируются через Git, `version_registry` и `change_log`;
 - местом, где contour-level historical recovery фиксируется через `approved_contour_history`;
+- местом, где canonical repo-work handoff interface задается через `docs/approved/vscode_codex_handoff_contract.md`;
 - местом, где хранятся versioned handoff artifacts для repo/spec changes.
 
 Внутри repo handoff layer выражается через:
@@ -111,7 +112,7 @@ VS Code/Codex:
 
 Изменение вступает в силу только после того, как:
 1. оформлена новая approved revision на stable path и, при необходимости, versioned handoff artifact;
-2. для нетривиальной repo/spec задачи зафиксирован explicit handoff artifact;
+2. repo/spec работа по умолчанию идет через canonical handoff contract; `short_handoff` допустим только для clearly mechanical local edits;
 3. обновлены approved contour history artifacts;
 4. они зафиксированы в Git;
 5. обновлены version registry и change log;
@@ -124,6 +125,7 @@ VS Code/Codex:
 - `docs/approved/experiment_charter_stage_a.md`
 - `docs/approved/decision_log.md`
 - `docs/approved/master_instruction.md`
+- `docs/approved/vscode_codex_handoff_contract.md`
 - `docs/approved/output_contract.md`
 - `docs/approved/test_set.md`
 

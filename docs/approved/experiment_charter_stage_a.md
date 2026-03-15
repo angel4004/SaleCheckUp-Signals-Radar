@@ -1,4 +1,4 @@
-# Experiment Charter — Stage A v0.6
+# Experiment Charter — Stage A v0.7
 
 ## Название этапа
 **Этап A — проверка исследовательской машины**
@@ -15,7 +15,7 @@
 - `ChatGPT Project` используется как thinking / feedback / governance layer для feedback, contradictions, reasoning, decisions, change scope и sync impact.
 - `Manus` является research execution layer для run'ов и проверки гипотез этапа A.
 - `VS Code/Codex` является repo/spec execution layer для изменения approved revisions на stable paths и repo artifacts.
-- Handoff между ChatGPT Project и VS Code/Codex должен идти через versioned repo artifact, а не через ручной перенос длинных сообщений между окнами.
+- Repo/spec handoff между ChatGPT Project и VS Code/Codex должен идти по `docs/approved/vscode_codex_handoff_contract.md`; versioned repo artifacts инстанцируют этот contract для конкретной задачи.
 - Repo changes не должны исполняться напрямую в web chat.
 - Каждый run должен быть привязан к approved contour через stable approved paths и полный Git commit SHA.
 
@@ -103,11 +103,12 @@
 - `docs/approved/spec_governance.md`
 - `docs/approved/decision_log.md`
 - `docs/approved/master_instruction.md`
+- `docs/approved/vscode_codex_handoff_contract.md`
 - `docs/approved/output_contract.md`
 - `docs/approved/test_set.md`
 - `docs/approved/experiment_charter_stage_a.md`
 
 После этого:
 1. выполнить следующий research run в Manus по актуальному набору approved docs и зафиксировать stable approved paths + commit SHA в `run_manifest.json`;
-2. если нужен repo/spec change, сначала зафиксировать versioned handoff artifact, а затем исполнять задачу в VS Code/Codex;
+2. если нужен repo/spec change, сначала зафиксировать handoff package по canonical handoff contract, а затем исполнять задачу в VS Code/Codex;
 3. обновлять спецификацию только по итогам явного review loop и approved revision sync.

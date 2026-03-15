@@ -1,4 +1,4 @@
-# Decision Log v0.9
+# Decision Log v0.10
 
 ## Назначение документа
 Этот документ фиксирует уже принятые решения по проекту SaleCheckUp Signals Radar, чтобы не обсуждать их заново и не терять контекст между итерациями.
@@ -37,8 +37,8 @@
 20. Обязательный human-readable artifact должен быть привязан к **run**, а не к **day**.
 21. Новая формулировка или решение не считаются действующей спецификацией только потому, что они обсуждены в ChatGPT Project.
 22. Изменение вступает в силу только после фиксации новой approved revision на stable path в Git и обновления version registry / change log.
-23. Handoff для repo/spec changes между ChatGPT Project и VS Code/Codex идет через versioned repo artifact, а не через ручной перенос длинных сообщений между окнами.
-24. Для каждой нетривиальной задачи должен быть явный handoff artifact с change scope, do-not-change scope, document status и sync-impact.
+23. Repo work между ChatGPT Project и VS Code/Codex идет через canonical approved handoff contract, а не через manual long-form chat transfer.
+24. `full_handoff` является default mode; `short_handoff` допустим только для clearly mechanical local edits по contract rules.
 25. Все repo changes должны исполняться через **VS Code/Codex**, а не через web chat.
 26. В scope repo changes входят document edits, version registry, change log, lifecycle/status updates и другие логически затронутые файлы.
 27. Active approved docs используют stable semantic filenames без version suffix; active filename не является revision marker.
@@ -315,7 +315,7 @@ Canonical flow фиксируется так:
 #### 2. Handoff artifacts become explicit
 Handoff между ChatGPT Project и VS Code/Codex должен выполняться через versioned repo artifacts, а не через ручной перенос длинных сообщений между окнами.
 
-Для нетривиальной задачи artifact должен явно фиксировать:
+Для task-scoped repo work artifact должен явно фиксировать:
 - что менять;
 - что не менять;
 - какие документы затронуты;
@@ -715,6 +715,115 @@ Contour-level recovery выполняется через explicit snapshot/histo
 ### Approval
 Approved
 
+## Новая запись решения v0.10
+
+### Decision ID
+`decision_007`
+
+### Title
+Canonical approved handoff contract for repo work between GPT Project and VS Code/Codex
+
+### Status
+Approved
+
+### Date
+2026-03-15
+
+### Problem
+Handoff rules для repo work уже существуют в approved contour, но сейчас они распределены между:
+- `master_instruction`;
+- `spec_governance`;
+- decision layer;
+- versioned handoff artifacts;
+- рабочей памятью и устными соглашениями.
+
+Из-за этого в проекте отсутствует один canonical approved doc, который задает standard operational interface между reasoning layer и execution layer.
+
+Это создает:
+- более слабую reproducibility handoff;
+- более слабую auditability completeness;
+- риск drift между обсуждением изменений и их фактической передачей в Codex;
+- ambiguity вокруг default rule и exception rule для short handoff.
+
+### Decision
+Принято следующее operating rule.
+
+#### 1. Canonical approved handoff interface
+`docs/approved/vscode_codex_handoff_contract.md` становится canonical approved handoff interface для repo work между `GPT Project` и `VS Code/Codex`.
+
+#### 2. Default rule
+Repo work по умолчанию идет через этот handoff contract.
+
+`full_handoff` является default mode.
+
+#### 3. Exception rule
+`short_handoff` допустим только для clearly mechanical local edits, если одновременно:
+- target files заранее известны;
+- нет policy choice или wording-design choice;
+- не создается новый approved doc;
+- не меняется version/control/history layer;
+- нет cross-doc sync beyond explicit `none`;
+- expected result однозначен.
+
+Если хотя бы одно условие не выполнено, требуется `full_handoff`.
+
+#### 4. Carrier rule
+`docs/patch_plans/`, `docs/decision_drafts/` и `docs/indexes/current_handoff.md` остаются carriers / instantiations of the contract для конкретной задачи.
+
+Они не заменяют:
+- approved docs;
+- canonical handoff contract;
+- version/control layer.
+
+### Rationale
+Это решение не создает новый workflow, а делает уже существующий handoff contour canonical и auditably explicit.
+
+Оно нужно, чтобы:
+- reasoning layer и execution layer опирались на один и тот же interface standard;
+- default и exception были выражены без устных договоренностей;
+- можно было проверять completeness handoff package;
+- approved governance contour не зависел от distributed wording across multiple docs.
+
+### Consequences
+
+#### Governance consequences
+- `master_instruction` должен ссылаться на canonical handoff contract вместо weak threshold wording.
+- `spec_governance` должен считать handoff contract required operational interface между reasoning layer и execution layer.
+- top-level accepted decisions должны отражать default contract rule и short-handoff exception.
+
+#### Documentation consequences
+Должны быть синхронизированы:
+- `vscode_codex_handoff_contract` → `v0.1`
+- `master_instruction` → `v0.6`
+- `spec_governance` → `v0.6`
+- `decision_log` → `v0.10`
+- `project_brief` → `v0.8`
+- `README_upload_to_projects` → `v0.5`
+- `experiment_charter_stage_a` → `v0.7`
+
+#### Control / history consequences
+- stale `decision_006` commit-pointer state должен быть исправлен;
+- `approved_contour_2026-03-15_decision_006` должен стать committed baseline at `33fa8ecbc066025bbdbc2b6e1b94a9fb50b817ea`;
+- `approved_contour_2026-03-15_decision_007` должен стать current working snapshot этого change package.
+
+### Affected Documents
+- `docs/approved/vscode_codex_handoff_contract.md`
+- `docs/approved/master_instruction.md`
+- `docs/approved/spec_governance.md`
+- `docs/approved/decision_log.md`
+- `docs/approved/project_brief.md`
+- `docs/approved/README_upload_to_projects.md`
+- `docs/approved/experiment_charter_stage_a.md`
+- `docs/indexes/version_registry.md`
+- `docs/indexes/change_log.md`
+- `docs/indexes/current_handoff.md`
+- `docs/indexes/approved_contour_history.md`
+- `docs/history/approved_contours/approved_contour_2026-03-15_decision_006.md`
+- `docs/history/approved_contours/approved_contour_2026-03-15_decision_007.md`
+
+### Approval
+Approved
+
 ## Что считаем шумом
 Шумом считаются материалы, где отсутствует связка:
 **payer → JTBD → outcome → money-link**
@@ -791,7 +900,7 @@ Approved
 - change log;
 - lifecycle/status updates;
 - other logically affected files;
-- работа по approved docs и handoff artifacts;
+- работа по approved docs, canonical handoff contract и handoff artifacts;
 - sync изменений в version/control layer;
 - исключение прямого исполнения repo changes в web chat.
 
@@ -813,6 +922,7 @@ Approved
 - `docs/approved/experiment_charter_stage_a.md`
 - `docs/approved/decision_log.md`
 - `docs/approved/master_instruction.md`
+- `docs/approved/vscode_codex_handoff_contract.md`
 - `docs/approved/output_contract.md`
 - `docs/approved/test_set.md`
 
@@ -821,6 +931,6 @@ Operational support doc:
 
 После этого:
 1. выполнять research runs в Manus по актуальному approved contour из Git и фиксировать stable approved paths + commit SHA в `run_manifest.json`;
-2. выполнять repo/spec changes в VS Code/Codex только по versioned handoff artifact и не исполнять их напрямую в web chat;
+2. выполнять repo/spec changes в VS Code/Codex по canonical handoff contract и task-level handoff package, не исполняя их напрямую в web chat;
 3. использовать `approved_contour_history` для contour-level historical recovery;
 4. обновлять спецификацию только через явный review loop и approved revision sync в Git.

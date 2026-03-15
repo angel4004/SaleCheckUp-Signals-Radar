@@ -1,7 +1,14 @@
 # Change Log
 
 ## 2026-03-15
-- Entries for `decision_006` below describe the current working change package in the workspace; the last committed approved contour remains `approved_contour_2026-03-15_decision_005` until the next Git commit.
+- Repaired stale control/history pointers so the last committed approved contour is now `approved_contour_2026-03-15_decision_006` at `33fa8ecbc066025bbdbc2b6e1b94a9fb50b817ea`.
+- Entries for `decision_007` below describe the current working change package in the workspace; the last committed approved contour remains `approved_contour_2026-03-15_decision_006` until the next Git commit.
+- Added patch_plan_010 for introducing the canonical VS Code/Codex handoff contract.
+- Approved decision_007: canonical approved handoff contract for repo work between GPT Project and VS Code/Codex.
+- Added `docs/approved/vscode_codex_handoff_contract.md` as the canonical approved repo-work handoff interface.
+- Prepared master_instruction v0.6, spec_governance v0.6, decision_log v0.10, project_brief v0.8, README_upload_to_projects v0.5 and experiment_charter_stage_a v0.7 in the current working contour.
+- Added working snapshot `approved_contour_2026-03-15_decision_007`.
+- Updated `version_registry`, `current_handoff`, direct contour-reference docs and history pointers for handoff-contract Wave 0.
 - Added patch_plan_009 for replacing archived duplicate governance copies with explicit contour history artifacts.
 - Approved decision_006: contour history layer replaces archived duplicate governance copies.
 - Added canonical history index `docs/indexes/approved_contour_history.md`.

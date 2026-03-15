@@ -4,13 +4,13 @@
 `approved_contour_2026-03-15_decision_006`
 
 ## Status
-pending_commit
+approved
 
 ## Effective date
 2026-03-15
 
 ## Approved contour commit SHA
-`e1f5c9b7a248baad0b8de1e466af4ca16eef52bf`
+`33fa8ecbc066025bbdbc2b6e1b94a9fb50b817ea`
 
 ## Source decision / change package
 - `decision_006`
@@ -33,6 +33,6 @@ pending_commit
 - `approved_contour_2026-03-15_decision_005`
 
 ## Notes
-- This snapshot represents the current working contour in the local workspace.
-- The listed SHA is the last committed approved contour available at the start of this pass.
-- Final commit-grounded approval for this snapshot requires the next Git commit, which is intentionally outside the scope of this run.
+- This snapshot is the actual committed contour produced by the history-model migration package.
+- The listed SHA is the Git commit that grounded decision_006 as the committed approved contour.
+- This snapshot is the committed baseline for handoff-contract Wave 0.
