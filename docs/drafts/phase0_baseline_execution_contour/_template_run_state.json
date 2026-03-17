@@ -1,0 +1,27 @@
+{
+  "run_id": "phase0-run-001",
+  "model_id": "openai/gpt-5-mini",
+  "provider_policy": {
+    "order": [
+      "openrouter"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  },
+  "request_history": [
+    {
+      "request_id": "or-request-001",
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5-mini",
+      "requested_at": "2026-03-17T10:00:00Z",
+      "response_status": "completed"
+    }
+  ],
+  "intermediate_outputs": {
+    "assembled_prompt_path": "local/prompts/phase0-run-001.txt",
+    "working_notes_path": "local/notes/phase0-run-001.md"
+  },
+  "run_status": "draft",
+  "started_at": "2026-03-17T10:00:00Z",
+  "completed_at": null
+}

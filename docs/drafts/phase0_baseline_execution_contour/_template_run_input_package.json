@@ -1,0 +1,31 @@
+{
+  "run_id": "phase0-run-001",
+  "run_goal": "Validate the Phase 0 baseline execution contour on a controlled lane.",
+  "current_hypothesis": "A pinned openai baseline through OpenRouter can produce a repeatable consolidated bundle under fixed constraints.",
+  "approved_context_snapshot": {
+    "approved_contour_commit_sha": "5fc8f3201f07ab210caab949584416090a60bfb5",
+    "approved_contour_paths": [
+      "docs/approved/spec_governance.md",
+      "docs/approved/project_brief.md",
+      "docs/approved/experiment_charter_stage_a.md",
+      "docs/approved/decision_log.md",
+      "docs/approved/master_instruction.md",
+      "docs/approved/vscode_codex_handoff_contract.md",
+      "docs/approved/output_contract.md",
+      "docs/approved/test_set.md",
+      "docs/approved/README_upload_to_projects.md"
+    ]
+  },
+  "constraints": [
+    "Use OPENROUTER_API_KEY from environment only.",
+    "Keep run state client-managed.",
+    "Do not mutate repo artifacts from runtime."
+  ],
+  "requested_outputs": [
+    "run_manifest.json",
+    "candidate_signals.jsonl",
+    "evidence_index.jsonl",
+    "run_synthesis_ru.md",
+    "project_update_block_ru.md"
+  ]
+}

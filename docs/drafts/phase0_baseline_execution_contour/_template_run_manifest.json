@@ -1,0 +1,45 @@
+{
+  "run_id": "phase0-run-001",
+  "run_goal": "Validate the Phase 0 baseline execution contour on a controlled lane.",
+  "approved_context_snapshot": {
+    "approved_contour_commit_sha": "5fc8f3201f07ab210caab949584416090a60bfb5",
+    "approved_contour_paths": [
+      "docs/approved/spec_governance.md",
+      "docs/approved/project_brief.md",
+      "docs/approved/experiment_charter_stage_a.md"
+    ]
+  },
+  "execution_gateway": "openrouter",
+  "model_family": "openai",
+  "model_id": "openai/gpt-5-mini",
+  "provider_policy": {
+    "order": [
+      "openrouter"
+    ],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  },
+  "project_sync_status": "pending_manual_sync",
+  "request_refs": [
+    {
+      "request_id": "or-request-001",
+      "provider": "openrouter",
+      "model_id": "openai/gpt-5-mini"
+    }
+  ],
+  "run_status": "completed",
+  "started_at": "2026-03-17T10:00:00Z",
+  "completed_at": "2026-03-17T10:15:00Z",
+  "bundle_files": {
+    "run_manifest": "run_manifest.json",
+    "candidate_signals": "candidate_signals.jsonl",
+    "evidence_index": "evidence_index.jsonl",
+    "run_synthesis_ru": "run_synthesis_ru.md",
+    "project_update_block_ru": "project_update_block_ru.md"
+  },
+  "summary": {
+    "candidate_signals_count": 1,
+    "evidence_items_count": 1,
+    "bundle_status": "complete"
+  }
+}
