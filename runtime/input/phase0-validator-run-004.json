@@ -1,0 +1,13 @@
+{
+  "run_id": "phase0-validator-run-004",
+  "run_goal": "Проверить, даст ли GPT-5.4 mini более строгий и полезный validator verdict на том же retrieval evidence.",
+  "current_hypothesis": "На том же source evidence model openai/gpt-5.4-mini должна лучше соблюдать one-to-one contract и осторожнее обращаться с confirmed_case/high confidence, чем предыдущие validator models.",
+  "source_run_id": "phase0-retrieval-run-003",
+  "source_run_dir": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\phase0-retrieval-run-003",
+  "model_id": "openai/gpt-5.4-mini",
+  "provider_policy": {
+    "order": [],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  }
+}

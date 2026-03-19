@@ -1,0 +1,40 @@
+{
+  "run_id": "phase0-parity-run-003",
+  "run_goal": "Проверить repeatability baseline contour на revisit lane с отдельным input package и тем же provider policy.",
+  "current_hypothesis": "Baseline contour должен стабильно выполнять revisit run при тех же baseline условиях и сохранять ту же форму bundle.",
+  "approved_context_snapshot": {
+    "approved_contour_commit_sha": "9ac22e7f47bad6e45a0b788884c5f4ba1bdb2e18",
+    "approved_contour_paths": [
+      "@docs/drafts/phase0_baseline_execution_contour/phase0_architecture_decision.md",
+      "@docs/drafts/phase0_baseline_execution_contour/run_contract_v0.md",
+      "@docs/drafts/phase0_baseline_execution_contour/runtime_flow_spec_v0.md",
+      "@docs/drafts/phase0_baseline_execution_contour/orchestration_spec_v0.md",
+      "@docs/drafts/phase0_baseline_execution_contour/repo_execution_boundary.md",
+      "@docs/drafts/phase0_baseline_execution_contour/baseline_parity_run_set.md",
+      "@docs/drafts/phase0_baseline_execution_contour/secret_policy_v0.md"
+    ]
+  },
+  "constraints": [
+    "Variant A only",
+    "No validator_gate",
+    "No run_dashboard",
+    "No auto_sync",
+    "No repo mutation",
+    "Parity run checks contour stability, not research superiority",
+    "Keep the same model family and provider policy as previous runs",
+    "Revisit lane should preserve the same bundle contract"
+  ],
+  "requested_outputs": [
+    "run_manifest.json",
+    "candidate_signals.jsonl",
+    "evidence_index.jsonl",
+    "run_synthesis_ru.md",
+    "project_update_block_ru.md"
+  ],
+  "model_id": "openai/gpt-4.1-mini",
+  "provider_policy": {
+    "order": [],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "run_id": "phase0-retrieval-run-003",
+  "run_goal": "Проверить retrieval quality после tightening queries и minimal evidence filtering.",
+  "input_package_path": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\input\\phase0-retrieval-run-003.json",
+  "approved_context_snapshot": {
+    "approved_contour_commit_sha": "9ac22e7f47bad6e45a0b788884c5f4ba1bdb2e18",
+    "approved_contour_paths": [
+      "@docs/drafts/phase0_baseline_execution_contour/phase0_architecture_decision.md",
+      "@docs/drafts/phase0_baseline_execution_contour/run_contract_v0.md",
+      "@docs/drafts/phase0_baseline_execution_contour/runtime_flow_spec_v0.md",
+      "@docs/drafts/phase0_baseline_execution_contour/orchestration_spec_v0.md",
+      "@docs/drafts/phase0_baseline_execution_contour/repo_execution_boundary.md",
+      "@docs/drafts/phase0_baseline_execution_contour/baseline_parity_run_set.md",
+      "@docs/drafts/phase0_baseline_execution_contour/secret_policy_v0.md"
+    ]
+  },
+  "execution_gateway": "openrouter",
+  "model_family": "openai",
+  "model_id": "openai/gpt-4o-mini-search-preview",
+  "provider_policy": {
+    "order": [],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  },
+  "web_plugin": {
+    "id": "web",
+    "engine": "exa",
+    "max_results": 5
+  },
+  "project_sync_status": "pending_manual_sync",
+  "request_refs": [
+    {
+      "request_id": "gen-1773903677-CNjZcN22VtHkgpv9DYdj",
+      "provider": "openrouter",
+      "model_id": "openai/gpt-4o-mini-search-preview",
+      "requested_at": "2026-03-19T07:01:13+00:00",
+      "response_status": "completed"
+    }
+  ],
+  "run_status": "completed",
+  "started_at": "2026-03-19T07:01:13+00:00",
+  "completed_at": "2026-03-19T07:01:40+00:00",
+  "bundle_files": [
+    "run_manifest.json",
+    "candidate_signals.jsonl",
+    "evidence_index.jsonl",
+    "run_synthesis_ru.md",
+    "project_update_block_ru.md"
+  ],
+  "evidence_count": 2,
+  "skipped_evidence_count": 3,
+  "summary": "Retrieval run completed successfully."
+}

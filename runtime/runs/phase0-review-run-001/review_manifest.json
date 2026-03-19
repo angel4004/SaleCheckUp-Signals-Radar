@@ -1,0 +1,40 @@
+{
+  "run_id": "phase0-review-run-001",
+  "stage": "phase0_review_gate",
+  "status": "completed",
+  "created_at_utc": "2026-03-19T10:38:47+00:00",
+  "source_run_id": "phase0-validator-run-005",
+  "source_validated_signals_path": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\phase0-validator-run-005\\validated_signals.jsonl",
+  "output_run_dir": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\phase0-review-run-001",
+  "models": {
+    "retrieval": "openai/gpt-4o-mini-search-preview",
+    "review": "openai/gpt-5.4-mini"
+  },
+  "review_mode": "model_plus_rules_guardrails",
+  "strict_cardinality_rule": "exactly_one_reviewed_item_per_candidate_id",
+  "input_item_count": 2,
+  "unique_candidate_count": 2,
+  "output_item_count": 2,
+  "decision_counts": {
+    "accept": 0,
+    "hold": 2,
+    "reject": 0
+  },
+  "review_policy": {
+    "conservative": true,
+    "confirmed_case_vendor_or_self_reported_not_auto_accept": true,
+    "weak_or_ambiguous_to_hold": true,
+    "noise_to_reject": true,
+    "allowed_review_decision": [
+      "accept",
+      "hold",
+      "reject"
+    ],
+    "allowed_priority_hint": [
+      "high",
+      "low",
+      "medium"
+    ]
+  },
+  "errors": []
+}

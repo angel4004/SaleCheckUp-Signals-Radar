@@ -1,0 +1,35 @@
+{
+  "run_id": "phase0-validator-run-001",
+  "source_run_id": "phase0-retrieval-run-003",
+  "source_run_dir": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\phase0-retrieval-run-003",
+  "input_package_path": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\input\\phase0-validator-run-001.json",
+  "evidence_path": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\phase0-retrieval-run-003\\evidence_index.jsonl",
+  "model_id": "openai/gpt-4o-mini-search-preview",
+  "provider_policy": {
+    "order": [],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  },
+  "request_refs": [
+    {
+      "request_id": "gen-1773904508-BfM6Bseku8fwul6BlStn",
+      "provider": "openrouter",
+      "model_id": "openai/gpt-4o-mini-search-preview",
+      "requested_at": "2026-03-19T07:15:07+00:00",
+      "response_status": "completed"
+    }
+  ],
+  "run_status": "completed",
+  "started_at": "2026-03-19T07:15:07+00:00",
+  "completed_at": "2026-03-19T07:15:12+00:00",
+  "validated_signal_count": 1,
+  "signal_type_counts": {
+    "technology_shift_signal": 1
+  },
+  "bundle_files": [
+    "validation_manifest.json",
+    "validated_signals.jsonl",
+    "validation_summary_ru.md",
+    "project_update_block_ru.md"
+  ]
+}

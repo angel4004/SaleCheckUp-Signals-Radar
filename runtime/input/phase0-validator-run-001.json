@@ -1,0 +1,13 @@
+{
+  "run_id": "phase0-validator-run-001",
+  "run_goal": "Проверить, умеет ли validator gate различать signal types на уже отфильтрованном retrieval evidence.",
+  "current_hypothesis": "На retrieval evidence из phase0-retrieval-run-003 validator должен уметь не принимать всё подряд как сильный signal и раскладывать evidence по signal types.",
+  "source_run_id": "phase0-retrieval-run-003",
+  "source_run_dir": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\phase0-retrieval-run-003",
+  "model_id": "openai/gpt-4o-mini-search-preview",
+  "provider_policy": {
+    "order": [],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  }
+}

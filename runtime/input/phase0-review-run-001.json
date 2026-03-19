@@ -1,0 +1,28 @@
+{
+  "run_id": "phase0-review-run-001",
+  "stage": "phase0_review_gate",
+  "source_run_id": "phase0-validator-run-005",
+  "source_validated_signals_path": "runs/phase0-validator-run-005/validated_signals.jsonl",
+  "output_run_dir": "runs/phase0-review-run-001",
+  "models": {
+    "retrieval": "openai/gpt-4o-mini-search-preview",
+    "review": "openai/gpt-5.4-mini"
+  },
+  "review_policy": {
+    "conservative": true,
+    "strict_cardinality_rule": "exactly_one_reviewed_item_per_candidate_id",
+    "confirmed_case_vendor_or_self_reported_not_auto_accept": true,
+    "weak_or_ambiguous_to_hold": true,
+    "noise_to_reject": true,
+    "allowed_review_decision": [
+      "accept",
+      "hold",
+      "reject"
+    ],
+    "allowed_priority_hint": [
+      "high",
+      "medium",
+      "low"
+    ]
+  }
+}

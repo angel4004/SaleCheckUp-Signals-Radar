@@ -1,0 +1,48 @@
+{
+  "run_id": "phase0-retrieval-run-001",
+  "run_goal": "Проверить, что baseline contour умеет выполнять реальный retrieval run через OpenRouter web plugin и собирать evidence_index.",
+  "current_hypothesis": "После успешного smoke/parity baseline contour должен уметь получать внешний web evidence и сохранять его в стабильный run bundle.",
+  "approved_context_snapshot": {
+    "approved_contour_commit_sha": "9ac22e7f47bad6e45a0b788884c5f4ba1bdb2e18",
+    "approved_contour_paths": [
+      "@docs/drafts/phase0_baseline_execution_contour/phase0_architecture_decision.md",
+      "@docs/drafts/phase0_baseline_execution_contour/run_contract_v0.md",
+      "@docs/drafts/phase0_baseline_execution_contour/runtime_flow_spec_v0.md",
+      "@docs/drafts/phase0_baseline_execution_contour/orchestration_spec_v0.md",
+      "@docs/drafts/phase0_baseline_execution_contour/repo_execution_boundary.md",
+      "@docs/drafts/phase0_baseline_execution_contour/baseline_parity_run_set.md",
+      "@docs/drafts/phase0_baseline_execution_contour/secret_policy_v0.md"
+    ]
+  },
+  "constraints": [
+    "Variant A only",
+    "No validator_gate",
+    "No run_dashboard",
+    "No auto_sync",
+    "No repo mutation",
+    "Focus on retrieval boundary and evidence capture, not on final signal validation"
+  ],
+  "requested_outputs": [
+    "run_manifest.json",
+    "candidate_signals.jsonl",
+    "evidence_index.jsonl",
+    "run_synthesis_ru.md",
+    "project_update_block_ru.md"
+  ],
+  "model_id": "openai/gpt-4.1-mini",
+  "provider_policy": {
+    "order": [],
+    "allow_fallbacks": false,
+    "require_parameters": true
+  },
+  "web_plugin": {
+    "id": "web",
+    "engine": "exa",
+    "max_results": 5
+  },
+  "search_queries": [
+    "hotel missed call booking revenue case study",
+    "hotel direct booking abandonment recovery revenue case study",
+    "hotel AI reservation agent direct bookings case study"
+  ]
+}
