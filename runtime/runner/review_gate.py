@@ -162,6 +162,35 @@ def collect_evidence_ids(item: Dict[str, Any]) -> List[str]:
     return unique_strings(evidence_ids)
 
 
+def build_flag_scope(item: Dict[str, Any]) -> Dict[str, Any]:
+    non_source_keys = {
+        "validator_handoff",
+        "review_stage",
+        "review_schema_version",
+        "source_run_id",
+        "reviewed_at_utc",
+        "review_model",
+        "status",
+        "why_this_status",
+        "missing_evidence_or_gap",
+        "contradictions",
+        "next_step",
+        "evidence_trace",
+        "source_item_count",
+    }
+    return {
+        "source_items": [
+            {
+                key: value
+                for key, value in source_item.items()
+                if key not in non_source_keys
+            }
+            for source_item in get_source_items(item)
+            if isinstance(source_item, dict)
+        ]
+    }
+
+
 def infer_text_blob(obj: Any) -> str:
     try:
         return json.dumps(obj, ensure_ascii=False, sort_keys=True).lower()
@@ -170,7 +199,7 @@ def infer_text_blob(obj: Any) -> str:
 
 
 def infer_flags(item: Dict[str, Any]) -> Dict[str, bool]:
-    blob = infer_text_blob(item)
+    blob = infer_text_blob(build_flag_scope(item))
 
     vendor_or_self_reported_terms = [
         "vendor",
@@ -864,23 +893,35 @@ def normalize_next_step(
     )
 
     if not isinstance(value, dict):
+        if status == "hold":
+            return {
+                "action": "",
+                "owner_stage": "",
+                "target_gap_or_contradiction_id": "",
+                "expected_decision_effect": "",
+            }
         return default_next_step
 
-    action = str(value.get("action", "")).strip() or default_next_step["action"]
-    owner_stage = str(value.get("owner_stage", "")).strip().lower()
-    if owner_stage not in ALLOWED_OWNER_STAGES:
-        owner_stage = default_next_step["owner_stage"]
-
-    target_id = str(value.get("target_gap_or_contradiction_id", "")).strip()
     if status == "hold":
+        action = str(value.get("action", "")).strip()
+        owner_stage = str(value.get("owner_stage", "")).strip().lower()
+        target_id = str(value.get("target_gap_or_contradiction_id", "")).strip()
+        expected_decision_effect = str(value.get("expected_decision_effect", "")).strip()
+        if owner_stage not in ALLOWED_OWNER_STAGES:
+            owner_stage = ""
         if target_id not in valid_targets:
+            target_id = ""
+    else:
+        action = str(value.get("action", "")).strip() or default_next_step["action"]
+        owner_stage = str(value.get("owner_stage", "")).strip().lower()
+        if owner_stage not in ALLOWED_OWNER_STAGES:
+            owner_stage = default_next_step["owner_stage"]
+        target_id = str(value.get("target_gap_or_contradiction_id", "")).strip()
+        if target_id and target_id not in valid_targets:
             target_id = default_next_step["target_gap_or_contradiction_id"]
-    elif target_id and target_id not in valid_targets:
-        target_id = default_next_step["target_gap_or_contradiction_id"]
-
-    expected_decision_effect = (
-        str(value.get("expected_decision_effect", "")).strip() or default_next_step["expected_decision_effect"]
-    )
+        expected_decision_effect = (
+            str(value.get("expected_decision_effect", "")).strip() or default_next_step["expected_decision_effect"]
+        )
 
     return {
         "action": action,
