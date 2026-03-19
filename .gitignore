@@ -1,4 +1,13 @@
 .env
-.env.local
 .env.*
 !.env.example
+
+runtime/.venv/
+runtime/**/__pycache__/
+runtime/**/*.pyc
+runtime/**/*.pyo
+runtime/logs/
+runtime/runs/**/raw_*.txt
+runtime/runs/**/raw_*.json
+runtime/runs/**/raw_*.md
+runtime/runs/**/tmp*
