@@ -1,0 +1,213 @@
+{
+  "summary": {
+    "runId": "phase0-smoke-run-001",
+    "runLabel": "Smoke contour zero-signal demo",
+    "runState": "zero_signal",
+    "runOutcomeStatus": "completed",
+    "sourceRunOutcomeRaw": "completed",
+    "signalCount": 0,
+    "contradictionCount": 1,
+    "nextStepCount": 1,
+    "evidenceTracePresence": "limited",
+    "comparisonFamilyKey": "phase0-smoke",
+    "previousComparableRunId": null,
+    "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+    "humanSummary": "The smoke contour completed, but this demo explicitly classifies it as zero_signal because no operator-facing signal rows were available.",
+    "provenance": {
+      "sourceMode": "hybrid",
+      "sourceRefs": [
+        "runtime/runs/phase0-smoke-run-001/run_manifest.json",
+        "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
+        "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
+      ],
+      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "notes": "Explicit zero_signal classification is a demo-side mapping over a completed smoke bundle."
+    }
+  },
+  "stageStatuses": [
+    {
+      "stageKey": "retrieval",
+      "stageLabel": "Baseline run",
+      "status": "completed",
+      "detail": "Smoke run completed successfully.",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-smoke-run-001/run_manifest.json"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Exact smoke run completion from tracked runtime artifact."
+      }
+    },
+    {
+      "stageKey": "validator",
+      "stageLabel": "Validator",
+      "status": "not_started",
+      "detail": "Validator layer was not part of this smoke contour.",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Explicit stage exposure from tracked smoke synthesis."
+      }
+    },
+    {
+      "stageKey": "review",
+      "stageLabel": "Review",
+      "status": "not_started",
+      "detail": "Review layer was not part of this smoke contour.",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Explicit stage exposure from tracked smoke synthesis."
+      }
+    }
+  ],
+  "signals": [],
+  "runContradictions": [
+    {
+      "contradictionId": "contradiction-phase0-smoke-run-001-no-operator-surface",
+      "severityLevel": "moderate",
+      "contradictionKind": "completed_contour_without_operator_surface",
+      "contradictionText": "The smoke contour completed mechanically, but evidence indexing and candidate extraction were not implemented in this pass, so no operator-facing signal rows surfaced.",
+      "sourceStageOrigin": "projection_fallback",
+      "traceRefIds": [
+        "trace-phase0-smoke-run-001-smoke_synthesis",
+        "trace-phase0-smoke-run-001-smoke_project_update"
+      ],
+      "isResolved": false,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-smoke-run-001/run_manifest.json",
+          "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
+          "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Hybrid contradiction derived from tracked smoke synthesis and update notes."
+      }
+    }
+  ],
+  "runNextSteps": [
+    {
+      "nextStepId": "next-phase0-smoke-run-001-inspect-zero-signal",
+      "nextStepType": "hold_for_future_run",
+      "targetLayer": "ui",
+      "priorityLevel": "medium",
+      "provenanceType": "operator",
+      "actionText": "Inspect why no operator-facing signals surfaced before treating this contour as decision-ready.",
+      "traceRefIds": [
+        "trace-phase0-smoke-run-001-smoke_synthesis"
+      ],
+      "isBlocking": false,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
+          "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Demo-side next step attached to a completed smoke contour with zero surfaced signals."
+      }
+    }
+  ],
+  "runEvidenceTraces": [
+    {
+      "traceId": "trace-phase0-smoke-run-001-smoke_manifest",
+      "traceRole": "context",
+      "artifactPath": "runtime/runs/phase0-smoke-run-001/run_manifest.json",
+      "artifactKind": "json",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "sourceRecordId": "smoke_manifest",
+      "locatorHint": "summary",
+      "excerptText": "Smoke run completed successfully under the minimal baseline contour.",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-smoke-run-001/run_manifest.json"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Trace anchored to tracked runtime artifact."
+      }
+    },
+    {
+      "traceId": "trace-phase0-smoke-run-001-smoke_synthesis",
+      "traceRole": "context",
+      "artifactPath": "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
+      "artifactKind": "markdown",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "sourceRecordId": "smoke_synthesis",
+      "locatorHint": "known gaps and recommended next step",
+      "excerptText": "# Run Synthesis ## Run Goal Проверить, что baseline runner может выполнить один вызов через OpenRouter и собрать minimal run bundle. ## Current Hypothesis Baseline contour на OpenRouter с pinned openai model может стабильно выполнить smoke run и собрать Phase…",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Trace anchored to tracked runtime artifact."
+      }
+    },
+    {
+      "traceId": "trace-phase0-smoke-run-001-smoke_project_update",
+      "traceRole": "context",
+      "artifactPath": "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md",
+      "artifactKind": "markdown",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "sourceRecordId": "smoke_project_update",
+      "locatorHint": "project update block",
+      "excerptText": "# Project Update Block ## Что проверяли Минимальный baseline runner на OpenRouter с pinned openai model. ## Что нашли Runner успешно выполнил один вызов и собрал minimal run bundle. ## Что осталось н…",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Trace anchored to tracked runtime artifact."
+      }
+    }
+  ],
+  "stateBanner": {
+    "title": "Zero-signal state is explicit",
+    "tone": "info",
+    "text": "This demo marks the run as zero_signal deliberately. The UI is not inferring that state from missing sections or empty arrays.",
+    "provenance": {
+      "sourceMode": "hybrid",
+      "sourceRefs": [
+        "runtime/runs/phase0-smoke-run-001/run_manifest.json",
+        "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md"
+      ],
+      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "notes": "Banner explains the explicit demo-side zero_signal mapping."
+    }
+  },
+  "provenance": {
+    "sourceMode": "hybrid",
+    "sourceRefs": [
+      "runtime/runs/phase0-smoke-run-001/run_manifest.json",
+      "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
+      "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
+    ],
+    "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+    "generatedAt": "2026-03-20T15:18:42.962Z",
+    "notes": "Run detail combines tracked smoke artifacts with explicit demo-side state mapping."
+  }
+}

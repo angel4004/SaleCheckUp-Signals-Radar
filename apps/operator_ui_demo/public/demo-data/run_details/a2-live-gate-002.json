@@ -1,0 +1,272 @@
+{
+  "summary": {
+    "runId": "a2-live-gate-002",
+    "runLabel": "A2 live gate blocked contour",
+    "runState": "blocked",
+    "runOutcomeStatus": "blocked",
+    "sourceRunOutcomeRaw": "blocked",
+    "signalCount": 0,
+    "contradictionCount": 2,
+    "nextStepCount": 1,
+    "evidenceTracePresence": "limited",
+    "comparisonFamilyKey": "a2-live-gate::hotel_phone_abandonment",
+    "previousComparableRunId": "a2-live-gate-001",
+    "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+    "humanSummary": "The contour stopped before validator/review decisioning because retrieval persisted zero evidence items.",
+    "provenance": {
+      "sourceMode": "hybrid",
+      "sourceRefs": [
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
+      ],
+      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "notes": "Blocked run stitched from a repo-resident draft plus cited external runtime paths."
+    }
+  },
+  "stageStatuses": [
+    {
+      "stageKey": "retrieval",
+      "stageLabel": "Retrieval",
+      "status": "completed",
+      "detail": "retrieval completed",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked run 002 contour completion section."
+      }
+    },
+    {
+      "stageKey": "validator",
+      "stageLabel": "Validator",
+      "status": "blocked",
+      "detail": "validator blocked on empty evidence bundle",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked run 002 contour completion section."
+      }
+    },
+    {
+      "stageKey": "review",
+      "stageLabel": "Review",
+      "status": "not_started",
+      "detail": "review not started",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked run 002 contour completion section."
+      }
+    }
+  ],
+  "blocker": {
+    "blockedReasonCode": "validator_empty_evidence_bundle",
+    "blockedReasonText": "Validator blocked immediately because retrieval produced no persisted evidence records.",
+    "detail": "This is a real blocked contour. The UI shows it explicitly rather than hiding the absence of signal rows.",
+    "citedOutputPaths": [
+      "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval",
+      "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
+      "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
+    ],
+    "provenance": {
+      "sourceMode": "hybrid",
+      "sourceRefs": [
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
+      ],
+      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "notes": "Blocked reason anchored in the tracked outcome capture and cited external runtime paths."
+    }
+  },
+  "signals": [],
+  "runContradictions": [
+    {
+      "contradictionId": "contradiction-a2-live-gate-002-empty-evidence-bundle",
+      "severityLevel": "critical",
+      "contradictionKind": "validator_received_no_persisted_evidence",
+      "contradictionText": "Retrieval completed, but validator stopped on an empty evidence bundle, so the operator surface never reached a signal-emitting stage.",
+      "sourceStageOrigin": "projection_fallback",
+      "traceRefIds": [
+        "trace-a2-live-gate-002-a2_live_gate_run_002"
+      ],
+      "isResolved": false,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked blocked live-gate outcome capture."
+      }
+    },
+    {
+      "contradictionId": "contradiction-a2-live-gate-002-query-density-regressed-yield",
+      "severityLevel": "major",
+      "contradictionKind": "denser_queries_did_not_improve_yield",
+      "contradictionText": "The rerun densified query coverage, but persisted retrieval yield regressed from one surviving evidence item to zero.",
+      "sourceStageOrigin": "projection_fallback",
+      "traceRefIds": [
+        "trace-a2-live-gate-002-a2_live_gate_run_002"
+      ],
+      "isResolved": false,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from the tracked run 002 comparison and gate decision sections."
+      }
+    }
+  ],
+  "runNextSteps": [
+    {
+      "nextStepId": "next-a2-live-gate-002-retrieval-capability-review",
+      "nextStepType": "validate_with_more_evidence",
+      "targetLayer": "operator_review",
+      "priorityLevel": "high",
+      "provenanceType": "operator",
+      "actionText": "pause lane advancement and review whether the retrieval contour is currently capable of producing stable persisted evidence for this lane before attempting another live A2 check",
+      "traceRefIds": [
+        "trace-a2-live-gate-002-a2_live_gate_run_002"
+      ],
+      "isBlocking": true,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Exact recommendation preserved from tracked run 002 outcome capture."
+      }
+    }
+  ],
+  "runEvidenceTraces": [
+    {
+      "traceId": "trace-a2-live-gate-002-a2_live_gate_run_002",
+      "traceRole": "context",
+      "artifactPath": "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md",
+      "artifactKind": "markdown",
+      "documentStatus": "draft",
+      "sourceRecordId": "a2_live_gate_run_002",
+      "locatorHint": "blocked classification and contour completion",
+      "excerptText": "# quality_change_package_A2_live_gate_run_002 Status: draft live rerun plan and outcome capture ## 1. Context - lane: `hotel_phone_abandonment` - reason for rerun: - run 001 completed safely, but A2 recurrence layer was not materially exercised because retrie…",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Trace reconstructed from repo-resident draft outcome capture."
+      }
+    },
+    {
+      "traceId": "trace-a2-live-gate-002-a2_live_gate_002_output_1",
+      "traceRole": "context",
+      "artifactPath": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval",
+      "artifactKind": "external_runtime_path",
+      "documentStatus": "external_untracked_runtime_output",
+      "sourceRecordId": "a2_live_gate_002_output_1",
+      "locatorHint": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval",
+      "excerptText": "Runtime output path cited in the tracked draft outcome capture.",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Path cited by a tracked draft, but raw output bundle is not tracked in this repo."
+      }
+    },
+    {
+      "traceId": "trace-a2-live-gate-002-a2_live_gate_002_output_2",
+      "traceRole": "context",
+      "artifactPath": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
+      "artifactKind": "external_runtime_path",
+      "documentStatus": "external_untracked_runtime_output",
+      "sourceRecordId": "a2_live_gate_002_output_2",
+      "locatorHint": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
+      "excerptText": "Runtime output path cited in the tracked draft outcome capture.",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Path cited by a tracked draft, but raw output bundle is not tracked in this repo."
+      }
+    },
+    {
+      "traceId": "trace-a2-live-gate-002-a2_live_gate_002_output_3",
+      "traceRole": "context",
+      "artifactPath": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review",
+      "artifactKind": "external_runtime_path",
+      "documentStatus": "external_untracked_runtime_output",
+      "sourceRecordId": "a2_live_gate_002_output_3",
+      "locatorHint": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review",
+      "excerptText": "Runtime output path cited in the tracked draft outcome capture.",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Path cited by a tracked draft, but raw output bundle is not tracked in this repo."
+      }
+    }
+  ],
+  "stateBanner": {
+    "title": "Blocked before fair operator inspection",
+    "tone": "danger",
+    "text": "Retrieval completed, but validator stopped on an empty evidence bundle and review never started. No signal rows are fabricated.",
+    "provenance": {
+      "sourceMode": "hybrid",
+      "sourceRefs": [
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
+      ],
+      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "notes": "Banner derived from tracked blocked contour completion wording."
+    }
+  },
+  "provenance": {
+    "sourceMode": "hybrid",
+    "sourceRefs": [
+      "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md",
+      "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval",
+      "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
+      "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
+    ],
+    "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+    "generatedAt": "2026-03-20T15:18:42.962Z",
+    "notes": "Run detail stitched from the tracked draft outcome capture and cited runtime paths."
+  }
+}

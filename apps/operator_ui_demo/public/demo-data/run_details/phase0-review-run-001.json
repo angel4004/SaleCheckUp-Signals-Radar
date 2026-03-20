@@ -1,0 +1,562 @@
+{
+  "summary": {
+    "runId": "phase0-review-run-001",
+    "runLabel": "Review decision surface",
+    "runState": "populated",
+    "runOutcomeStatus": "completed",
+    "sourceRunOutcomeRaw": "completed",
+    "signalCount": 2,
+    "contradictionCount": 3,
+    "nextStepCount": 2,
+    "evidenceTracePresence": "present",
+    "comparisonFamilyKey": "hotel_phone_abandonment::phase0-retrieval-run-003",
+    "previousComparableRunId": "phase0-validator-run-005",
+    "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+    "humanSummary": "Review preserves two hold decisions, makes uncertainty explicit, and adds concrete signal-level follow-up steps.",
+    "provenance": {
+      "sourceMode": "artifact_backed",
+      "sourceRefs": [
+        "runtime/runs/phase0-review-run-001/review_manifest.json",
+        "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+        "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+        "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+      ],
+      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "notes": "Summary assembled from tracked review, validator, and retrieval artifacts."
+    }
+  },
+  "stageStatuses": [
+    {
+      "stageKey": "retrieval",
+      "stageLabel": "Retrieval",
+      "status": "completed",
+      "detail": "2 persisted evidence items remained available to the chain.",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Exact retrieval status from tracked runtime output."
+      }
+    },
+    {
+      "stageKey": "validator",
+      "stageLabel": "Validator",
+      "status": "completed",
+      "detail": "2 validator items were passed into review.",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Exact validator count from tracked runtime output."
+      }
+    },
+    {
+      "stageKey": "review",
+      "stageLabel": "Review",
+      "status": "completed",
+      "detail": "2 hold decisions emitted by review.",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/review_manifest.json",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Exact review status from tracked runtime output."
+      }
+    }
+  ],
+  "signals": [
+    {
+      "signalId": "signal-001",
+      "runId": "phase0-review-run-001",
+      "signalType": "hold_item",
+      "sourceSignalTypeRaw": "monetizable_pain_signal",
+      "label": "Hidden phone-loss after IVR removal",
+      "summary": "После удаления IVR empty call rate вырос с 12–15% до 19.5%, что указывает на скрытую потерю обращений.",
+      "status": {
+        "statusCode": "hold",
+        "uncertaintyLevel": "low",
+        "decisionRelevanceLevel": "high",
+        "assessmentOrigin": "review",
+        "sourceStatusCodeRaw": "hold",
+        "sourceEvidenceStrengthRaw": "medium",
+        "rationale": "Сигнал выглядит экономически значимым, но опирается на индустриальную статью и собственный анализ без независимой верификации. Для автоматического принятия недостаточно подтверждений.",
+        "traceRefIds": [
+          "trace-phase0-review-run-001-evidence-001"
+        ],
+        "provenance": {
+          "sourceMode": "artifact_backed",
+          "sourceRefs": [
+            "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+            "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+            "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+          ],
+          "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+          "generatedAt": "2026-03-20T15:18:42.962Z",
+          "notes": "Normalized from tracked review output with raw validator signal type preserved."
+        }
+      },
+      "contradictions": [
+        {
+          "contradictionId": "contradiction-signal-001-review-gap",
+          "severityLevel": "major",
+          "contradictionKind": "review_hold_preserves_uncertainty",
+          "contradictionText": "Сигнал выглядит экономически значимым, но опирается на индустриальную статью и собственный анализ без независимой верификации. Для автоматического принятия недостаточно подтверждений.",
+          "sourceStageOrigin": "review",
+          "traceRefIds": [
+            "trace-phase0-review-run-001-evidence-001"
+          ],
+          "isResolved": false,
+          "provenance": {
+            "sourceMode": "hybrid",
+            "sourceRefs": [
+              "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+              "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+              "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Derived from tracked review decision rationale against exact evidence trace."
+          }
+        },
+        {
+          "contradictionId": "contradiction-signal-001-validator-review-divergence",
+          "severityLevel": "moderate",
+          "contradictionKind": "validator_review_divergence",
+          "contradictionText": "Review downgraded the validator posture and kept the item on hold instead of leaving it at the validator-facing signal class.",
+          "sourceStageOrigin": "projection_comparator",
+          "traceRefIds": [
+            "trace-phase0-review-run-001-evidence-001"
+          ],
+          "isResolved": false,
+          "provenance": {
+            "sourceMode": "hybrid",
+            "sourceRefs": [
+              "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+              "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+              "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Hybrid contradiction derived from comparing tracked validator and review outputs."
+          }
+        }
+      ],
+      "nextSteps": [
+        {
+          "nextStepId": "next-signal-001-review-follow-up",
+          "nextStepType": "validate_with_more_evidence",
+          "targetLayer": "operator_review",
+          "priorityLevel": "medium",
+          "provenanceType": "machine",
+          "actionText": "Verify the metric change with an independent source or primary customer evidence; confirm baseline, sample size, and that the loss in calls is attributable to an actionable operational issue rather than the AI voice agent study context.",
+          "traceRefIds": [
+            "trace-phase0-review-run-001-evidence-001"
+          ],
+          "isBlocking": true,
+          "provenance": {
+            "sourceMode": "artifact_backed",
+            "sourceRefs": [
+              "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+              "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Exact next step text preserved from tracked review output."
+          }
+        }
+      ],
+      "evidenceTraces": [
+        {
+          "traceId": "trace-phase0-review-run-001-evidence-001",
+          "traceRole": "support",
+          "artifactPath": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+          "artifactKind": "jsonl_record",
+          "documentStatus": "repo_tracked_runtime_artifact",
+          "sourceRecordId": "evidence-001",
+          "locatorHint": "evidence_id=evidence-001",
+          "excerptText": "AI Voice Agents for Hotels: Lessons from 15,910 Real Guest Calls February 26, 2026 # What 16,000 Hotel Phone Calls Taught Us About AI Voice Agents When you deploy an AI voice agent across a hotel group, you expect to learn about guest behavior. What you don't…",
+          "sourceStageOrigin": "retrieval",
+          "provenance": {
+            "sourceMode": "artifact_backed",
+            "sourceRefs": [
+              "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Exact evidence trace entry from tracked retrieval output."
+          }
+        }
+      ],
+      "changedVsPreviousComparable": "status_changed_to_hold",
+      "feedbackTarget": {
+        "runId": "phase0-review-run-001",
+        "signalId": "signal-001"
+      },
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Signal row comes from tracked review output with exact next-step text preserved."
+      }
+    },
+    {
+      "signalId": "signal-002",
+      "runId": "phase0-review-run-001",
+      "signalType": "hold_item",
+      "sourceSignalTypeRaw": "hold",
+      "label": "Evermore reservation call-center scaling",
+      "summary": "В excerpt заявлены снижение abandonment rate на 92%, рост агентов на 467% и 36% total revenue in 1 month, но без независимой проверки и без полного контекста измерений.",
+      "status": {
+        "statusCode": "hold",
+        "uncertaintyLevel": "low",
+        "decisionRelevanceLevel": "medium",
+        "assessmentOrigin": "review",
+        "sourceStatusCodeRaw": "hold",
+        "sourceEvidenceStrengthRaw": "low",
+        "rationale": "Сигнал основан на vendor/customer-story с маркетинговыми метриками без независимой проверки; по консервативному правилу это не подтверждённый кейс, но и не чистый шум.",
+        "traceRefIds": [
+          "trace-phase0-review-run-001-evidence-002"
+        ],
+        "provenance": {
+          "sourceMode": "artifact_backed",
+          "sourceRefs": [
+            "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+            "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+            "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+          ],
+          "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+          "generatedAt": "2026-03-20T15:18:42.962Z",
+          "notes": "Normalized from tracked review output with raw validator signal type preserved."
+        }
+      },
+      "contradictions": [
+        {
+          "contradictionId": "contradiction-signal-002-review-gap",
+          "severityLevel": "major",
+          "contradictionKind": "review_hold_preserves_uncertainty",
+          "contradictionText": "Сигнал основан на vendor/customer-story с маркетинговыми метриками без независимой проверки; по консервативному правилу это не подтверждённый кейс, но и не чистый шум.",
+          "sourceStageOrigin": "review",
+          "traceRefIds": [
+            "trace-phase0-review-run-001-evidence-002"
+          ],
+          "isResolved": false,
+          "provenance": {
+            "sourceMode": "hybrid",
+            "sourceRefs": [
+              "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+              "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+              "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Derived from tracked review decision rationale against exact evidence trace."
+          }
+        }
+      ],
+      "nextSteps": [
+        {
+          "nextStepId": "next-signal-002-review-follow-up",
+          "nextStepType": "validate_with_more_evidence",
+          "targetLayer": "operator_review",
+          "priorityLevel": "low",
+          "provenanceType": "machine",
+          "actionText": "verify_independent_third_party_evidence_for_claimed_metrics_and_business_impact_before_accepting",
+          "traceRefIds": [
+            "trace-phase0-review-run-001-evidence-002"
+          ],
+          "isBlocking": true,
+          "provenance": {
+            "sourceMode": "artifact_backed",
+            "sourceRefs": [
+              "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+              "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Exact next step text preserved from tracked review output."
+          }
+        }
+      ],
+      "evidenceTraces": [
+        {
+          "traceId": "trace-phase0-review-run-001-evidence-002",
+          "traceRole": "support",
+          "artifactPath": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+          "artifactKind": "jsonl_record",
+          "documentStatus": "repo_tracked_runtime_artifact",
+          "sourceRecordId": "evidence-002",
+          "locatorHint": "evidence_id=evidence-002",
+          "excerptText": "How Evermore Resort reduced their call abandonment rate by 92% # How Evermore Resort reduced their call abandonment rate by 92% Abandonment rate 92% drop in call abandonment in 1 year Call center 467% increase in call center agents Outbound revenue 36% of tot…",
+          "sourceStageOrigin": "retrieval",
+          "provenance": {
+            "sourceMode": "artifact_backed",
+            "sourceRefs": [
+              "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Exact evidence trace entry from tracked retrieval output."
+          }
+        }
+      ],
+      "changedVsPreviousComparable": "status_stable",
+      "feedbackTarget": {
+        "runId": "phase0-review-run-001",
+        "signalId": "signal-002"
+      },
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Signal row comes from tracked review output with exact next-step text preserved."
+      }
+    }
+  ],
+  "runContradictions": [
+    {
+      "contradictionId": "contradiction-signal-001-review-gap",
+      "severityLevel": "major",
+      "contradictionKind": "review_hold_preserves_uncertainty",
+      "contradictionText": "Сигнал выглядит экономически значимым, но опирается на индустриальную статью и собственный анализ без независимой верификации. Для автоматического принятия недостаточно подтверждений.",
+      "sourceStageOrigin": "review",
+      "traceRefIds": [
+        "trace-phase0-review-run-001-evidence-001"
+      ],
+      "isResolved": false,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked review decision rationale against exact evidence trace."
+      }
+    },
+    {
+      "contradictionId": "contradiction-signal-001-validator-review-divergence",
+      "severityLevel": "moderate",
+      "contradictionKind": "validator_review_divergence",
+      "contradictionText": "Review downgraded the validator posture and kept the item on hold instead of leaving it at the validator-facing signal class.",
+      "sourceStageOrigin": "projection_comparator",
+      "traceRefIds": [
+        "trace-phase0-review-run-001-evidence-001"
+      ],
+      "isResolved": false,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Hybrid contradiction derived from comparing tracked validator and review outputs."
+      }
+    },
+    {
+      "contradictionId": "contradiction-signal-002-review-gap",
+      "severityLevel": "major",
+      "contradictionKind": "review_hold_preserves_uncertainty",
+      "contradictionText": "Сигнал основан на vendor/customer-story с маркетинговыми метриками без независимой проверки; по консервативному правилу это не подтверждённый кейс, но и не чистый шум.",
+      "sourceStageOrigin": "review",
+      "traceRefIds": [
+        "trace-phase0-review-run-001-evidence-002"
+      ],
+      "isResolved": false,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked review decision rationale against exact evidence trace."
+      }
+    }
+  ],
+  "runNextSteps": [
+    {
+      "nextStepId": "next-signal-001-review-follow-up",
+      "nextStepType": "validate_with_more_evidence",
+      "targetLayer": "operator_review",
+      "priorityLevel": "medium",
+      "provenanceType": "machine",
+      "actionText": "Verify the metric change with an independent source or primary customer evidence; confirm baseline, sample size, and that the loss in calls is attributable to an actionable operational issue rather than the AI voice agent study context.",
+      "traceRefIds": [
+        "trace-phase0-review-run-001-evidence-001"
+      ],
+      "isBlocking": true,
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Exact next step text preserved from tracked review output."
+      }
+    },
+    {
+      "nextStepId": "next-signal-002-review-follow-up",
+      "nextStepType": "validate_with_more_evidence",
+      "targetLayer": "operator_review",
+      "priorityLevel": "low",
+      "provenanceType": "machine",
+      "actionText": "verify_independent_third_party_evidence_for_claimed_metrics_and_business_impact_before_accepting",
+      "traceRefIds": [
+        "trace-phase0-review-run-001-evidence-002"
+      ],
+      "isBlocking": true,
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Exact next step text preserved from tracked review output."
+      }
+    }
+  ],
+  "runEvidenceTraces": [
+    {
+      "traceId": "trace-phase0-review-run-001-review_manifest",
+      "traceRole": "context",
+      "artifactPath": "runtime/runs/phase0-review-run-001/review_manifest.json",
+      "artifactKind": "json",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "sourceRecordId": "review_manifest",
+      "locatorHint": "output_item_count",
+      "excerptText": "Review output count: 2; decision_counts.hold = 2.",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/review_manifest.json"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Trace anchored to tracked runtime artifact."
+      }
+    },
+    {
+      "traceId": "trace-phase0-review-run-001-decision_summary",
+      "traceRole": "context",
+      "artifactPath": "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+      "artifactKind": "markdown",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "sourceRecordId": "decision_summary",
+      "locatorHint": "review decision summary",
+      "excerptText": "# Decision Summary — phase0-review-run-001 - source_run_id: `phase0-validator-run-005` - reviewed_candidates: `2` - accept: `0` - hold: `2` - reject: `0` ## Принцип review gate - Слой работает консервативно. - confirmed_case из vendor/self-reported material н…",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Trace anchored to tracked runtime artifact."
+      }
+    },
+    {
+      "traceId": "trace-phase0-review-run-001-evidence-001",
+      "traceRole": "support",
+      "artifactPath": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+      "artifactKind": "jsonl_record",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "sourceRecordId": "evidence-001",
+      "locatorHint": "evidence_id=evidence-001",
+      "excerptText": "AI Voice Agents for Hotels: Lessons from 15,910 Real Guest Calls February 26, 2026 # What 16,000 Hotel Phone Calls Taught Us About AI Voice Agents When you deploy an AI voice agent across a hotel group, you expect to learn about guest behavior. What you don't…",
+      "sourceStageOrigin": "retrieval",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Exact evidence trace entry from tracked retrieval output."
+      }
+    },
+    {
+      "traceId": "trace-phase0-review-run-001-evidence-002",
+      "traceRole": "support",
+      "artifactPath": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+      "artifactKind": "jsonl_record",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "sourceRecordId": "evidence-002",
+      "locatorHint": "evidence_id=evidence-002",
+      "excerptText": "How Evermore Resort reduced their call abandonment rate by 92% # How Evermore Resort reduced their call abandonment rate by 92% Abandonment rate 92% drop in call abandonment in 1 year Call center 467% increase in call center agents Outbound revenue 36% of tot…",
+      "sourceStageOrigin": "retrieval",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Exact evidence trace entry from tracked retrieval output."
+      }
+    }
+  ],
+  "stateBanner": {
+    "title": "Populated review surface",
+    "tone": "success",
+    "text": "Operator-facing hold posture is explicit, contradictions stay visible, and next steps are concrete rather than implicit.",
+    "provenance": {
+      "sourceMode": "artifact_backed",
+      "sourceRefs": [
+        "runtime/runs/phase0-review-run-001/review_manifest.json",
+        "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+        "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+      ],
+      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "notes": "Banner derived from tracked review decision distribution and signal-level next steps."
+    }
+  },
+  "provenance": {
+    "sourceMode": "artifact_backed",
+    "sourceRefs": [
+      "runtime/runs/phase0-review-run-001/review_manifest.json",
+      "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+      "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+      "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+    ],
+    "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+    "generatedAt": "2026-03-20T15:18:42.962Z",
+    "notes": "Run detail rooted in tracked review and retrieval artifacts."
+  }
+}

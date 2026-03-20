@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-03-20T15:18:42.962Z",
+  "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+  "runs": [
+    {
+      "runId": "phase0-validator-run-005",
+      "runLabel": "Validator verdict surface",
+      "runState": "populated",
+      "runOutcomeStatus": "completed",
+      "sourceRunOutcomeRaw": "completed",
+      "signalCount": 2,
+      "contradictionCount": 2,
+      "nextStepCount": 1,
+      "evidenceTracePresence": "present",
+      "comparisonFamilyKey": "hotel_phone_abandonment::phase0-retrieval-run-003",
+      "previousComparableRunId": null,
+      "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+      "humanSummary": "Two validator-surfaced signals are available with direct evidence traces and conservative contradiction visibility.",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Summary assembled from tracked validator and retrieval artifacts."
+      }
+    },
+    {
+      "runId": "phase0-review-run-001",
+      "runLabel": "Review decision surface",
+      "runState": "populated",
+      "runOutcomeStatus": "completed",
+      "sourceRunOutcomeRaw": "completed",
+      "signalCount": 2,
+      "contradictionCount": 3,
+      "nextStepCount": 2,
+      "evidenceTracePresence": "present",
+      "comparisonFamilyKey": "hotel_phone_abandonment::phase0-retrieval-run-003",
+      "previousComparableRunId": "phase0-validator-run-005",
+      "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+      "humanSummary": "Review preserves two hold decisions, makes uncertainty explicit, and adds concrete signal-level follow-up steps.",
+      "provenance": {
+        "sourceMode": "artifact_backed",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/review_manifest.json",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Summary assembled from tracked review, validator, and retrieval artifacts."
+      }
+    },
+    {
+      "runId": "a2-live-gate-002",
+      "runLabel": "A2 live gate blocked contour",
+      "runState": "blocked",
+      "runOutcomeStatus": "blocked",
+      "sourceRunOutcomeRaw": "blocked",
+      "signalCount": 0,
+      "contradictionCount": 2,
+      "nextStepCount": 1,
+      "evidenceTracePresence": "limited",
+      "comparisonFamilyKey": "a2-live-gate::hotel_phone_abandonment",
+      "previousComparableRunId": "a2-live-gate-001",
+      "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+      "humanSummary": "The contour stopped before validator/review decisioning because retrieval persisted zero evidence items.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Blocked run stitched from a repo-resident draft plus cited external runtime paths."
+      }
+    },
+    {
+      "runId": "phase0-smoke-run-001",
+      "runLabel": "Smoke contour zero-signal demo",
+      "runState": "zero_signal",
+      "runOutcomeStatus": "completed",
+      "sourceRunOutcomeRaw": "completed",
+      "signalCount": 0,
+      "contradictionCount": 1,
+      "nextStepCount": 1,
+      "evidenceTracePresence": "limited",
+      "comparisonFamilyKey": "phase0-smoke",
+      "previousComparableRunId": null,
+      "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+      "humanSummary": "The smoke contour completed, but this demo explicitly classifies it as zero_signal because no operator-facing signal rows were available.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-smoke-run-001/run_manifest.json",
+          "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
+          "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Explicit zero_signal classification is a demo-side mapping over a completed smoke bundle."
+      }
+    },
+    {
+      "runId": "a2-live-gate-001",
+      "runLabel": "A2 live gate inconclusive contour",
+      "runState": "inconclusive",
+      "runOutcomeStatus": "partial",
+      "sourceRunOutcomeRaw": "hold_and_review",
+      "signalCount": 1,
+      "contradictionCount": 2,
+      "nextStepCount": 1,
+      "evidenceTracePresence": "limited",
+      "comparisonFamilyKey": "a2-live-gate::hotel_phone_abandonment",
+      "previousComparableRunId": null,
+      "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+      "humanSummary": "The contour completed end-to-end, but retrieval under-yield kept the live run too thin to substantively exercise recurrence.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-retrieval",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-validator",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-review"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Inconclusive run stitched from tracked drafts and cited external runtime paths."
+      }
+    }
+  ]
+}

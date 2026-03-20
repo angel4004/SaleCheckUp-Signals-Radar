@@ -1,0 +1,408 @@
+{
+  "summary": {
+    "runId": "a2-live-gate-001",
+    "runLabel": "A2 live gate inconclusive contour",
+    "runState": "inconclusive",
+    "runOutcomeStatus": "partial",
+    "sourceRunOutcomeRaw": "hold_and_review",
+    "signalCount": 1,
+    "contradictionCount": 2,
+    "nextStepCount": 1,
+    "evidenceTracePresence": "limited",
+    "comparisonFamilyKey": "a2-live-gate::hotel_phone_abandonment",
+    "previousComparableRunId": null,
+    "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+    "humanSummary": "The contour completed end-to-end, but retrieval under-yield kept the live run too thin to substantively exercise recurrence.",
+    "provenance": {
+      "sourceMode": "hybrid",
+      "sourceRefs": [
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-retrieval",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-validator",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-review"
+      ],
+      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "notes": "Inconclusive run stitched from tracked drafts and cited external runtime paths."
+    }
+  },
+  "stageStatuses": [
+    {
+      "stageKey": "retrieval",
+      "stageLabel": "Retrieval",
+      "status": "completed",
+      "detail": "Retrieval completed.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked run 001 contour completion section."
+      }
+    },
+    {
+      "stageKey": "validator",
+      "stageLabel": "Validator",
+      "status": "completed",
+      "detail": "Validator completed.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked run 001 contour completion section."
+      }
+    },
+    {
+      "stageKey": "review",
+      "stageLabel": "Review",
+      "status": "completed",
+      "detail": "Review completed.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked run 001 contour completion section."
+      }
+    }
+  ],
+  "signals": [
+    {
+      "signalId": "a2-live-gate-001-provisional-signal-001",
+      "runId": "a2-live-gate-001",
+      "signalType": "hold_item",
+      "sourceSignalTypeRaw": null,
+      "label": "Single surviving hotel phone-loss candidate",
+      "summary": "A live candidate reached review, but the batch stayed too thin to support recurrence visibility or a stronger operator decision.",
+      "status": {
+        "statusCode": "hold",
+        "uncertaintyLevel": "high",
+        "decisionRelevanceLevel": "medium",
+        "assessmentOrigin": "projection_fallback",
+        "sourceStatusCodeRaw": "hold_and_review",
+        "sourceEvidenceStrengthRaw": null,
+        "rationale": "Live contour did not produce recurrence conditions, so this run cannot say whether A2 meaningfully improves recurring motif visibility in practice.",
+        "traceRefIds": [
+          "trace-a2-live-gate-001-provisional-signal"
+        ],
+        "provenance": {
+          "sourceMode": "hybrid",
+          "sourceRefs": [
+            "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+            "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+          ],
+          "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+          "generatedAt": "2026-03-20T15:18:42.962Z",
+          "notes": "Provisional signal reconstructed from tracked live-gate outcome and diagnosis drafts."
+        }
+      },
+      "contradictions": [
+        {
+          "contradictionId": "contradiction-a2-live-gate-001-retrieval-under-yield",
+          "severityLevel": "major",
+          "contradictionKind": "retrieval_under_yield",
+          "contradictionText": "The contour narrowed before validator because retrieval persisted only one evidence item while also reporting eight skipped items.",
+          "sourceStageOrigin": "projection_fallback",
+          "traceRefIds": [
+            "trace-a2-live-gate-001-a2_live_gate_run_001_diagnosis"
+          ],
+          "isResolved": false,
+          "provenance": {
+            "sourceMode": "hybrid",
+            "sourceRefs": [
+              "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+              "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Derived from tracked run 001 diagnosis."
+          }
+        },
+        {
+          "contradictionId": "contradiction-a2-live-gate-001-live-inconclusive",
+          "severityLevel": "moderate",
+          "contradictionKind": "live_inconclusive",
+          "contradictionText": "Live contour did not produce recurrence conditions, so this run cannot say whether A2 meaningfully improves recurring motif visibility in practice.",
+          "sourceStageOrigin": "projection_fallback",
+          "traceRefIds": [
+            "trace-a2-live-gate-001-a2_live_gate_run_001_diagnosis"
+          ],
+          "isResolved": false,
+          "provenance": {
+            "sourceMode": "hybrid",
+            "sourceRefs": [
+              "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Derived from tracked run 001 diagnosis."
+          }
+        }
+      ],
+      "nextSteps": [
+        {
+          "nextStepId": "next-a2-live-gate-001-rerun-same-lane",
+          "nextStepType": "hold_for_future_run",
+          "targetLayer": "operator_review",
+          "priorityLevel": "high",
+          "provenanceType": "operator",
+          "actionText": "rerun_same_lane_with_better_input: densify retrieval around missed reservation calls, direct-booking leakage, staffing strain, and phone-to-revenue loss without changing runtime logic.",
+          "traceRefIds": [
+            "trace-a2-live-gate-001-a2_live_gate_run_001_diagnosis"
+          ],
+          "isBlocking": true,
+          "provenance": {
+            "sourceMode": "hybrid",
+            "sourceRefs": [
+              "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Derived from the tracked run 001 diagnosis recommendation."
+          }
+        }
+      ],
+      "evidenceTraces": [
+        {
+          "traceId": "trace-a2-live-gate-001-provisional-signal",
+          "traceRole": "support",
+          "artifactPath": "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md",
+          "artifactKind": "markdown",
+          "documentStatus": "draft",
+          "sourceRecordId": "provisional_signal_basis",
+          "locatorHint": "retrieval_under_yield + live-inconclusive diagnosis",
+          "excerptText": "One live candidate was reviewable, but the contour remained too thin to exercise recurrence materially.",
+          "sourceStageOrigin": "projection_fallback",
+          "provenance": {
+            "sourceMode": "hybrid",
+            "sourceRefs": [
+              "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+            ],
+            "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+            "generatedAt": "2026-03-20T15:18:42.962Z",
+            "notes": "Trace reconstructed from repo-resident draft outcome capture."
+          }
+        }
+      ],
+      "changedVsPreviousComparable": "comparison_unavailable_due_to_partial_data",
+      "feedbackTarget": {
+        "runId": "a2-live-gate-001",
+        "signalId": "a2-live-gate-001-provisional-signal-001"
+      },
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Provisional signal row is reconstructed because the raw live bundle is not tracked in this repo."
+      }
+    }
+  ],
+  "runContradictions": [
+    {
+      "contradictionId": "contradiction-a2-live-gate-001-retrieval-under-yield",
+      "severityLevel": "major",
+      "contradictionKind": "retrieval_under_yield",
+      "contradictionText": "The contour narrowed before validator because retrieval persisted only one evidence item while also reporting eight skipped items.",
+      "sourceStageOrigin": "projection_fallback",
+      "traceRefIds": [
+        "trace-a2-live-gate-001-a2_live_gate_run_001_diagnosis"
+      ],
+      "isResolved": false,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked run 001 diagnosis."
+      }
+    },
+    {
+      "contradictionId": "contradiction-a2-live-gate-001-live-inconclusive",
+      "severityLevel": "moderate",
+      "contradictionKind": "live_inconclusive",
+      "contradictionText": "Live contour did not produce recurrence conditions, so this run cannot say whether A2 meaningfully improves recurring motif visibility in practice.",
+      "sourceStageOrigin": "projection_fallback",
+      "traceRefIds": [
+        "trace-a2-live-gate-001-a2_live_gate_run_001_diagnosis"
+      ],
+      "isResolved": false,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from tracked run 001 diagnosis."
+      }
+    }
+  ],
+  "runNextSteps": [
+    {
+      "nextStepId": "next-a2-live-gate-001-rerun-same-lane",
+      "nextStepType": "hold_for_future_run",
+      "targetLayer": "operator_review",
+      "priorityLevel": "high",
+      "provenanceType": "operator",
+      "actionText": "rerun_same_lane_with_better_input: densify retrieval around missed reservation calls, direct-booking leakage, staffing strain, and phone-to-revenue loss without changing runtime logic.",
+      "traceRefIds": [
+        "trace-a2-live-gate-001-a2_live_gate_run_001_diagnosis"
+      ],
+      "isBlocking": true,
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Derived from the tracked run 001 diagnosis recommendation."
+      }
+    }
+  ],
+  "runEvidenceTraces": [
+    {
+      "traceId": "trace-a2-live-gate-001-a2_live_gate_run_001",
+      "traceRole": "context",
+      "artifactPath": "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+      "artifactKind": "markdown",
+      "documentStatus": "draft",
+      "sourceRecordId": "a2_live_gate_run_001",
+      "locatorHint": "gate assessment and completion status",
+      "excerptText": "# quality_change_package_A2_live_gate_run_001 Status: draft execution-state capture ## A. Context - project repo branch: `main` - project repo HEAD commit: `050a6120bf3e469cc6457bb68bc81cd9858878b0` - authoritative A2 minimal implementation package: - `docs/d…",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Trace reconstructed from repo-resident draft outcome capture."
+      }
+    },
+    {
+      "traceId": "trace-a2-live-gate-001-a2_live_gate_run_001_diagnosis",
+      "traceRole": "context",
+      "artifactPath": "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md",
+      "artifactKind": "markdown",
+      "documentStatus": "draft",
+      "sourceRecordId": "a2_live_gate_run_001_diagnosis",
+      "locatorHint": "retrieval_under_yield and live-inconclusive diagnosis",
+      "excerptText": "# quality_change_package_A2_live_gate_run_001_diagnosis Status: draft post-run diagnosis References - authoritative A2 minimal implementation package: - `docs/drafts/quality_change_package_A2/quality_change_package_A2_minimal_implementation_wave.md` - executi…",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Trace reconstructed from repo-resident draft outcome capture."
+      }
+    },
+    {
+      "traceId": "trace-a2-live-gate-001-a2_live_gate_001_output_1",
+      "traceRole": "context",
+      "artifactPath": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-retrieval",
+      "artifactKind": "external_runtime_path",
+      "documentStatus": "external_untracked_runtime_output",
+      "sourceRecordId": "a2_live_gate_001_output_1",
+      "locatorHint": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-retrieval",
+      "excerptText": "Runtime output path cited in the tracked run 001 live-gate capture.",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-retrieval"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Path cited by a tracked draft, but raw output bundle is not tracked in this repo."
+      }
+    },
+    {
+      "traceId": "trace-a2-live-gate-001-a2_live_gate_001_output_2",
+      "traceRole": "context",
+      "artifactPath": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-validator",
+      "artifactKind": "external_runtime_path",
+      "documentStatus": "external_untracked_runtime_output",
+      "sourceRecordId": "a2_live_gate_001_output_2",
+      "locatorHint": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-validator",
+      "excerptText": "Runtime output path cited in the tracked run 001 live-gate capture.",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-validator"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Path cited by a tracked draft, but raw output bundle is not tracked in this repo."
+      }
+    },
+    {
+      "traceId": "trace-a2-live-gate-001-a2_live_gate_001_output_3",
+      "traceRole": "context",
+      "artifactPath": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-review",
+      "artifactKind": "external_runtime_path",
+      "documentStatus": "external_untracked_runtime_output",
+      "sourceRecordId": "a2_live_gate_001_output_3",
+      "locatorHint": "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-review",
+      "excerptText": "Runtime output path cited in the tracked run 001 live-gate capture.",
+      "sourceStageOrigin": "projection_fallback",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-review"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Path cited by a tracked draft, but raw output bundle is not tracked in this repo."
+      }
+    }
+  ],
+  "stateBanner": {
+    "title": "Inconclusive because recurrence never formed fairly",
+    "tone": "warning",
+    "text": "The contour ran far enough to inspect outputs, but the live batch remained too thin to claim a substantive recurrence exercise. The UI keeps that uncertainty explicit.",
+    "provenance": {
+      "sourceMode": "hybrid",
+      "sourceRefs": [
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md"
+      ],
+      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "notes": "Banner derived from tracked run 001 outcome and diagnosis drafts."
+    }
+  },
+  "provenance": {
+    "sourceMode": "hybrid",
+    "sourceRefs": [
+      "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+      "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md",
+      "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-retrieval",
+      "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-validator",
+      "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-review"
+    ],
+    "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+    "generatedAt": "2026-03-20T15:18:42.962Z",
+    "notes": "Run detail combines tracked drafts with cited external runtime paths and a provisional signal row."
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-03-20T15:18:42.962Z",
+  "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+  "globalGroundingRefs": [
+    "docs/drafts/decision_consumption_layer/decision_consumption_layer_spec_vA.md",
+    "docs/drafts/decision_consumption_layer/decision_read_model_contract_v1.md",
+    "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+    "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md",
+    "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md",
+    "docs/drafts/quality_change_package_A2/quality_change_package_A2_switch_to_lane_2_live_gate_execution_package.md",
+    "docs/drafts/quality_change_package_A2/next_A2_live_gate_run_on_reservation_call_center_scaling_execution_package.md",
+    "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+    "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+    "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+    "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+    "runtime/runs/phase0-review-run-001/review_manifest.json",
+    "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+    "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+    "runtime/runs/phase0-smoke-run-001/run_manifest.json",
+    "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md"
+  ],
+  "entries": [
+    {
+      "id": "phase0-validator-run-005",
+      "title": "Validator verdict surface",
+      "sourceMode": "artifact_backed",
+      "refs": [
+        "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+        "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+        "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+        "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+      ],
+      "notes": "Tracked runtime artifacts with normalized read-side projection."
+    },
+    {
+      "id": "phase0-review-run-001",
+      "title": "Review decision surface",
+      "sourceMode": "artifact_backed",
+      "refs": [
+        "runtime/runs/phase0-review-run-001/review_manifest.json",
+        "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+        "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+        "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+      ],
+      "notes": "Tracked runtime artifacts with normalized read-side projection."
+    },
+    {
+      "id": "a2-live-gate-002",
+      "title": "Blocked A2 live gate",
+      "sourceMode": "hybrid",
+      "refs": [
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
+      ],
+      "notes": "Repo-resident draft plus cited untracked runtime paths."
+    },
+    {
+      "id": "phase0-smoke-run-001",
+      "title": "Zero-signal smoke contour",
+      "sourceMode": "hybrid",
+      "refs": [
+        "runtime/runs/phase0-smoke-run-001/run_manifest.json",
+        "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
+        "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
+      ],
+      "notes": "Tracked smoke bundle plus explicit demo-side zero_signal mapping."
+    },
+    {
+      "id": "a2-live-gate-001",
+      "title": "Inconclusive A2 live gate",
+      "sourceMode": "hybrid",
+      "refs": [
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+        "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-retrieval",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-validator",
+        "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-review"
+      ],
+      "notes": "Repo-resident drafts plus cited untracked runtime paths and a provisional signal row."
+    },
+    {
+      "id": "phase0-validator-run-005__phase0-review-run-001",
+      "title": "Comparison pair",
+      "sourceMode": "hybrid",
+      "refs": [
+        "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+        "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+        "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+      ],
+      "notes": "Precomputed comparison with partial hybrid delta mapping."
+    },
+    {
+      "id": "feedback-local",
+      "title": "Local demo feedback events",
+      "sourceMode": "mock",
+      "refs": [
+        "browser:localStorage"
+      ],
+      "notes": "Created locally in the browser and never written into runtime or governance."
+    }
+  ]
+}

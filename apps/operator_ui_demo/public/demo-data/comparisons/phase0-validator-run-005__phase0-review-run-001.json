@@ -1,0 +1,169 @@
+{
+  "pairId": "phase0-validator-run-005__phase0-review-run-001",
+  "leftRunId": "phase0-validator-run-005",
+  "rightRunId": "phase0-review-run-001",
+  "deltaSummary": [
+    {
+      "key": "run_state",
+      "label": "Run state",
+      "leftValue": "populated",
+      "rightValue": "populated",
+      "change": "State stayed populated while the decision posture tightened.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+          "runtime/runs/phase0-review-run-001/review_manifest.json"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Comparison delta derived from two tracked run summaries."
+      }
+    },
+    {
+      "key": "signal_count",
+      "label": "Signal count",
+      "leftValue": 2,
+      "rightValue": 2,
+      "change": "Signal count stayed stable across validator and review.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Comparison delta derived from tracked signal arrays."
+      }
+    },
+    {
+      "key": "contradiction_count",
+      "label": "Contradiction count",
+      "leftValue": 2,
+      "rightValue": 3,
+      "change": "Review introduced one extra contradiction entry for validator-review divergence.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Comparison delta derived from tracked signal and decision artifacts."
+      }
+    },
+    {
+      "key": "next_step_count",
+      "label": "Next-step count",
+      "leftValue": 1,
+      "rightValue": 2,
+      "change": "Review introduced signal-specific follow-up steps.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+          "runtime/runs/phase0-review-run-001/review_manifest.json",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Comparison delta derived from tracked manifests and review next-step fields."
+      }
+    }
+  ],
+  "addedSignals": [],
+  "removedSignals": [],
+  "changedSignals": [
+    {
+      "signalId": "signal-001",
+      "label": "Hidden phone-loss after IVR removal",
+      "changeType": "changed",
+      "summary": "Validator surfaced the item as a monetizable pain signal; review kept it on hold because independent verification is still missing.",
+      "leftStatus": "needs_validation",
+      "rightStatus": "hold",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Signal change derived from tracked validator and review outputs for the same candidate_id."
+      }
+    }
+  ],
+  "contradictionDelta": [
+    {
+      "id": "contradiction-delta-signal-001",
+      "label": "Validator-review divergence",
+      "changeType": "added",
+      "rightValue": "Review added an explicit divergence contradiction for signal-001.",
+      "note": "Partial because contradiction taxonomy is still a hybrid draft projection.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Hybrid contradiction delta projected from tracked artifacts."
+      }
+    }
+  ],
+  "nextStepDelta": [
+    {
+      "id": "next-step-delta-next-signal-001-review-follow-up",
+      "label": "validate_with_more_evidence",
+      "changeType": "added",
+      "rightValue": "Verify the metric change with an independent source or primary customer evidence; confirm baseline, sample size, and that the loss in calls is attributable to an actionable operational issue rather than the AI voice agent study context.",
+      "note": "Review adds concrete signal-level follow-up text.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Next-step delta projected from tracked review output."
+      }
+    },
+    {
+      "id": "next-step-delta-next-signal-002-review-follow-up",
+      "label": "validate_with_more_evidence",
+      "changeType": "added",
+      "rightValue": "verify_independent_third_party_evidence_for_claimed_metrics_and_business_impact_before_accepting",
+      "note": "Review adds concrete signal-level follow-up text.",
+      "provenance": {
+        "sourceMode": "hybrid",
+        "sourceRefs": [
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+        ],
+        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "notes": "Next-step delta projected from tracked review output."
+      }
+    }
+  ],
+  "partialDueToHybridData": true,
+  "partialNote": "State and signal deltas are rooted in tracked artifacts. Contradiction and next-step delta sections remain partial because their cross-run mapping is still a hybrid projection.",
+  "provenance": {
+    "sourceMode": "hybrid",
+    "sourceRefs": [
+      "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+      "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+      "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+    ],
+    "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+    "generatedAt": "2026-03-20T15:18:42.962Z",
+    "notes": "Comparison surface is precomputed from tracked artifacts plus hybrid delta mapping."
+  }
+}
