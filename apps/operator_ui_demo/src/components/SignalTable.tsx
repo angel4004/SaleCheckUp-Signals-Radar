@@ -2,12 +2,15 @@ import type { DemoSignal } from "../lib/readModel";
 import { ContradictionPanel } from "./ContradictionPanel";
 import { EvidencePanel } from "./EvidencePanel";
 import { FeedbackActions } from "./FeedbackActions";
+import { LineagePanel } from "./LineagePanel";
 import { NextStepPanel } from "./NextStepPanel";
 import { ProvenanceChip } from "./ProvenanceChip";
 import { StatusBadge } from "./StatusBadge";
+import type { UiObjectProvenanceEntry } from "../lib/readModel";
 
 interface SignalTableProps {
   signals: DemoSignal[];
+  signalProvenanceEntries?: Record<string, UiObjectProvenanceEntry>;
 }
 
 function getStatusTone(statusCode: string) {
@@ -25,7 +28,10 @@ function getStatusTone(statusCode: string) {
   }
 }
 
-export function SignalTable({ signals }: SignalTableProps) {
+export function SignalTable({
+  signals,
+  signalProvenanceEntries = {},
+}: SignalTableProps) {
   return (
     <section className="panel">
       <div className="panel-header">
@@ -56,6 +62,9 @@ export function SignalTable({ signals }: SignalTableProps) {
 
               <div className="metadata-row">
                 <span>signal_id: {signal.signalId}</span>
+                <span>run_id: {signal.runId}</span>
+                <span>state: {signal.status.statusCode}</span>
+                <span>materialization_mode: {signal.provenance.sourceMode}</span>
                 <span>uncertainty: {signal.status.uncertaintyLevel}</span>
                 <span>decision relevance: {signal.status.decisionRelevanceLevel}</span>
                 {signal.changedVsPreviousComparable ? (
@@ -65,6 +74,13 @@ export function SignalTable({ signals }: SignalTableProps) {
 
               <p>{signal.status.rationale}</p>
               <ProvenanceChip provenance={signal.provenance} />
+              {signalProvenanceEntries[`${signal.runId}::${signal.signalId}`] ? (
+                <LineagePanel
+                  entry={signalProvenanceEntries[`${signal.runId}::${signal.signalId}`]}
+                  eyebrow="Signal lineage"
+                  title={`How ${signal.signalId} reached UI`}
+                />
+              ) : null}
 
               <div className="three-column">
                 <ContradictionPanel

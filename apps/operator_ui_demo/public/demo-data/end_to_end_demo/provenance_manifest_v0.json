@@ -1,0 +1,649 @@
+{
+  "manifestId": "provenance_manifest_v0",
+  "generatedAt": "2026-03-21T10:34:37.068Z",
+  "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+  "anchorRunId": "phase0-review-run-001",
+  "entries": {
+    "runs": {
+      "phase0-validator-run-005": {
+        "objectId": "phase0-validator-run-005",
+        "objectType": "run",
+        "route": "/runs/phase0-validator-run-005",
+        "runId": "phase0-validator-run-005",
+        "state": "populated",
+        "materializationMode": "artifact_backed",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+          "apps/operator_ui_demo/public/demo-data/run_details/phase0-validator-run-005.json"
+        ],
+        "projectionNotes": "Validator detail is rebuilt from tracked validator output plus retrieval evidence, with the new provenance overlay keeping the bounded chain visible.",
+        "assumptions": [],
+        "uiVisibleReason": "This run stays visible as the pre-review stage anchor so the operator can compare validator posture against review posture.",
+        "lineage": [
+          {
+            "stepId": "bounded_input",
+            "label": "Bounded input manifest",
+            "ref": "runtime/input/phase0-retrieval-run-003.json",
+            "note": "The same bounded input anchors the validator surface.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "retrieval_run",
+            "label": "Retrieval run",
+            "ref": "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+            "note": "Validator consumes the persisted evidence bundle from retrieval.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "validator_run",
+            "label": "Validator run",
+            "ref": "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+            "note": "Validator emitted the tracked signal rows shown to the operator.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "projected_run_detail",
+            "label": "Projected validator detail",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/phase0-validator-run-005.json",
+            "note": "The UI reads generated validator detail JSON plus the explicit provenance overlay.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/phase0-validator-run-005",
+            "note": "RunDetailPage renders the validator surface with explicit lineage.",
+            "materializationMode": "hybrid"
+          }
+        ]
+      },
+      "phase0-review-run-001": {
+        "objectId": "phase0-review-run-001",
+        "objectType": "run",
+        "route": "/runs/phase0-review-run-001",
+        "runId": "phase0-review-run-001",
+        "state": "populated",
+        "materializationMode": "artifact_backed",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "runtime/runs/phase0-review-run-001/review_manifest.json",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+          "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json"
+        ],
+        "projectionNotes": "The primary run detail is rebuilt from tracked retrieval, validator, and review artifacts. The provenance overlay remains explicit and demo-only.",
+        "assumptions": [
+          "phase0-review-run-001 remains the primary artifact-backed operator anchor for this demo wave.",
+          "The new end_to_end_demo manifests stay demo-only and do not redefine decision_read_model_contract_v1."
+        ],
+        "uiVisibleReason": "This run is the chosen primary operator-facing anchor because it preserves the full bounded phase0 chain and keeps provenance inspectable at every stage.",
+        "lineage": [
+          {
+            "stepId": "bounded_input",
+            "label": "Bounded input manifest",
+            "ref": "runtime/input/phase0-retrieval-run-003.json",
+            "note": "Chosen bounded input for the demo wave.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "retrieval_run",
+            "label": "Retrieval run",
+            "ref": "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+            "note": "Retrieval produced the persisted evidence bundle used downstream.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "validator_run",
+            "label": "Validator run",
+            "ref": "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+            "note": "Validator emitted the candidate rows that review later tightened.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "review_run",
+            "label": "Review run",
+            "ref": "runtime/runs/phase0-review-run-001/review_manifest.json",
+            "note": "Review kept both candidates on hold and attached next-step guidance.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "projected_run_detail",
+            "label": "Projected run detail",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json",
+            "note": "The UI reads generated review detail JSON plus the explicit provenance overlay.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/phase0-review-run-001",
+            "note": "RunDetailPage reads both the generated run detail and the provenance overlay.",
+            "materializationMode": "hybrid"
+          }
+        ]
+      },
+      "phase0-smoke-run-001": {
+        "objectId": "phase0-smoke-run-001",
+        "objectType": "run",
+        "route": "/runs/phase0-smoke-run-001",
+        "runId": "phase0-smoke-run-001",
+        "state": "zero_signal",
+        "materializationMode": "hybrid",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "runtime/runs/phase0-smoke-run-001/run_manifest.json",
+          "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
+          "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md",
+          "apps/operator_ui_demo/public/demo-data/run_details/phase0-smoke-run-001.json"
+        ],
+        "projectionNotes": "The smoke contour is rendered as zero_signal through explicit demo-side mapping over tracked smoke artifacts.",
+        "assumptions": [
+          "zero_signal remains a demo-side classification over the tracked smoke bundle for this wave."
+        ],
+        "uiVisibleReason": "This run stays visible so zero_signal is distinguishable from blocked and populated states.",
+        "lineage": [
+          {
+            "stepId": "source_capture",
+            "label": "Smoke contour artifacts",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/phase0-smoke-run-001.json",
+            "note": "Tracked smoke artifacts are mapped into an explicit zero_signal run state.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/phase0-smoke-run-001",
+            "note": "RunDetailPage keeps zero_signal visible instead of collapsing it into an empty list.",
+            "materializationMode": "hybrid"
+          }
+        ]
+      },
+      "a2-live-gate-002": {
+        "objectId": "a2-live-gate-002",
+        "objectType": "run",
+        "route": "/runs/a2-live-gate-002",
+        "runId": "a2-live-gate-002",
+        "state": "blocked",
+        "materializationMode": "hybrid",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review",
+          "apps/operator_ui_demo/public/demo-data/run_details/a2-live-gate-002.json"
+        ],
+        "projectionNotes": "Blocked state is reconstructed from repo-resident A2 live-gate outcome capture plus cited external runtime paths.",
+        "assumptions": [
+          "The raw runtime bundle for live gate 002 remains untracked in repo."
+        ],
+        "uiVisibleReason": "This run remains visible so blocked is distinguishable from zero_signal and the absence of signal rows is not hidden.",
+        "lineage": [
+          {
+            "stepId": "source_capture",
+            "label": "Tracked blocked outcome capture",
+            "ref": "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md",
+            "note": "A tracked draft captures the blockage and cites the external runtime locations.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "projected_run_detail",
+            "label": "Projected blocked run detail",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/a2-live-gate-002.json",
+            "note": "The UI reads a generated blocked run detail bundle.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/a2-live-gate-002",
+            "note": "RunDetailPage keeps blocked visible and does not invent signal rows.",
+            "materializationMode": "hybrid"
+          }
+        ]
+      },
+      "a2-live-gate-001": {
+        "objectId": "a2-live-gate-001",
+        "objectType": "run",
+        "route": "/runs/a2-live-gate-001",
+        "runId": "a2-live-gate-001",
+        "state": "inconclusive",
+        "materializationMode": "hybrid",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-retrieval",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-validator",
+          "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-001-review",
+          "apps/operator_ui_demo/public/demo-data/run_details/a2-live-gate-001.json"
+        ],
+        "projectionNotes": "Inconclusive state is rendered from tracked live-gate outcome and diagnosis drafts plus a provisional signal row.",
+        "assumptions": [
+          "The live-gate signal row stays provisional until the raw live bundle is tracked in repo."
+        ],
+        "uiVisibleReason": "This run remains visible so inconclusive is distinguishable from populated and blocked states.",
+        "lineage": [
+          {
+            "stepId": "source_capture",
+            "label": "Tracked inconclusive outcome capture",
+            "ref": "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+            "note": "Tracked drafts capture the live contour result and diagnosis.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "projected_run_detail",
+            "label": "Projected inconclusive run detail",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/a2-live-gate-001.json",
+            "note": "The UI reads a generated inconclusive run detail bundle.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/a2-live-gate-001",
+            "note": "RunDetailPage keeps the inconclusive state explicit for the operator.",
+            "materializationMode": "hybrid"
+          }
+        ]
+      }
+    },
+    "signals": {
+      "phase0-validator-run-005::signal-001": {
+        "objectId": "phase0-validator-run-005::signal-001",
+        "objectType": "signal",
+        "route": "/runs/phase0-validator-run-005",
+        "runId": "phase0-validator-run-005",
+        "signalId": "signal-001",
+        "state": "needs_validation",
+        "materializationMode": "artifact_backed",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "apps/operator_ui_demo/public/demo-data/run_details/phase0-validator-run-005.json"
+        ],
+        "projectionNotes": "Signal row is normalized from validated_signals.jsonl and linked retrieval evidence. The overview/provenance overlay remains demo-only.",
+        "assumptions": [],
+        "uiVisibleReason": "The operator sees this signal directly from tracked validator output with a linked retrieval evidence trace.",
+        "lineage": [
+          {
+            "stepId": "bounded_input",
+            "label": "Bounded input manifest",
+            "ref": "runtime/input/phase0-retrieval-run-003.json",
+            "note": "The selected demo input anchors the visible signal.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "retrieval_evidence",
+            "label": "Retrieval evidence",
+            "ref": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+            "note": "Evidence trace for signal-001 stays inspectable through the persisted retrieval bundle.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "validator_signal",
+            "label": "Validator signal row",
+            "ref": "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+            "note": "candidate_id signal-001 was emitted from tracked validator output.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "projected_run_detail",
+            "label": "Projected validator detail",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/phase0-validator-run-005.json",
+            "note": "The UI reads generated validator detail JSON plus the explicit provenance overlay.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/phase0-validator-run-005",
+            "note": "The detail route renders signal-001 with explicit state, provenance, and source_artifact_refs.",
+            "materializationMode": "artifact_backed"
+          }
+        ]
+      },
+      "phase0-validator-run-005::signal-002": {
+        "objectId": "phase0-validator-run-005::signal-002",
+        "objectType": "signal",
+        "route": "/runs/phase0-validator-run-005",
+        "runId": "phase0-validator-run-005",
+        "signalId": "signal-002",
+        "state": "hold",
+        "materializationMode": "artifact_backed",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "apps/operator_ui_demo/public/demo-data/run_details/phase0-validator-run-005.json"
+        ],
+        "projectionNotes": "Signal row is normalized from validated_signals.jsonl and linked retrieval evidence. The overview/provenance overlay remains demo-only.",
+        "assumptions": [],
+        "uiVisibleReason": "The operator sees this signal directly from tracked validator output with a linked retrieval evidence trace.",
+        "lineage": [
+          {
+            "stepId": "bounded_input",
+            "label": "Bounded input manifest",
+            "ref": "runtime/input/phase0-retrieval-run-003.json",
+            "note": "The selected demo input anchors the visible signal.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "retrieval_evidence",
+            "label": "Retrieval evidence",
+            "ref": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+            "note": "Evidence trace for signal-002 stays inspectable through the persisted retrieval bundle.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "validator_signal",
+            "label": "Validator signal row",
+            "ref": "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+            "note": "candidate_id signal-002 was emitted from tracked validator output.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "projected_run_detail",
+            "label": "Projected validator detail",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/phase0-validator-run-005.json",
+            "note": "The UI reads generated validator detail JSON plus the explicit provenance overlay.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/phase0-validator-run-005",
+            "note": "The detail route renders signal-002 with explicit state, provenance, and source_artifact_refs.",
+            "materializationMode": "artifact_backed"
+          }
+        ]
+      },
+      "phase0-review-run-001::signal-001": {
+        "objectId": "phase0-review-run-001::signal-001",
+        "objectType": "signal",
+        "route": "/runs/phase0-review-run-001",
+        "runId": "phase0-review-run-001",
+        "signalId": "signal-001",
+        "state": "hold",
+        "materializationMode": "artifact_backed",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+          "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json"
+        ],
+        "projectionNotes": "Signal row is normalized from reviewed_signals.jsonl, validator output, and retrieval evidence. The provenance overlay stays explicit and demo-only.",
+        "assumptions": [],
+        "uiVisibleReason": "The operator sees this signal because review kept candidate_id visible, linked it to persisted evidence, and the detail route reads the new provenance overlay.",
+        "lineage": [
+          {
+            "stepId": "bounded_input",
+            "label": "Bounded input manifest",
+            "ref": "runtime/input/phase0-retrieval-run-003.json",
+            "note": "The selected demo input anchors the visible signal.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "retrieval_evidence",
+            "label": "Retrieval evidence",
+            "ref": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+            "note": "Evidence trace for signal-001 stays inspectable through the persisted retrieval bundle.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "validator_signal",
+            "label": "Validator signal row",
+            "ref": "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+            "note": "candidate_id signal-001 was emitted from tracked validator output.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "review_signal",
+            "label": "Review signal row",
+            "ref": "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+            "note": "candidate_id signal-001 was tightened under the review gate before projection.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "projected_run_detail",
+            "label": "Projected run detail",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json",
+            "note": "The UI reads generated review detail JSON plus the explicit provenance overlay.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/phase0-review-run-001",
+            "note": "The detail route renders signal-001 with explicit state, provenance, and source_artifact_refs.",
+            "materializationMode": "artifact_backed"
+          }
+        ]
+      },
+      "phase0-review-run-001::signal-002": {
+        "objectId": "phase0-review-run-001::signal-002",
+        "objectType": "signal",
+        "route": "/runs/phase0-review-run-001",
+        "runId": "phase0-review-run-001",
+        "signalId": "signal-002",
+        "state": "hold",
+        "materializationMode": "artifact_backed",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+          "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json"
+        ],
+        "projectionNotes": "Signal row is normalized from reviewed_signals.jsonl, validator output, and retrieval evidence. The provenance overlay stays explicit and demo-only.",
+        "assumptions": [],
+        "uiVisibleReason": "The operator sees this signal because review kept candidate_id visible, linked it to persisted evidence, and the detail route reads the new provenance overlay.",
+        "lineage": [
+          {
+            "stepId": "bounded_input",
+            "label": "Bounded input manifest",
+            "ref": "runtime/input/phase0-retrieval-run-003.json",
+            "note": "The selected demo input anchors the visible signal.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "retrieval_evidence",
+            "label": "Retrieval evidence",
+            "ref": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+            "note": "Evidence trace for signal-002 stays inspectable through the persisted retrieval bundle.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "validator_signal",
+            "label": "Validator signal row",
+            "ref": "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+            "note": "candidate_id signal-002 was emitted from tracked validator output.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "review_signal",
+            "label": "Review signal row",
+            "ref": "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+            "note": "candidate_id signal-002 was tightened under the review gate before projection.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "projected_run_detail",
+            "label": "Projected run detail",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json",
+            "note": "The UI reads generated review detail JSON plus the explicit provenance overlay.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/phase0-review-run-001",
+            "note": "The detail route renders signal-002 with explicit state, provenance, and source_artifact_refs.",
+            "materializationMode": "artifact_backed"
+          }
+        ]
+      },
+      "a2-live-gate-001::a2-live-gate-001-provisional-signal-001": {
+        "objectId": "a2-live-gate-001::a2-live-gate-001-provisional-signal-001",
+        "objectType": "signal",
+        "route": "/runs/a2-live-gate-001",
+        "runId": "a2-live-gate-001",
+        "signalId": "a2-live-gate-001-provisional-signal-001",
+        "state": "hold",
+        "materializationMode": "hybrid",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001.md",
+          "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_001_diagnosis.md",
+          "apps/operator_ui_demo/public/demo-data/run_details/a2-live-gate-001.json"
+        ],
+        "projectionNotes": "Signal row is provisional and derived from repo-resident live-gate outcome capture plus diagnosis drafts because the raw live bundle is not tracked here.",
+        "assumptions": [
+          "The provisional signal stays demo-only until a repo-resident raw live bundle exists."
+        ],
+        "uiVisibleReason": "The operator still sees the signal so that the inconclusive state remains explicit instead of silently collapsing to an empty run.",
+        "lineage": [
+          {
+            "stepId": "bounded_input",
+            "label": "Bounded input manifest",
+            "ref": "runtime/input/phase0-retrieval-run-003.json",
+            "note": "The selected demo input anchors the visible signal.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "retrieval_evidence",
+            "label": "Retrieval evidence",
+            "ref": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+            "note": "Evidence trace for a2-live-gate-001-provisional-signal-001 stays inspectable through the persisted retrieval bundle.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "projected_run_detail",
+            "label": "Projected inconclusive run detail",
+            "ref": "apps/operator_ui_demo/public/demo-data/run_details/a2-live-gate-001.json",
+            "note": "The UI reads a provisional signal row because the raw live bundle is not tracked in repo.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Run detail route",
+            "ref": "route:/runs/a2-live-gate-001",
+            "note": "The detail route renders a2-live-gate-001-provisional-signal-001 with explicit state, provenance, and source_artifact_refs.",
+            "materializationMode": "hybrid"
+          }
+        ]
+      }
+    },
+    "comparisons": {
+      "phase0-validator-run-005__phase0-review-run-001": {
+        "objectId": "phase0-validator-run-005__phase0-review-run-001",
+        "objectType": "comparison",
+        "route": "/compare?pair=phase0-validator-run-005__phase0-review-run-001",
+        "state": "partial",
+        "materializationMode": "hybrid",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "runtime/input/phase0-retrieval-run-003.json",
+          "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+          "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/review_manifest.json",
+          "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+          "runtime/runs/phase0-review-run-001/decision_summary_ru.md",
+          "apps/operator_ui_demo/public/demo-data/comparisons/phase0-validator-run-005__phase0-review-run-001.json"
+        ],
+        "projectionNotes": "The comparison bundle is generated from tracked validator/review artifacts, but contradiction and next-step deltas remain intentionally labeled hybrid.",
+        "assumptions": [
+          "Cross-run contradiction and next-step delta mapping stays hybrid for this wave."
+        ],
+        "uiVisibleReason": "The comparison view stays explicit about which sections are precomputed from tracked artifacts and which still rely on hybrid delta mapping.",
+        "lineage": [
+          {
+            "stepId": "validator_run",
+            "label": "Validator source run",
+            "ref": "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+            "note": "The left side of the comparison comes from the tracked validator run.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "review_run",
+            "label": "Review source run",
+            "ref": "runtime/runs/phase0-review-run-001/review_manifest.json",
+            "note": "The right side of the comparison comes from the tracked review run.",
+            "materializationMode": "artifact_backed"
+          },
+          {
+            "stepId": "comparison_bundle",
+            "label": "Generated comparison bundle",
+            "ref": "apps/operator_ui_demo/public/demo-data/comparisons/phase0-validator-run-005__phase0-review-run-001.json",
+            "note": "The comparator precomputes deltas into a UI-readable JSON file.",
+            "materializationMode": "hybrid"
+          },
+          {
+            "stepId": "ui_route",
+            "label": "Comparison route",
+            "ref": "route:/compare?pair=phase0-validator-run-005__phase0-review-run-001",
+            "note": "ComparisonPage reads the comparison JSON plus the explicit provenance overlay.",
+            "materializationMode": "hybrid"
+          }
+        ]
+      }
+    },
+    "feedback": {
+      "feedback-local": {
+        "objectId": "feedback-local",
+        "objectType": "feedback",
+        "route": "/feedback",
+        "state": "local_demo_localStorage",
+        "materializationMode": "mock",
+        "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+        "sourceArtifactRefs": [
+          "browser:localStorage"
+        ],
+        "projectionNotes": "Feedback events stay inside browser localStorage and never mutate runtime or governance automatically.",
+        "assumptions": [],
+        "uiVisibleReason": "The operator can test feedback affordances locally while the UI keeps the write-side boundary explicit.",
+        "lineage": [
+          {
+            "stepId": "signal_or_run_action",
+            "label": "Feedback action button",
+            "ref": "apps/operator_ui_demo/src/components/FeedbackActions.tsx",
+            "note": "Operator clicks stay inside the demo shell and do not write back into runtime.",
+            "materializationMode": "mock"
+          },
+          {
+            "stepId": "local_storage",
+            "label": "Browser localStorage",
+            "ref": "browser:localStorage",
+            "note": "Feedback events persist only in the browser for this wave.",
+            "materializationMode": "mock"
+          },
+          {
+            "stepId": "feedback_queue",
+            "label": "Feedback Queue route",
+            "ref": "route:/feedback",
+            "note": "The queue visualizes demo-only local events with explicit mock provenance.",
+            "materializationMode": "mock"
+          }
+        ]
+      }
+    }
+  }
+}

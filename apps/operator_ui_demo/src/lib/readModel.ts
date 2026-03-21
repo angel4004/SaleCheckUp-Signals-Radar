@@ -218,6 +218,124 @@ export interface SourceMapResponse {
   entries: SourceMapEntry[];
 }
 
+export interface DemoLegendEntry {
+  key: string;
+  label: string;
+  meaning: string;
+}
+
+export interface DemoFlowStep {
+  stepId: string;
+  label: string;
+  objectType: string;
+  objectId: string;
+  state: string;
+  materializationMode: SourceMode;
+  summary: string;
+  note: string;
+  sourceArtifactRefs: string[];
+  uiRoute?: string;
+  outputRef?: string;
+}
+
+export interface BoundedDemoInputManifest {
+  manifestId: string;
+  generatedAt: string;
+  sourceCommit: string | null;
+  inputId: string;
+  inputPath: string;
+  boundedInputSummary: string;
+  runGoal: string;
+  currentHypothesis: string;
+  modelId: string;
+  searchQueries: string[];
+  constraints: string[];
+  requestedOutputs: string[];
+  chosenRunChain: string[];
+  assumptions: string[];
+}
+
+export interface DemoArtifactEntry {
+  artifactId: string;
+  label: string;
+  artifactPath: string;
+  artifactKind: string;
+  sourceLayer: string;
+  documentStatus: string;
+  materializationMode: SourceMode;
+  role: string;
+  notes: string;
+}
+
+export interface DemoArtifactManifest {
+  manifestId: string;
+  generatedAt: string;
+  sourceCommit: string | null;
+  anchorRunId: string;
+  artifacts: DemoArtifactEntry[];
+}
+
+export interface EndToEndDemoBundle {
+  bundleId: string;
+  generatedAt: string;
+  sourceCommit: string | null;
+  projectionCommand: string;
+  readModelBuildCommand: string;
+  uiRootRoute: string;
+  primaryRunRoute: string;
+  comparisonRoute: string;
+  feedbackRoute: string;
+  boundedInputId: string;
+  boundedInputSummary: string;
+  chosenAnchorRunId: string;
+  chosenComparisonPairId: string;
+  chosenArtifactAnchorRefs: string[];
+  buildOutputs: string[];
+  flowSteps: DemoFlowStep[];
+  materializationLegend: DemoLegendEntry[];
+  runStateLegend: DemoLegendEntry[];
+  primarySurfaceRefs: string[];
+  assumptions: string[];
+  completionCriteria: string[];
+}
+
+export interface ProvenanceLineageStep {
+  stepId: string;
+  label: string;
+  ref: string;
+  note: string;
+  materializationMode: SourceMode;
+}
+
+export interface UiObjectProvenanceEntry {
+  objectId: string;
+  objectType: "run" | "signal" | "comparison" | "feedback";
+  route: string;
+  runId?: string;
+  signalId?: string;
+  state: string;
+  materializationMode: SourceMode;
+  boundedInputSummary: string;
+  sourceArtifactRefs: string[];
+  projectionNotes: string;
+  assumptions: string[];
+  uiVisibleReason: string;
+  lineage: ProvenanceLineageStep[];
+}
+
+export interface EndToEndProvenanceManifest {
+  manifestId: string;
+  generatedAt: string;
+  sourceCommit: string | null;
+  anchorRunId: string;
+  entries: {
+    runs: Record<string, UiObjectProvenanceEntry>;
+    signals: Record<string, UiObjectProvenanceEntry>;
+    comparisons: Record<string, UiObjectProvenanceEntry>;
+    feedback: Record<string, UiObjectProvenanceEntry>;
+  };
+}
+
 async function fetchJson<T>(path: string): Promise<T> {
   const response = await fetch(path);
   if (!response.ok) {
@@ -241,4 +359,28 @@ export function loadComparison(pairId: string) {
 
 export function loadSourceMap() {
   return fetchJson<SourceMapResponse>("/demo-data/source_map.json");
+}
+
+export function loadBoundedDemoInputManifest() {
+  return fetchJson<BoundedDemoInputManifest>(
+    "/demo-data/end_to_end_demo/bounded_demo_input_manifest_v0.json",
+  );
+}
+
+export function loadDemoArtifactManifest() {
+  return fetchJson<DemoArtifactManifest>(
+    "/demo-data/end_to_end_demo/artifact_manifest_v0.json",
+  );
+}
+
+export function loadEndToEndDemoBundle() {
+  return fetchJson<EndToEndDemoBundle>(
+    "/demo-data/end_to_end_demo/decision_read_bundle_demo_v0.json",
+  );
+}
+
+export function loadEndToEndProvenanceManifest() {
+  return fetchJson<EndToEndProvenanceManifest>(
+    "/demo-data/end_to_end_demo/provenance_manifest_v0.json",
+  );
 }

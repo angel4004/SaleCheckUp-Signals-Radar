@@ -15,8 +15,8 @@
           "runtime/runs/phase0-validator-run-005/validation_manifest.json",
           "runtime/runs/phase0-review-run-001/review_manifest.json"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Comparison delta derived from two tracked run summaries."
       }
     },
@@ -32,8 +32,8 @@
           "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
           "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Comparison delta derived from tracked signal arrays."
       }
     },
@@ -50,8 +50,8 @@
           "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
           "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Comparison delta derived from tracked signal and decision artifacts."
       }
     },
@@ -68,8 +68,8 @@
           "runtime/runs/phase0-review-run-001/review_manifest.json",
           "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Comparison delta derived from tracked manifests and review next-step fields."
       }
     }
@@ -91,8 +91,8 @@
           "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
           "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Signal change derived from tracked validator and review outputs for the same candidate_id."
       }
     }
@@ -111,8 +111,8 @@
           "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
           "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Hybrid contradiction delta projected from tracked artifacts."
       }
     }
@@ -130,8 +130,8 @@
           "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
           "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Next-step delta projected from tracked review output."
       }
     },
@@ -147,8 +147,8 @@
           "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
           "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Next-step delta projected from tracked review output."
       }
     }
@@ -162,8 +162,8 @@
       "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
       "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
     ],
-    "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-    "generatedAt": "2026-03-20T15:18:42.962Z",
+    "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+    "generatedAt": "2026-03-21T10:34:37.068Z",
     "notes": "Comparison surface is precomputed from tracked artifacts plus hybrid delta mapping."
   }
 }

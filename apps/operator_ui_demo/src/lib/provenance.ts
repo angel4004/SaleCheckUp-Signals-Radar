@@ -17,6 +17,21 @@ export function sourceModeClassName(sourceMode: SourceMode) {
   return `mode-${sourceMode}`;
 }
 
+export function sourceModeTone(
+  sourceMode: SourceMode,
+): "success" | "warning" | "info" {
+  switch (sourceMode) {
+    case "artifact_backed":
+      return "success";
+    case "hybrid":
+      return "warning";
+    case "mock":
+      return "info";
+    default:
+      return "info";
+  }
+}
+
 export function summarizeProvenance(provenance: Provenance) {
   return `${sourceModeLabel(provenance.sourceMode)} · ${provenance.sourceRefs.length} ref${
     provenance.sourceRefs.length === 1 ? "" : "s"

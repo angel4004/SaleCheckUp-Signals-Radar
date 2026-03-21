@@ -1,7 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { FeedbackQueueList } from "../components/FeedbackQueueList";
-import type { FeedbackActionType, FeedbackEvent } from "../lib/readModel";
-import { loadRunsIndex } from "../lib/readModel";
+import { LineagePanel } from "../components/LineagePanel";
+import type {
+  EndToEndProvenanceManifest,
+  FeedbackActionType,
+  FeedbackEvent,
+} from "../lib/readModel";
+import {
+  loadEndToEndProvenanceManifest,
+  loadRunsIndex,
+} from "../lib/readModel";
 import {
   loadFeedbackEvents,
   subscribeToFeedbackEvents,
@@ -20,6 +28,8 @@ const actions: ActionFilter[] = [
 
 export function FeedbackQueuePage() {
   const [events, setEvents] = useState<FeedbackEvent[]>([]);
+  const [provenanceManifest, setProvenanceManifest] =
+    useState<EndToEndProvenanceManifest | null>(null);
   const [actionFilter, setActionFilter] = useState<ActionFilter>("all");
   const [runCount, setRunCount] = useState(0);
 
@@ -29,6 +39,26 @@ export function FeedbackQueuePage() {
     return subscribeToFeedbackEvents(() => {
       setEvents(loadFeedbackEvents());
     });
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+
+    loadEndToEndProvenanceManifest()
+      .then((response) => {
+        if (active) {
+          setProvenanceManifest(response);
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setProvenanceManifest(null);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -102,6 +132,14 @@ export function FeedbackQueuePage() {
           ))}
         </div>
       </section>
+
+      {provenanceManifest?.entries.feedback["feedback-local"] ? (
+        <LineagePanel
+          entry={provenanceManifest.entries.feedback["feedback-local"]}
+          eyebrow="Mock zone"
+          title="Why feedback stays demo-only"
+        />
+      ) : null}
 
       <FeedbackQueueList actionFilter={actionFilter} events={events} />
     </div>

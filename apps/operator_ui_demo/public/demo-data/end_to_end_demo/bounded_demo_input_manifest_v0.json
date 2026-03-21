@@ -1,0 +1,44 @@
+{
+  "manifestId": "bounded_demo_input_manifest_v0",
+  "generatedAt": "2026-03-21T10:34:37.068Z",
+  "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+  "inputId": "phase0-retrieval-run-003",
+  "inputPath": "runtime/input/phase0-retrieval-run-003.json",
+  "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+  "runGoal": "Проверить retrieval quality после tightening queries и minimal evidence filtering.",
+  "currentHypothesis": "При той же модели openai/gpt-4o-mini-search-preview, но с tighter query pack и minimal evidence filter retrieval должен давать более decision-useful sources.",
+  "modelId": "openai/gpt-4o-mini-search-preview",
+  "searchQueries": [
+    "hotel missed calls lost bookings case study",
+    "hotel call abandonment direct booking revenue case study",
+    "hotel reservation calls revenue loss case study",
+    "hotel voice agent direct bookings case study",
+    "boutique hotel missed calls revenue case study"
+  ],
+  "constraints": [
+    "Variant A only",
+    "No validator_gate",
+    "No run_dashboard",
+    "No auto_sync",
+    "No repo mutation",
+    "Focus on retrieval quality and evidence usefulness, not on final signal validation",
+    "Keep model fixed to current retrieval winner"
+  ],
+  "requestedOutputs": [
+    "run_manifest.json",
+    "candidate_signals.jsonl",
+    "evidence_index.jsonl",
+    "run_synthesis_ru.md",
+    "project_update_block_ru.md"
+  ],
+  "chosenRunChain": [
+    "phase0-retrieval-run-003",
+    "phase0-validator-run-005",
+    "phase0-review-run-001"
+  ],
+  "assumptions": [
+    "phase0-review-run-001 remains the primary artifact-backed operator anchor for this demo wave.",
+    "The new end_to_end_demo manifests stay demo-only and do not redefine decision_read_model_contract_v1.",
+    "phase0-smoke-run-001, a2-live-gate-001, and a2-live-gate-002 remain secondary honesty states rather than the primary walkthrough path."
+  ]
+}

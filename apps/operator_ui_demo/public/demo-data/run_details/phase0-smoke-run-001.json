@@ -11,7 +11,7 @@
     "evidenceTracePresence": "limited",
     "comparisonFamilyKey": "phase0-smoke",
     "previousComparableRunId": null,
-    "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+    "projectionGeneratedAt": "2026-03-21T10:34:37.068Z",
     "humanSummary": "The smoke contour completed, but this demo explicitly classifies it as zero_signal because no operator-facing signal rows were available.",
     "provenance": {
       "sourceMode": "hybrid",
@@ -20,8 +20,8 @@
         "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
         "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
       ],
-      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+      "generatedAt": "2026-03-21T10:34:37.068Z",
       "notes": "Explicit zero_signal classification is a demo-side mapping over a completed smoke bundle."
     }
   },
@@ -36,8 +36,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-smoke-run-001/run_manifest.json"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Exact smoke run completion from tracked runtime artifact."
       }
     },
@@ -51,8 +51,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Explicit stage exposure from tracked smoke synthesis."
       }
     },
@@ -66,8 +66,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Explicit stage exposure from tracked smoke synthesis."
       }
     }
@@ -92,8 +92,8 @@
           "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
           "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Hybrid contradiction derived from tracked smoke synthesis and update notes."
       }
     }
@@ -116,8 +116,8 @@
           "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
           "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Demo-side next step attached to a completed smoke contour with zero surfaced signals."
       }
     }
@@ -138,8 +138,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-smoke-run-001/run_manifest.json"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Trace anchored to tracked runtime artifact."
       }
     },
@@ -158,8 +158,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Trace anchored to tracked runtime artifact."
       }
     },
@@ -178,8 +178,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Trace anchored to tracked runtime artifact."
       }
     }
@@ -194,8 +194,8 @@
         "runtime/runs/phase0-smoke-run-001/run_manifest.json",
         "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md"
       ],
-      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+      "generatedAt": "2026-03-21T10:34:37.068Z",
       "notes": "Banner explains the explicit demo-side zero_signal mapping."
     }
   },
@@ -206,8 +206,8 @@
       "runtime/runs/phase0-smoke-run-001/run_synthesis_ru.md",
       "runtime/runs/phase0-smoke-run-001/project_update_block_ru.md"
     ],
-    "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-    "generatedAt": "2026-03-20T15:18:42.962Z",
+    "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+    "generatedAt": "2026-03-21T10:34:37.068Z",
     "notes": "Run detail combines tracked smoke artifacts with explicit demo-side state mapping."
   }
 }

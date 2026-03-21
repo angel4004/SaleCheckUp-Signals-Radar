@@ -1,0 +1,107 @@
+{
+  "manifestId": "artifact_manifest_v0",
+  "generatedAt": "2026-03-21T10:34:37.068Z",
+  "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+  "anchorRunId": "phase0-review-run-001",
+  "artifacts": [
+    {
+      "artifactId": "bounded-input",
+      "label": "Bounded input manifest",
+      "artifactPath": "runtime/input/phase0-retrieval-run-003.json",
+      "artifactKind": "json",
+      "sourceLayer": "runtime_input",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "materializationMode": "artifact_backed",
+      "role": "bounded_input",
+      "notes": "Chosen explicit bounded input manifest for the primary demo path."
+    },
+    {
+      "artifactId": "retrieval-manifest",
+      "label": "Retrieval run manifest",
+      "artifactPath": "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+      "artifactKind": "json",
+      "sourceLayer": "runtime",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "materializationMode": "artifact_backed",
+      "role": "run_anchor",
+      "notes": "Primary retrieval anchor for the phase0 path."
+    },
+    {
+      "artifactId": "retrieval-evidence",
+      "label": "Retrieval evidence index",
+      "artifactPath": "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl",
+      "artifactKind": "jsonl",
+      "sourceLayer": "runtime",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "materializationMode": "artifact_backed",
+      "role": "evidence_trace",
+      "notes": "Evidence trace source for validator and review signals."
+    },
+    {
+      "artifactId": "validator-signals",
+      "label": "Validated signals",
+      "artifactPath": "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
+      "artifactKind": "jsonl",
+      "sourceLayer": "runtime",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "materializationMode": "artifact_backed",
+      "role": "signal_source",
+      "notes": "Exact validator signal rows used by the generated UI bundle."
+    },
+    {
+      "artifactId": "review-signals",
+      "label": "Reviewed signals",
+      "artifactPath": "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+      "artifactKind": "jsonl",
+      "sourceLayer": "runtime",
+      "documentStatus": "repo_tracked_runtime_artifact",
+      "materializationMode": "artifact_backed",
+      "role": "signal_source",
+      "notes": "Exact review signal rows used by the generated UI bundle."
+    },
+    {
+      "artifactId": "review-detail",
+      "label": "Generated review run detail",
+      "artifactPath": "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json",
+      "artifactKind": "json",
+      "sourceLayer": "projection",
+      "documentStatus": "generated_demo_data",
+      "materializationMode": "hybrid",
+      "role": "ui_bundle",
+      "notes": "Primary operator-visible run detail bundle."
+    },
+    {
+      "artifactId": "comparison-bundle",
+      "label": "Generated comparison bundle",
+      "artifactPath": "apps/operator_ui_demo/public/demo-data/comparisons/phase0-validator-run-005__phase0-review-run-001.json",
+      "artifactKind": "json",
+      "sourceLayer": "projection",
+      "documentStatus": "generated_demo_data",
+      "materializationMode": "hybrid",
+      "role": "ui_bundle",
+      "notes": "Comparison deltas remain partly hybrid even though the source runs are tracked."
+    },
+    {
+      "artifactId": "provenance-overlay",
+      "label": "End-to-end provenance manifest",
+      "artifactPath": "apps/operator_ui_demo/public/demo-data/end_to_end_demo/provenance_manifest_v0.json",
+      "artifactKind": "json",
+      "sourceLayer": "projection",
+      "documentStatus": "generated_demo_data",
+      "materializationMode": "hybrid",
+      "role": "demo_overlay",
+      "notes": "Demo-only provenance overlay that keeps the flow explicit without redefining the canonical contract."
+    },
+    {
+      "artifactId": "feedback-local",
+      "label": "Local feedback store",
+      "artifactPath": "browser:localStorage",
+      "artifactKind": "browser_storage",
+      "sourceLayer": "ui",
+      "documentStatus": "demo_only",
+      "materializationMode": "mock",
+      "role": "feedback",
+      "notes": "Feedback queue persistence remains local-only for this wave."
+    }
+  ]
+}

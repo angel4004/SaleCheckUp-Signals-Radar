@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-03-20T15:18:42.962Z",
-  "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
+  "generatedAt": "2026-03-21T10:34:37.068Z",
+  "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
   "globalGroundingRefs": [
     "docs/drafts/decision_consumption_layer/decision_consumption_layer_spec_vA.md",
     "docs/drafts/decision_consumption_layer/decision_read_model_contract_v1.md",

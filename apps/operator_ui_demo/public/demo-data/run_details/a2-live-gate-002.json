@@ -11,7 +11,7 @@
     "evidenceTracePresence": "limited",
     "comparisonFamilyKey": "a2-live-gate::hotel_phone_abandonment",
     "previousComparableRunId": "a2-live-gate-001",
-    "projectionGeneratedAt": "2026-03-20T15:18:42.962Z",
+    "projectionGeneratedAt": "2026-03-21T10:34:37.068Z",
     "humanSummary": "The contour stopped before validator/review decisioning because retrieval persisted zero evidence items.",
     "provenance": {
       "sourceMode": "hybrid",
@@ -21,8 +21,8 @@
         "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
         "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
       ],
-      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+      "generatedAt": "2026-03-21T10:34:37.068Z",
       "notes": "Blocked run stitched from a repo-resident draft plus cited external runtime paths."
     }
   },
@@ -37,8 +37,8 @@
         "sourceRefs": [
           "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Derived from tracked run 002 contour completion section."
       }
     },
@@ -52,8 +52,8 @@
         "sourceRefs": [
           "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Derived from tracked run 002 contour completion section."
       }
     },
@@ -67,8 +67,8 @@
         "sourceRefs": [
           "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Derived from tracked run 002 contour completion section."
       }
     }
@@ -90,8 +90,8 @@
         "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
         "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
       ],
-      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+      "generatedAt": "2026-03-21T10:34:37.068Z",
       "notes": "Blocked reason anchored in the tracked outcome capture and cited external runtime paths."
     }
   },
@@ -112,8 +112,8 @@
         "sourceRefs": [
           "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Derived from tracked blocked live-gate outcome capture."
       }
     },
@@ -132,8 +132,8 @@
         "sourceRefs": [
           "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Derived from the tracked run 002 comparison and gate decision sections."
       }
     }
@@ -155,8 +155,8 @@
         "sourceRefs": [
           "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Exact recommendation preserved from tracked run 002 outcome capture."
       }
     }
@@ -177,8 +177,8 @@
         "sourceRefs": [
           "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Trace reconstructed from repo-resident draft outcome capture."
       }
     },
@@ -197,8 +197,8 @@
         "sourceRefs": [
           "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-retrieval"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Path cited by a tracked draft, but raw output bundle is not tracked in this repo."
       }
     },
@@ -217,8 +217,8 @@
         "sourceRefs": [
           "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Path cited by a tracked draft, but raw output bundle is not tracked in this repo."
       }
     },
@@ -237,8 +237,8 @@
         "sourceRefs": [
           "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
         ],
-        "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-        "generatedAt": "2026-03-20T15:18:42.962Z",
+        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+        "generatedAt": "2026-03-21T10:34:37.068Z",
         "notes": "Path cited by a tracked draft, but raw output bundle is not tracked in this repo."
       }
     }
@@ -252,8 +252,8 @@
       "sourceRefs": [
         "docs/drafts/quality_change_package_A2/quality_change_package_A2_live_gate_run_002.md"
       ],
-      "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-      "generatedAt": "2026-03-20T15:18:42.962Z",
+      "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+      "generatedAt": "2026-03-21T10:34:37.068Z",
       "notes": "Banner derived from tracked blocked contour completion wording."
     }
   },
@@ -265,8 +265,8 @@
       "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-validator",
       "C:\\Users\\ilya.suvorov\\Projects\\Work\\salecheckup_signals_radar_runtime\\runs\\a2-live-gate-002-review"
     ],
-    "sourceCommit": "bfa4cba041807b905cfcd11ff54a57a06ff5ae12",
-    "generatedAt": "2026-03-20T15:18:42.962Z",
+    "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+    "generatedAt": "2026-03-21T10:34:37.068Z",
     "notes": "Run detail stitched from the tracked draft outcome capture and cited runtime paths."
   }
 }

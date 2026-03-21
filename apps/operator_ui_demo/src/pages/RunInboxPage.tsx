@@ -1,16 +1,35 @@
 import { useEffect, useMemo, useState } from "react";
+import { DemoOverviewPanel } from "../components/DemoOverviewPanel";
 import { RunCard } from "../components/RunCard";
 import { StatusBadge } from "../components/StatusBadge";
-import type { DemoRunSummary, RunState } from "../lib/readModel";
-import { loadRunsIndex } from "../lib/readModel";
+import type {
+  BoundedDemoInputManifest,
+  DemoArtifactManifest,
+  DemoRunSummary,
+  EndToEndDemoBundle,
+  RunState,
+} from "../lib/readModel";
+import {
+  loadBoundedDemoInputManifest,
+  loadDemoArtifactManifest,
+  loadEndToEndDemoBundle,
+  loadRunsIndex,
+} from "../lib/readModel";
 
 type FilterState = RunState | "all";
 
 export function RunInboxPage() {
   const [runs, setRuns] = useState<DemoRunSummary[]>([]);
+  const [bundle, setBundle] = useState<EndToEndDemoBundle | null>(null);
+  const [inputManifest, setInputManifest] =
+    useState<BoundedDemoInputManifest | null>(null);
+  const [artifactManifest, setArtifactManifest] =
+    useState<DemoArtifactManifest | null>(null);
   const [filter, setFilter] = useState<FilterState>("all");
   const [error, setError] = useState<string | null>(null);
+  const [overviewError, setOverviewError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [overviewLoading, setOverviewLoading] = useState(true);
 
   useEffect(() => {
     let active = true;
@@ -41,6 +60,45 @@ export function RunInboxPage() {
     };
   }, []);
 
+  useEffect(() => {
+    let active = true;
+
+    Promise.all([
+      loadBoundedDemoInputManifest(),
+      loadDemoArtifactManifest(),
+      loadEndToEndDemoBundle(),
+    ])
+      .then(([inputResponse, artifactResponse, bundleResponse]) => {
+        if (!active) {
+          return;
+        }
+
+        setInputManifest(inputResponse);
+        setArtifactManifest(artifactResponse);
+        setBundle(bundleResponse);
+      })
+      .catch((reason: unknown) => {
+        if (!active) {
+          return;
+        }
+
+        setOverviewError(
+          reason instanceof Error
+            ? reason.message
+            : "Failed to load end-to-end demo bundle.",
+        );
+      })
+      .finally(() => {
+        if (active) {
+          setOverviewLoading(false);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
   const counts = useMemo(
     () => ({
       populated: runs.filter((run) => run.runState === "populated").length,
@@ -56,6 +114,16 @@ export function RunInboxPage() {
 
   return (
     <div className="stack">
+      {overviewLoading ? <p className="empty-state">Loading bounded demo overview…</p> : null}
+      {overviewError ? <p className="error-state">{overviewError}</p> : null}
+      {bundle && inputManifest && artifactManifest ? (
+        <DemoOverviewPanel
+          artifactManifest={artifactManifest}
+          bundle={bundle}
+          inputManifest={inputManifest}
+        />
+      ) : null}
+
       <section className="panel">
         <div className="panel-header">
           <div>

@@ -3,12 +3,16 @@ import { useParams } from "react-router-dom";
 import { ContradictionPanel } from "../components/ContradictionPanel";
 import { EvidencePanel } from "../components/EvidencePanel";
 import { FeedbackActions } from "../components/FeedbackActions";
+import { LineagePanel } from "../components/LineagePanel";
 import { NextStepPanel } from "../components/NextStepPanel";
 import { ProvenanceChip } from "../components/ProvenanceChip";
 import { SignalTable } from "../components/SignalTable";
 import { StatusBadge } from "../components/StatusBadge";
-import type { DemoRunDetail } from "../lib/readModel";
-import { loadRunDetail } from "../lib/readModel";
+import type {
+  DemoRunDetail,
+  EndToEndProvenanceManifest,
+} from "../lib/readModel";
+import { loadEndToEndProvenanceManifest, loadRunDetail } from "../lib/readModel";
 
 function getBannerTone(tone: DemoRunDetail["stateBanner"]["tone"]) {
   switch (tone) {
@@ -26,6 +30,8 @@ function getBannerTone(tone: DemoRunDetail["stateBanner"]["tone"]) {
 export function RunDetailPage() {
   const { runId } = useParams();
   const [detail, setDetail] = useState<DemoRunDetail | null>(null);
+  const [provenanceManifest, setProvenanceManifest] =
+    useState<EndToEndProvenanceManifest | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -38,11 +44,14 @@ export function RunDetailPage() {
 
     let active = true;
 
-    loadRunDetail(runId)
-      .then((response) => {
-        if (active) {
-          setDetail(response);
+    Promise.all([loadRunDetail(runId), loadEndToEndProvenanceManifest()])
+      .then(([detailResponse, provenanceResponse]) => {
+        if (!active) {
+          return;
         }
+
+        setDetail(detailResponse);
+        setProvenanceManifest(provenanceResponse);
       })
       .catch((reason: unknown) => {
         if (active) {
@@ -72,6 +81,9 @@ export function RunDetailPage() {
     return <p className="empty-state">Run detail is not available.</p>;
   }
 
+  const runLineage =
+    provenanceManifest?.entries.runs[detail.summary.runId] ?? null;
+
   return (
     <div className="stack">
       <section className="panel">
@@ -88,6 +100,17 @@ export function RunDetailPage() {
         </div>
 
         <p>{detail.summary.humanSummary}</p>
+
+        <div className="metadata-row">
+          <span>run_id: {detail.summary.runId}</span>
+          <span>run_state: {detail.summary.runState}</span>
+          <span>materialization_mode: {detail.summary.provenance.sourceMode}</span>
+          <span>comparison_family_key: {detail.summary.comparisonFamilyKey}</span>
+          <span>
+            previous_comparable_run_id:{" "}
+            {detail.summary.previousComparableRunId ?? "none"}
+          </span>
+        </div>
 
         <dl className="stat-grid">
           <div>
@@ -111,6 +134,10 @@ export function RunDetailPage() {
         <ProvenanceChip provenance={detail.summary.provenance} />
         <FeedbackActions runId={detail.summary.runId} targetScope="run" />
       </section>
+
+      {runLineage ? (
+        <LineagePanel entry={runLineage} title={`How ${detail.summary.runId} reached UI`} />
+      ) : null}
 
       <section className={`banner tone-${detail.stateBanner.tone}`}>
         <div className="panel-header">
@@ -178,7 +205,10 @@ export function RunDetailPage() {
         </section>
       ) : null}
 
-      <SignalTable signals={detail.signals} />
+      <SignalTable
+        signalProvenanceEntries={provenanceManifest?.entries.signals}
+        signals={detail.signals}
+      />
 
       <div className="two-column">
         <ContradictionPanel contradictions={detail.runContradictions} />

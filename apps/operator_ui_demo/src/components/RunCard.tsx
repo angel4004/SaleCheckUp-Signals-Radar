@@ -22,6 +22,21 @@ function getRunStateTone(runState: DemoRunSummary["runState"]) {
   }
 }
 
+function getRunStateNote(runState: DemoRunSummary["runState"]) {
+  switch (runState) {
+    case "populated":
+      return "signals surfaced and operator-visible";
+    case "blocked":
+      return "contour stopped before fair signal emission";
+    case "zero_signal":
+      return "run materialized with zero visible signals";
+    case "inconclusive":
+      return "partial signal view remained too thin for stronger closure";
+    default:
+      return "state note unavailable";
+  }
+}
+
 export function RunCard({ run }: RunCardProps) {
   const comparisonPair = run.previousComparableRunId
     ? `${run.previousComparableRunId}__${run.runId}`
@@ -41,6 +56,17 @@ export function RunCard({ run }: RunCardProps) {
       </div>
 
       <p>{run.humanSummary}</p>
+
+      <div className="metadata-row">
+        <span>run_id: {run.runId}</span>
+        <span>run_state: {run.runState}</span>
+        <span>materialization_mode: {run.provenance.sourceMode}</span>
+        <span>comparison_family_key: {run.comparisonFamilyKey}</span>
+        <span>
+          previous_comparable_run_id: {run.previousComparableRunId ?? "none"}
+        </span>
+      </div>
+      <p className="muted">state_semantics: {getRunStateNote(run.runState)}</p>
 
       <dl className="stat-grid">
         <div>

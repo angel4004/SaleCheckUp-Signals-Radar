@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ComparisonDiff } from "../components/ComparisonDiff";
-import type { DemoComparison } from "../lib/readModel";
-import { loadComparison } from "../lib/readModel";
+import { LineagePanel } from "../components/LineagePanel";
+import type {
+  DemoComparison,
+  EndToEndProvenanceManifest,
+} from "../lib/readModel";
+import { loadComparison, loadEndToEndProvenanceManifest } from "../lib/readModel";
 
 const seededPair = "phase0-validator-run-005__phase0-review-run-001";
 
@@ -10,6 +14,8 @@ export function ComparisonPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const pairId = searchParams.get("pair") ?? seededPair;
   const [comparison, setComparison] = useState<DemoComparison | null>(null);
+  const [provenanceManifest, setProvenanceManifest] =
+    useState<EndToEndProvenanceManifest | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -21,11 +27,14 @@ export function ComparisonPage() {
 
     let active = true;
 
-    loadComparison(pairId)
-      .then((response) => {
-        if (active) {
-          setComparison(response);
+    Promise.all([loadComparison(pairId), loadEndToEndProvenanceManifest()])
+      .then(([comparisonResponse, provenanceResponse]) => {
+        if (!active) {
+          return;
         }
+
+        setComparison(comparisonResponse);
+        setProvenanceManifest(provenanceResponse);
       })
       .catch((reason: unknown) => {
         if (active) {
@@ -70,6 +79,13 @@ export function ComparisonPage() {
 
       {loading ? <p className="empty-state">Loading comparison…</p> : null}
       {error ? <p className="error-state">{error}</p> : null}
+      {provenanceManifest?.entries.comparisons[pairId] ? (
+        <LineagePanel
+          entry={provenanceManifest.entries.comparisons[pairId]}
+          eyebrow="Comparison lineage"
+          title={`How ${pairId} was projected`}
+        />
+      ) : null}
       {comparison ? <ComparisonDiff comparison={comparison} /> : null}
     </div>
   );

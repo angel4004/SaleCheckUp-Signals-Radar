@@ -1,0 +1,202 @@
+{
+  "bundleId": "decision_read_bundle_demo_v0",
+  "generatedAt": "2026-03-21T10:34:37.068Z",
+  "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+  "projectionCommand": "node scripts/build_end_to_end_demo_bundle.mjs",
+  "readModelBuildCommand": "node apps/operator_ui_demo/scripts/build_demo_read_model.mjs",
+  "uiRootRoute": "/runs",
+  "primaryRunRoute": "/runs/phase0-review-run-001",
+  "comparisonRoute": "/compare?pair=phase0-validator-run-005__phase0-review-run-001",
+  "feedbackRoute": "/feedback",
+  "boundedInputId": "phase0-retrieval-run-003",
+  "boundedInputSummary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+  "chosenAnchorRunId": "phase0-review-run-001",
+  "chosenComparisonPairId": "phase0-validator-run-005__phase0-review-run-001",
+  "chosenArtifactAnchorRefs": [
+    "runtime/input/phase0-retrieval-run-003.json",
+    "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+    "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+    "runtime/runs/phase0-review-run-001/review_manifest.json",
+    "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json"
+  ],
+  "buildOutputs": [
+    "apps/operator_ui_demo/public/demo-data/runs_index.json",
+    "apps/operator_ui_demo/public/demo-data/run_details/phase0-validator-run-005.json",
+    "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json",
+    "apps/operator_ui_demo/public/demo-data/comparisons/phase0-validator-run-005__phase0-review-run-001.json",
+    "apps/operator_ui_demo/public/demo-data/end_to_end_demo/bounded_demo_input_manifest_v0.json",
+    "apps/operator_ui_demo/public/demo-data/end_to_end_demo/artifact_manifest_v0.json",
+    "apps/operator_ui_demo/public/demo-data/end_to_end_demo/decision_read_bundle_demo_v0.json",
+    "apps/operator_ui_demo/public/demo-data/end_to_end_demo/provenance_manifest_v0.json"
+  ],
+  "flowSteps": [
+    {
+      "stepId": "bounded_input",
+      "label": "Bounded input manifest",
+      "objectType": "bounded_input",
+      "objectId": "phase0-retrieval-run-003",
+      "state": "selected",
+      "materializationMode": "artifact_backed",
+      "summary": "Bounded phase0 hotel phone-loss input is replayed through persisted retrieval, validator, and review artifacts before entering the demo-side projection.",
+      "note": "No fresh live retrieval is required for this wave; the bounded input is replayed locally against persisted artifacts.",
+      "sourceArtifactRefs": [
+        "runtime/input/phase0-retrieval-run-003.json"
+      ],
+      "uiRoute": "/runs"
+    },
+    {
+      "stepId": "retrieval_run",
+      "label": "Retrieval contour anchor",
+      "objectType": "run",
+      "objectId": "phase0-retrieval-run-003",
+      "state": "completed",
+      "materializationMode": "artifact_backed",
+      "summary": "2 persisted evidence items survived retrieval filtering.",
+      "note": "This is the runtime source for the phase0 evidence bundle.",
+      "sourceArtifactRefs": [
+        "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
+        "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
+      ]
+    },
+    {
+      "stepId": "validator_run",
+      "label": "Validator contour anchor",
+      "objectType": "run",
+      "objectId": "phase0-validator-run-005",
+      "state": "populated",
+      "materializationMode": "artifact_backed",
+      "summary": "2 validator-visible signals were emitted from the persisted evidence bundle.",
+      "note": "Validator output remains directly inspectable before the review gate tightens posture.",
+      "sourceArtifactRefs": [
+        "runtime/runs/phase0-validator-run-005/validation_manifest.json",
+        "runtime/runs/phase0-validator-run-005/validated_signals.jsonl"
+      ]
+    },
+    {
+      "stepId": "review_run",
+      "label": "Review contour anchor",
+      "objectType": "run",
+      "objectId": "phase0-review-run-001",
+      "state": "populated",
+      "materializationMode": "artifact_backed",
+      "summary": "2 reviewed signals remain operator-visible with conservative hold decisions.",
+      "note": "This is the chosen primary operator-facing run for the demo wave.",
+      "sourceArtifactRefs": [
+        "runtime/runs/phase0-review-run-001/review_manifest.json",
+        "runtime/runs/phase0-review-run-001/reviewed_signals.jsonl",
+        "runtime/runs/phase0-review-run-001/decision_summary_ru.md"
+      ],
+      "uiRoute": "/runs/phase0-review-run-001"
+    },
+    {
+      "stepId": "projection_bundle",
+      "label": "Read-side projection bundle",
+      "objectType": "projection",
+      "objectId": "decision_read_bundle_demo_v0",
+      "state": "materialized",
+      "materializationMode": "hybrid",
+      "summary": "Generated read-side JSON plus explicit demo-only lineage/provenance overlays feed the UI without mutating runtime or governance.",
+      "note": "The generator rebuilds the UI-readable bundle from tracked artifacts, but the overview/provenance layer is still a demo-side stitch.",
+      "sourceArtifactRefs": [
+        "apps/operator_ui_demo/public/demo-data/runs_index.json",
+        "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json",
+        "apps/operator_ui_demo/public/demo-data/comparisons/phase0-validator-run-005__phase0-review-run-001.json",
+        "apps/operator_ui_demo/public/demo-data/end_to_end_demo/bounded_demo_input_manifest_v0.json",
+        "apps/operator_ui_demo/public/demo-data/end_to_end_demo/artifact_manifest_v0.json",
+        "apps/operator_ui_demo/public/demo-data/end_to_end_demo/decision_read_bundle_demo_v0.json",
+        "apps/operator_ui_demo/public/demo-data/end_to_end_demo/provenance_manifest_v0.json"
+      ]
+    },
+    {
+      "stepId": "operator_ui",
+      "label": "Operator UI surface",
+      "objectType": "ui_surface",
+      "objectId": "apps/operator_ui_demo",
+      "state": "operator_visible",
+      "materializationMode": "hybrid",
+      "summary": "Inbox, detail, comparison, and feedback routes all read the generated bundle and keep provenance/state semantics explicit.",
+      "note": "The UI is intentionally demo-scoped and does not open a production contour.",
+      "sourceArtifactRefs": [
+        "apps/operator_ui_demo/src/pages/RunInboxPage.tsx",
+        "apps/operator_ui_demo/src/pages/RunDetailPage.tsx",
+        "apps/operator_ui_demo/src/pages/ComparisonPage.tsx",
+        "apps/operator_ui_demo/src/pages/FeedbackQueuePage.tsx"
+      ],
+      "uiRoute": "/runs"
+    },
+    {
+      "stepId": "feedback_mock",
+      "label": "Feedback mock boundary",
+      "objectType": "feedback",
+      "objectId": "feedback-local",
+      "state": "local_demo_localStorage",
+      "materializationMode": "mock",
+      "summary": "Feedback stays explicitly local and demo-only, so the operator surface never mutates runtime or governance automatically.",
+      "note": "Mock is a deliberate visible boundary, not a hidden implementation gap.",
+      "sourceArtifactRefs": [
+        "browser:localStorage"
+      ],
+      "uiRoute": "/feedback"
+    }
+  ],
+  "materializationLegend": [
+    {
+      "key": "artifact_backed",
+      "label": "artifact_backed",
+      "meaning": "The visible object is anchored in repo-tracked runtime artifacts and can be traced back to specific manifests, signal rows, or evidence records."
+    },
+    {
+      "key": "hybrid",
+      "label": "hybrid",
+      "meaning": "The visible object is rebuilt from tracked artifacts plus demo-side stitching or draft-derived mapping that remains intentionally explicit."
+    },
+    {
+      "key": "mock",
+      "label": "mock",
+      "meaning": "The visible object is demo-only and stays outside runtime and governance mutation paths."
+    }
+  ],
+  "runStateLegend": [
+    {
+      "key": "populated",
+      "label": "populated",
+      "meaning": "The run has surfaced operator-visible signal rows with inspectable evidence traces."
+    },
+    {
+      "key": "blocked",
+      "label": "blocked",
+      "meaning": "The contour stopped before a fair signal-emitting stage completed and the UI keeps that blockage explicit."
+    },
+    {
+      "key": "zero_signal",
+      "label": "zero_signal",
+      "meaning": "The contour completed far enough to produce a run object, but it emitted zero operator-visible signals."
+    },
+    {
+      "key": "inconclusive",
+      "label": "inconclusive",
+      "meaning": "The contour surfaced a partial signal view, but the evidence remained too thin for a stronger conclusion."
+    }
+  ],
+  "primarySurfaceRefs": [
+    "apps/operator_ui_demo/public/demo-data/runs_index.json",
+    "apps/operator_ui_demo/public/demo-data/run_details/phase0-review-run-001.json",
+    "apps/operator_ui_demo/public/demo-data/comparisons/phase0-validator-run-005__phase0-review-run-001.json",
+    "apps/operator_ui_demo/public/demo-data/end_to_end_demo/bounded_demo_input_manifest_v0.json",
+    "apps/operator_ui_demo/public/demo-data/end_to_end_demo/artifact_manifest_v0.json",
+    "apps/operator_ui_demo/public/demo-data/end_to_end_demo/decision_read_bundle_demo_v0.json",
+    "apps/operator_ui_demo/public/demo-data/end_to_end_demo/provenance_manifest_v0.json"
+  ],
+  "assumptions": [
+    "phase0-review-run-001 remains the primary artifact-backed operator anchor for this demo wave.",
+    "The new end_to_end_demo manifests stay demo-only and do not redefine decision_read_model_contract_v1.",
+    "phase0-smoke-run-001, a2-live-gate-001, and a2-live-gate-002 remain secondary honesty states rather than the primary walkthrough path."
+  ],
+  "completionCriteria": [
+    "The projection/build command regenerates both the base demo read model and the explicit end_to_end_demo bundle.",
+    "The Run Inbox shows bounded input summary, chosen run/artifact anchor, materialization legend, and state legend.",
+    "The chosen run detail shows visible run lineage plus signal lineage with state, materialization_mode, source_artifact_refs, and projection_notes.",
+    "The comparison route shows explicit hybrid projection context instead of implying a fully canonical comparator.",
+    "The feedback route keeps mock persistence explicit and does not hide the write-side boundary."
+  ]
+}
