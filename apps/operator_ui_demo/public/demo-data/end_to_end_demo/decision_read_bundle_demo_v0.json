@@ -1,7 +1,7 @@
 {
   "bundleId": "decision_read_bundle_demo_v0",
-  "generatedAt": "2026-03-21T10:34:37.068Z",
-  "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
+  "generatedAt": "2026-03-21T12:21:59.561Z",
+  "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
   "projectionCommand": "node scripts/build_end_to_end_demo_bundle.mjs",
   "readModelBuildCommand": "node apps/operator_ui_demo/scripts/build_demo_read_model.mjs",
   "uiRootRoute": "/runs",

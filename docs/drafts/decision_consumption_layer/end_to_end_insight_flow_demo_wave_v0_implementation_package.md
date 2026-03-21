@@ -3,9 +3,10 @@ Status note
 - `draft`
 - `implementation package`
 - `demo wave only`
-- `not canonical`
-- `not production contour`
-- `no runtime or UI code opened by this document`
+- `implemented_in_repo`
+- `repo_materialization_remains_demo_only`
+- `not_canonicalized`
+- `not_production_contour`
 - `grounding_note`: repo-resident source-of-truth files `quality_spine_vA_canonical_draft`, `quality_spine_vA_status_addendum_operator_ui_demo_wave_v0`, and `quality_spine_vA_status_addendum_decision_read_model` were not found in the current worktree. This package is therefore grounded on repo-available artifacts only and does not invent substitute file paths.
 - `assumption_note_1`: no repo-resident artifact named `minimal_operator_ui_demo_wave_v0` was found. References to it in this package are therefore best-effort interpretations based on the existing `apps/operator_ui_demo` contour already present in repo.
 - `assumption_note_2`: for this wave, the correct primary demo path is the fully repo-resident `phase0-retrieval-run-003 -> phase0-validator-run-005 -> phase0-review-run-001` chain. Existing A2 live-gate surfaces remain useful secondary honesty states, but not the primary bounded demo path because they are partly hybrid.
@@ -19,9 +20,9 @@ Status note
 - `status`: `draft`
 - `layer_type`: `decision_consumption_layer`
 - `scope_mode`: `demo_wave_only`
-- `implementation_status`: `not_opened`
+- `implementation_status`: `implemented_in_repo`
 - `git_branch`: `main`
-- `git_context_current_head_commit`: `32b27a6b9d8412b10ed9e109670bc0cf144a1af6`
+- `git_context_current_head_commit`: `29208e91cb82ce2f8376ba36691fb56789fef726`
 - `git_context_runtime_baseline_commit`: `e16bb2d`
 - `git_context_a1_runtime_patch_commit`: `78d79c2`
 - `git_context_a1_validation_followup_commit`: `d55e002`
@@ -30,7 +31,7 @@ Status note
 - `git_context_a2_lane2_live_gate_execution_package_commit`: `dba74f242f957f510c90b4c6611852c4256a630d`
 - `git_context_decision_consumption_layer_spec_commit`: `6bce73a`
 - `git_context_decision_read_model_contract_commit`: `bfa4cba`
-- `git_context_operator_ui_demo_wave_commit`: `32b27a6`
+- `git_context_operator_ui_demo_wave_commit`: `29208e9`
 
 ## Repo grounding used for this package
 
@@ -56,6 +57,8 @@ Status note
 ## 1. Human layer
 
 Эта wave должна показать не набор изолированных экранов, а один честный движущийся контур: есть ограниченный вход, есть зафиксированная цепочка `run`, есть projection в demo-side read model, и есть UI, в котором оператор видит итоговый insight вместе с provenance, contradictions и next steps.
+
+В текущем repo эта wave уже materialized через existing projector, checked-in demo-data и `apps/operator_ui_demo`, но этот contour остается demo-only, non-canonical и вне production.
 
 Почему это правильный следующий шаг после `minimal_operator_ui_demo_wave_v0`: минимальная demo-поверхность уже показывает, что `Run Inbox`, `Run Detail`, `Comparison View` и `Feedback Queue` могут рендерить read-side объекты. Но этого недостаточно, если человек не может быстро понять, какой именно вход породил какой `run`, как этот `run` дошел до операторского экрана и где кончается реальность и начинается demo-side reconstruction. Следующая правильная цель поэтому не новый экран, а связанный `input -> run -> projection -> UI` путь.
 

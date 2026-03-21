@@ -4,7 +4,7 @@ Status note
 
 - Expected authoritative planning artifacts were not found in this runtime workspace: `quality_spine_vA_canonical_draft`, `quality_system_principles_vA_working_draft_current`, `docs/drafts/quality_change_package_A2/quality_change_package_A2_design_candidate.md`.
 - This draft is therefore grounded on the active runtime contour that is actually present in repo: `runtime_contract.md`, `runner/validator_run.py`, `runner/review_gate.py`, and Phase 0 persisted artifacts.
-- Repo also contains older pre-A1 review artifacts under `runs/phase0-review-run-001/*`. For this package they are treated as non-authoritative history. The current implementation baseline is `runner/review_gate.py` together with `runs/phase0-review-run-a1-smoke/*`.
+- Repo also contains older pre-A1 review artifacts under `runs/phase0-review-run-001/*`. For this package's A2 runtime-baseline framing they are treated as non-authoritative history only relative to `runner/review_gate.py` together with `runs/phase0-review-run-a1-smoke/*`; this note does not demote `phase0-review-run-001` as a separate decision-consumption or demo anchor.
 - Best-effort assumption for this wave: the current A1 runtime surface is the authoritative implementation baseline, and A2 must remain strictly subordinate to it.
 
 ## 1. Human layer

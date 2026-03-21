@@ -2,9 +2,9 @@ Status note
 
 - `draft`
 - `working spec`
-- `spec only`
-- `not implementation`
-- `not canonized`
+- `partially_materialized_for_demo`
+- `not_production`
+- `not_canonicalized`
 
 # decision_read_model_contract_v1
 
@@ -17,9 +17,9 @@ Status note
 - `layer_type`: `decision_consumption_layer`
 - `contract_type`: `read_model_contract`
 - `scope_mode`: `spec_only`
-- `implementation_status`: `not_opened`
+- `implementation_status`: `partially_materialized_for_demo`
 - `git_branch`: `main`
-- `git_context_current_head_commit`: `38717f3710a740134cf0ef5139bf7aeee9a42f46`
+- `git_context_current_head_commit`: `29208e91cb82ce2f8376ba36691fb56789fef726`
 - `git_context_runtime_baseline_commit`: `e16bb2d`
 - `git_context_a1_runtime_patch_commit`: `78d79c2`
 - `git_context_a1_validation_followup_commit`: `d55e002`
@@ -41,10 +41,14 @@ Status note
 
 Документ не является approved contract.
 
+В текущем repo уже есть частичная demo-side materialization этого draft через существующий projector и checked-in `apps/operator_ui_demo/public/demo-data`, но эта materialization остается demo-only, non-production и non-canonical.
+
+Это не делает `decision_read_model` finalized contract.
+
 Документ не открывает:
 
-- UI implementation;
-- projection implementation;
+- final UI contract or production UI implementation;
+- final projection/materializer implementation;
 - final `feedback` contract;
 - production contour;
 - automatic canonical sync.

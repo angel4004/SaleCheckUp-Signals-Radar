@@ -11,7 +11,7 @@
     "evidenceTracePresence": "present",
     "comparisonFamilyKey": "hotel_phone_abandonment::phase0-retrieval-run-003",
     "previousComparableRunId": null,
-    "projectionGeneratedAt": "2026-03-21T10:34:37.068Z",
+    "projectionGeneratedAt": "2026-03-21T12:21:59.561Z",
     "humanSummary": "Two validator-surfaced signals are available with direct evidence traces and conservative contradiction visibility.",
     "provenance": {
       "sourceMode": "artifact_backed",
@@ -21,8 +21,8 @@
         "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
         "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
       ],
-      "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-      "generatedAt": "2026-03-21T10:34:37.068Z",
+      "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+      "generatedAt": "2026-03-21T12:21:59.561Z",
       "notes": "Summary assembled from tracked validator and retrieval artifacts."
     }
   },
@@ -38,8 +38,8 @@
           "runtime/runs/phase0-retrieval-run-003/run_manifest.json",
           "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Exact retrieval status from tracked runtime output."
       }
     },
@@ -54,8 +54,8 @@
           "runtime/runs/phase0-validator-run-005/validation_manifest.json",
           "runtime/runs/phase0-validator-run-005/validated_signals.jsonl"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Exact validator status from tracked runtime output."
       }
     },
@@ -69,8 +69,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-validator-run-005/validation_manifest.json"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Explicit demo-side stage exposure; no review mutation or hidden inference."
       }
     }
@@ -100,8 +100,8 @@
             "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
             "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
           ],
-          "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-          "generatedAt": "2026-03-21T10:34:37.068Z",
+          "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+          "generatedAt": "2026-03-21T12:21:59.561Z",
           "notes": "Normalized from tracked validator output and retrieval evidence."
         }
       },
@@ -122,8 +122,8 @@
               "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
               "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
             ],
-            "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-            "generatedAt": "2026-03-21T10:34:37.068Z",
+            "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+            "generatedAt": "2026-03-21T12:21:59.561Z",
             "notes": "Derived from tracked validator weaknesses against exact evidence trace."
           }
         }
@@ -145,8 +145,8 @@
             "sourceRefs": [
               "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
             ],
-            "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-            "generatedAt": "2026-03-21T10:34:37.068Z",
+            "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+            "generatedAt": "2026-03-21T12:21:59.561Z",
             "notes": "Exact evidence trace entry from tracked retrieval output."
           }
         }
@@ -162,8 +162,8 @@
           "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
           "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Signal row comes directly from tracked validator output with normalized status fields."
       }
     },
@@ -191,8 +191,8 @@
             "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
             "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
           ],
-          "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-          "generatedAt": "2026-03-21T10:34:37.068Z",
+          "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+          "generatedAt": "2026-03-21T12:21:59.561Z",
           "notes": "Normalized from tracked validator output and retrieval evidence."
         }
       },
@@ -213,8 +213,8 @@
               "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
               "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
             ],
-            "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-            "generatedAt": "2026-03-21T10:34:37.068Z",
+            "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+            "generatedAt": "2026-03-21T12:21:59.561Z",
             "notes": "Derived from tracked validator weaknesses against exact evidence trace."
           }
         }
@@ -236,8 +236,8 @@
             "sourceRefs": [
               "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
             ],
-            "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-            "generatedAt": "2026-03-21T10:34:37.068Z",
+            "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+            "generatedAt": "2026-03-21T12:21:59.561Z",
             "notes": "Exact evidence trace entry from tracked retrieval output."
           }
         }
@@ -253,8 +253,8 @@
           "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
           "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Signal row comes directly from tracked validator output with normalized status fields."
       }
     }
@@ -276,8 +276,8 @@
           "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
           "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Derived from tracked validator weaknesses against exact evidence trace."
       }
     },
@@ -297,8 +297,8 @@
           "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
           "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Derived from tracked validator weaknesses against exact evidence trace."
       }
     }
@@ -321,8 +321,8 @@
           "runtime/runs/phase0-validator-run-005/validation_manifest.json",
           "runtime/runs/phase0-review-run-001/review_manifest.json"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Hybrid projection step to keep next-step panel visible before review output exists."
       }
     }
@@ -343,8 +343,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-validator-run-005/validation_manifest.json"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Trace anchored to tracked runtime artifact."
       }
     },
@@ -363,8 +363,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Exact evidence trace entry from tracked retrieval output."
       }
     },
@@ -383,8 +383,8 @@
         "sourceRefs": [
           "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
         ],
-        "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-        "generatedAt": "2026-03-21T10:34:37.068Z",
+        "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+        "generatedAt": "2026-03-21T12:21:59.561Z",
         "notes": "Exact evidence trace entry from tracked retrieval output."
       }
     }
@@ -399,8 +399,8 @@
         "runtime/runs/phase0-validator-run-005/validation_manifest.json",
         "runtime/runs/phase0-validator-run-005/validated_signals.jsonl"
       ],
-      "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-      "generatedAt": "2026-03-21T10:34:37.068Z",
+      "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+      "generatedAt": "2026-03-21T12:21:59.561Z",
       "notes": "Banner wording derived from tracked validator bundle counts and signal posture."
     }
   },
@@ -411,8 +411,8 @@
       "runtime/runs/phase0-validator-run-005/validated_signals.jsonl",
       "runtime/runs/phase0-retrieval-run-003/evidence_index.jsonl"
     ],
-    "sourceCommit": "30ddc713fce199bbd77370a3df6d3e71845028bf",
-    "generatedAt": "2026-03-21T10:34:37.068Z",
+    "sourceCommit": "29208e91cb82ce2f8376ba36691fb56789fef726",
+    "generatedAt": "2026-03-21T12:21:59.561Z",
     "notes": "Run detail rooted in tracked validator and retrieval artifacts."
   }
 }
